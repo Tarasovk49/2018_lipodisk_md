@@ -1,0 +1,76 @@
+
+
+```
+#!/bin/bash
+
+################################################################################### 
+###    Derive Lipodisk Structure By Using Flat-bottom Potentials And 2 Walls    ###
+###################################################################################
+
+# During the simulation harmonic potential is applied to center of mass motion of each
+# polymer molecule. It is applyed on distance between COM of each polymer
+# and COM of membrane and it is only applied when this distance is more than 4 nm.  
+switch=1
+if [[ $switch -eq 1 ]]
+then
+
+# Generate topology
+gmx_2018 pdb2gmx -f SMALP.pdb -o SMALP_processed.gro -ff oplsaa_lipids_polymers -water spce -p topol.top
+
+# Move posres and itp to their own folders and define where to find them
+for name in `ls topol_*`
+do
+sed -i -- 's/\#include \"posre_/\#include \"..\/posres\/posre_/g' $name
+done
+sed -i -- 's/\#include \"topol_/\#include \"itp\/topol_/g' topol.top
+
+# Define position restraints that will be used during NPT simulation to keep membrane integral
+echo "#ifdef POSRES_LIPIDS" >> topol_Other*.itp
+var=`ls posre_Other*.itp`
+echo "#include \"../posres/$var\"" >> topol_Other*.itp
+echo "#endif" >> topol_Other*.itp
+
+mv posre*.itp posres/.
+mv topol*.itp itp/.
+
+# Set box size
+gmx_2018 editconf -f SMALP_processed.gro -o SMALP_newbox.gro -d 0.1 -c -bt triclinic
+
+#gmx_2018 solvate -cp $folder/whole_newbox.gro -cs spc216.gro -o $folder/whole_solv.gro -p $folder/topol.top
+#gmx_2018 grompp -f config/ions.mdp -c $folder/whole_solv.gro -p $folder/topol.top -o ions.tpr -po $folder/mdout_cont4.mdp
+#gmx_2018 genion -s ions.tpr -o whole_solv_ions.gro -p topol.top -pname NA -nname CL -conc 0.15<<!
+#13
+#!
+
+# Prepare and run EM
+gmx_2018 grompp -f config/minim_SMALP.mdp -c SMALP_newbox.gro -r SMALP_newbox.gro -o SMALP_em.tpr -p topol.top -po mdout.mdp -maxwarn 1
+gmx_2018 mdrun -deffnm SMALP_em
+
+# Prepare and run NVT
+gmx_2018 grompp -f config/nvt_SMALP.mdp -c SMALP_em.gro -r SMALP_em.gro -o SMALP_nvt.tpr -p topol.top -po mdout.mdp -maxwarn 1
+gmx_2018 mdrun -deffnm SMALP_nvt
+
+# Prepare index file with groups for pulling and mdp file
+gmx_2018 make_ndx -f SMALP_nvt.tpr<<!
+q
+!
+
+python gen_index.py -i SMALP.pdb -o index_more.ndx
+cat index_more.ndx >> index.ndx
+fi
+python gen_mdp.py -m config/SMALP.mdp -i index.ndx -o config/SMALP_flatbot.mdp
+
+switch2=0
+if [[ $switch2 -eq 1 ]]
+then
+# Prepare and run NPT
+gmx_2018 editconf -f SMALP_nvt.gro -o SMALP_bigbox.gro -box 30 30 8 -c -bt triclinic
+gmx_2018 grompp -f config/SMALP_flatbot.mdp -c SMALP_bigbox.gro -r SMALP_bigbox.gro -n index.ndx -o SMALP_flatbot.tpr -p topol.top -po mdout.mdp -maxwarn 1
+gmx_2018 mdrun -deffnm SMALP_flatbot
+fi
+# Dynamics finished with segmentation fault near 22000 step. Derive frame at 10000 step (20 ps):
+# Before start next step of dynamics it is needed to add TER between chains of polymer (add_ter_between_chains.py)
+gmx_2018 trjconv -f SMALP_flatbot.trr -o SMALP_pre.pdb -s SMALP_flatbot.tpr -dump 20<<!
+0
+!
+```
