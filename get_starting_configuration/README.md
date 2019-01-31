@@ -1,4 +1,4 @@
-**Usage**
+# Usage
 
 Script *orient_poly.py* finds principal axes of polymer molecules, alignes the longest axis along z-axis and then places polymer molecules in rings around ridges of lipid membrane. *-n* specifies number of layers.
 ```
@@ -10,4 +10,3 @@ Script *add_ter_between_chains.py* adds TER strings in *.pdb* files where resid 
 ```
 add_ter_between_chains.py -i infile_name.pdb -o outfile_name.pdb
 ```
-
