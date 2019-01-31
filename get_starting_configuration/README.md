@@ -1,6 +1,6 @@
 **Usage**
 
-Script *orient_poly.py* finds principal axes of polymer molecules, alignes the longest axis along Oz-axis and then places polymer molecules in rings around ridges of lipid membrane. *-n* specifies number of layers.
+Script *orient_poly.py* finds principal axes of polymer molecules, alignes the longest axis along z-axis and then places polymer molecules in rings around ridges of lipid membrane. *-n* specifies number of layers.
 ```
 orient_poly.py -m membrane.pdb -p directory_polymer_molecules_reside -o outfile_name.pdb -n 3
 ```
