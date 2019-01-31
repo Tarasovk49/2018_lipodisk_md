@@ -1,0 +1,57 @@
+[ None ]
+
+[ ST1-F ]
+[ replace ]
+CB  CB  opls_135    12.011  -0.180
+[ add ]
+3   4   HB  CB  CA +CB
+    opls_140    1.008   0.060
+
+[ ST2-F ]
+[ replace ]
+CB  CB  opls_136    12.011  -0.120
+[ add ]
+2   6   HB  CB  CA  C6
+    opls_140    1.008   0.060
+
+[ MA2-F ]
+[ replace ]
+CB  CB  opls_136    12.011  -0.120
+[ add ]
+2   6   HB  CB  CA  CO2
+    opls_140    1.008   0.060
+
+[ MAR-F ]
+[ replace ]
+CB  CB  opls_136    12.011  -0.120
+[ add ]
+2   6   HB  CB  CA  CO2
+    opls_140    1.008   0.060
+    
+[ MAL-F ]
+[ replace ]
+CB  CB  opls_274    12.011  -0.220
+[ add ]
+2   6   HB  CB  CA  CO2
+    opls_140    1.008   0.060
+    
+[ MAD-F ]
+[ replace ]
+CB  CB  opls_274    12.011  -0.220
+[ add ]
+2   6   HB  CB  CA  CO2
+    opls_140    1.008   0.060
+    
+[ DB1-F ]
+[ replace ]
+CB  CB  opls_135    12.011  -0.180
+[ add ]
+3   4   HB  CB  CA +CB
+    opls_140    1.008   0.060
+    
+[ DB2-F ]
+[ replace ]
+CB  CB  opls_137    12.011  -0.060
+[ add ]
+1   5   HB1  CB  C5  CA  C6
+    opls_140    1.008   0.060   

@@ -1,0 +1,57 @@
+[ None ]
+
+[ ST1-L ]
+[ replace ]
+CA  CA  opls_136    12.011  -0.120
+[ add ]
+2   6   HA  CA  CB  C6
+    opls_140    1.008   0.060
+
+[ ST2-L ]
+[ replace ]
+CA  CA  opls_135    12.011  -0.180
+[ add ]
+3   4   HA  CA  CB  -CA
+    opls_140    1.008   0.060
+
+[ MA2-L ]
+[ replace ]
+CA  CA  opls_136    12.011  -0.120
+[ add ]
+2   6   HA  CA  CB  CO1
+    opls_140    1.008   0.060
+    
+[ MAR-L ]
+[ replace ]
+CA  CA  opls_274    12.011  -0.220
+[ add ]
+2   6   HA  CA  CB  CO1
+    opls_140    1.008   0.060
+
+[ MAL-L ]
+[ replace ]
+CA  CA  opls_136    12.011  -0.120
+[ add ]
+2   6   HA  CA  CB  CO1
+    opls_140    1.008   0.060
+    
+[ MAD-L ]
+[ replace ]
+CA  CA  opls_274    12.011  -0.220
+[ add ]
+2   6   HA  CA  CB  CO1
+    opls_140    1.008   0.060    
+    
+[ DB1-L ]
+[ replace ]
+CA  CA  opls_137    12.011  -0.060
+[ add ]
+1   5   HA1  CA  C5  CB  C6
+    opls_140    1.008   0.060   
+
+[ DB2-L ]
+[ replace ]
+CA  CA  opls_135    12.011  -0.180
+[ add ]
+3   4   HA  CA  CB  -CA
+    opls_140    1.008   0.060

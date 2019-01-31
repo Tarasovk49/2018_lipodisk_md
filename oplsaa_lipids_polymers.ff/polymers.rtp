@@ -1,0 +1,331 @@
+[ bondedtypes ]
+; Column 1 : default bondtype
+; Column 2 : default angletype
+; Column 3 : default proper dihedraltype
+; Column 4 : default improper dihedraltype
+; Column 5 : This controls the generation of dihedrals from the bonding.
+;            All possible dihedrals are generated automatically. A value of
+;            1 here means that all these are retained. A value of
+;            0 here requires generated dihedrals be removed if
+;              * there are any dihedrals on the same central atoms
+;                specified in the residue topology, or
+;              * there are other identical generated dihedrals
+;                sharing the same central atoms, or
+;              * there are other generated dihedrals sharing the
+;                same central bond that have fewer hydrogen atoms
+; Column 6 : number of neighbors to exclude from non-bonded interactions
+; Column 7 : 1 = generate 1,4 interactions between pairs of hydrogen atoms
+;            0 = do not generate such
+; Column 8 : 1 = remove proper dihedrals if found centered on the same
+;                bond as an improper dihedral
+;            0 = do not generate such
+; bonds  angles  dihedrals  impropers all_dihedrals nrexcl HH14 RemoveDih
+     1       1          3          1        1         3      1     0
+
+[ MAD ]
+ [ atoms ]
+  OH1    opls_272   -0.800     1 
+  OH2    opls_272   -0.800     2 
+  OA1    opls_272   -0.800     1 
+  OB2    opls_272   -0.800     2 
+  CA     opls_275   -0.160     3 
+  HA1    opls_140    0.060     3 
+  CB     opls_275   -0.160     4 
+  HB1    opls_140    0.060     4 
+  CO1    opls_271    0.700     1 
+  CO2    opls_271    0.700     2
+ [ bonds ]
+ CA     CB  
+ CA     HA1  
+ CB     HB1   
+ CA     CO1 
+ CB     CO2 
+ CO1    OA1 
+ CO2    OB2 
+ CO1    OH1 
+ CO2    OH2  
+ CA    +CB
+ [ impropers ]
+  OH2  CB   CO2  OB2 improper_O_C_X_Y 
+  OH1  CA   CO1  OA1 improper_O_C_X_Y
+
+[ MAL ]
+ [ atoms ]
+  OH1    opls_268   -0.530     1 
+  OH2    opls_272   -0.800     2 
+  HO1    opls_270    0.450     3 
+  OA1    opls_269   -0.440     1 
+  OB2    opls_272   -0.800     2 
+  CA     opls_137   -0.060     4 
+  HA1    opls_140    0.060     4 
+  CB     opls_275   -0.160     5 
+  HB1    opls_140    0.060     5 
+  CO1    opls_267    0.520     1 
+  CO2    opls_271    0.700     2 
+ [ bonds ]
+ CA     CB  
+ CA     HA1  
+ CB     HB1   
+ CA     CO1 
+ CB     CO2 
+ CO1    OA1 
+ CO2    OB2 
+ CO1    OH1 
+ CO2    OH2  
+ OH1    HO1 
+ CA    +CB
+ [ impropers ]
+  OH2  CB   CO2  OB2 improper_O_C_X_Y 
+  OH1  CA   CO1  OA1 improper_O_C_X_Y
+  
+[ MAR ]
+ [ atoms ]
+  OH1    opls_272   -0.800     1 
+  OH2    opls_268   -0.530     2 
+  HO2    opls_270    0.450     3 
+  OA1    opls_272   -0.800     1 
+  OB2    opls_269   -0.440     2 
+  CA     opls_275   -0.160     4 
+  HA1    opls_140    0.060     4 
+  CB     opls_137   -0.060     5 
+  HB1    opls_140    0.060     5 
+  CO1    opls_271    0.700     1 
+  CO2    opls_267    0.520     2 
+ [ bonds ]
+ CA     CB  
+ CA     HA1  
+ CB     HB1   
+ CA     CO1 
+ CB     CO2 
+ CO1    OA1 
+ CO2    OB2 
+ CO1    OH1 
+ CO2    OH2  
+ OH2    HO2 
+ CA    +CB
+ [ impropers ]
+  OH2  CB   CO2  OB2 improper_O_C_X_Y 
+  OH1  CA   CO1  OA1 improper_O_C_X_Y
+
+[ MA2 ]
+ [ atoms ]
+  OH1    opls_268   -0.530    1 
+  OH2    opls_268   -0.530    2 
+  OA1    opls_269   -0.440    1 
+  OB2    opls_269   -0.440    2 
+  CA     opls_137   -0.060    3 
+  CB     opls_137   -0.060    4 
+  CO1    opls_267    0.520    1 
+  CO2    opls_267    0.520    2 
+  HA1    opls_140    0.060    3 
+  HB1    opls_140    0.060    4 
+  HO1    opls_270    0.450    5
+  HO2    opls_270    0.450    6
+ [ bonds ]
+ CA     CB  
+ CA     HA1  
+ CB     HB1   
+ CA     CO1 
+ CB     CO2 
+ CO1    OA1 
+ CO2    OB2 
+ CO1    OH1 
+ CO2    OH2  
+ OH1    HO1
+ OH2    HO2 
+ CA    +CB
+ [ impropers ]
+  OH2  CB   CO2  OB2 improper_O_C_X_Y 
+  OH1  CA   CO1  OA1 improper_O_C_X_Y
+
+[ ST1 ]
+ [ atoms ]
+  CA     opls_137   -0.060     1 
+  C6     opls_147    0.000     2 
+  C1     opls_145   -0.115     3 
+  C2     opls_145   -0.115     4 
+  CB     opls_136   -0.120     5 
+  C3     opls_145   -0.115     6 
+  C4     opls_145   -0.115     7 
+  C5     opls_145   -0.115     8 
+  HA1    opls_140    0.060     1 
+  H1     opls_146    0.115     3 
+  H2     opls_146    0.115     4 
+  HB1    opls_140    0.060     5 
+  HB2    opls_140    0.060     5 
+  H3     opls_146    0.115     6 
+  H4     opls_146    0.115     7 
+  H5     opls_146    0.115     8 
+ [ bonds ]
+ CB     CA   
+ CB     HB1
+ CB     HB2
+ CA     HA1
+ CA     C6  
+ CA    +CB
+ C1     C2
+ C2     C3
+ C3     C4
+ C4     C5
+ C5     C6 
+ C1     H1  
+ C2     H2
+ C3     H3
+ C4     H4
+ C5     H5
+ C6     C1
+ [ impropers ]
+  C6  C2  C1  H1 improper_Z_CA_X_Y 
+  C1  C3  C2  H2 improper_Z_CA_X_Y 
+  C2  C4  C3  H3 improper_Z_CA_X_Y 
+  C3  C5  C4  H4 improper_Z_CA_X_Y 
+  C4  C6  C5  H5 improper_Z_CA_X_Y 
+  C1  C5  C6  CA improper_Z_CA_X_Y
+
+[ ST2 ]
+ [ atoms ]
+  CB     opls_137   -0.060     1 
+  C6     opls_147    0.000     2 
+  C1     opls_145   -0.115     3 
+  C2     opls_145   -0.115     4 
+  CA     opls_136   -0.120     5 
+  C3     opls_145   -0.115     6 
+  C4     opls_145   -0.115     7 
+  C5     opls_145   -0.115     8 
+  HB1    opls_140    0.060     1 
+  H1     opls_146    0.115     3 
+  H2     opls_146    0.115     4 
+  HA1    opls_140    0.060     5 
+  HA2    opls_140    0.060     5 
+  H3     opls_146    0.115     6 
+  H4     opls_146    0.115     7 
+  H5     opls_146    0.115     8 
+ [ bonds ]
+ CB     CA   
+ CB     HB1
+ CB     C6  
+ CA     HA1
+ CA     HA2
+ CA    +CB
+ C1     C2
+ C2     C3
+ C3     C4
+ C4     C5
+ C5     C6 
+ C1     H1  
+ C2     H2
+ C3     H3
+ C4     H4
+ C5     H5
+ C6     C1
+ [ impropers ]
+  C6  C2  C1  H1 improper_Z_CA_X_Y 
+  C1  C3  C2  H2 improper_Z_CA_X_Y 
+  C2  C4  C3  H3 improper_Z_CA_X_Y 
+  C3  C5  C4  H4 improper_Z_CA_X_Y 
+  C4  C6  C5  H5 improper_Z_CA_X_Y 
+  C1  C5  C6  CB improper_Z_CA_X_Y
+
+[ DB1 ]
+ [ atoms ]
+  C4     opls_139    0.000     1 
+  C5     opls_136   -0.120     2 
+  CA     opls_139    0.000     3 
+  C1     opls_135   -0.180     4 
+  C2     opls_135   -0.180     5 
+  C3     opls_135   -0.180     6 
+  CB     opls_135   -0.120     7 
+  C6     opls_135   -0.180     8 
+  H52    opls_140    0.060     2 
+  H51    opls_140    0.060     2 
+  H11    opls_140    0.060     4 
+  H12    opls_140    0.060     4 
+  H13    opls_140    0.060     4 
+  H21    opls_140    0.060     5 
+  H22    opls_140    0.060     5 
+  H23    opls_140    0.060     5 
+  H31    opls_140    0.060     6 
+  H32    opls_140    0.060     6 
+  H33    opls_140    0.060     6 
+  HB2    opls_140    0.060     7 
+  HB1    opls_140    0.060     7 
+  H61    opls_140    0.060     8 
+  H62    opls_140    0.060     8 
+  H63    opls_140    0.060     8 
+ [ bonds ]
+ C4     C5   
+ C4     C1   
+ C4     C2   
+ C4     C3   
+ C5     CA   
+ CA     CB   
+ CA     C6   
+ C5     H51
+ C5     H52
+ CB     HB1
+ CB     HB2
+ C1     H11
+ C1     H12
+ C1     H13
+ C2     H21
+ C2     H22
+ C2     H23
+ C3     H31
+ C3     H32
+ C3     H33
+ C6     H61
+ C6     H62
+ C6     H63
+ CA    +CB
+
+[ DB2 ]
+ [ atoms ]
+  C4     opls_139    0.000    25 
+  C5     opls_136   -0.120    26 
+  CB     opls_139    0.000    27 
+  C1     opls_135   -0.180    28 
+  C2     opls_135   -0.180    29 
+  C3     opls_135   -0.180    30 
+  CA     opls_136   -0.120    31 
+  C6     opls_135   -0.180    32 
+  H52    opls_140    0.060    26 
+  H51    opls_140    0.060    26 
+  H11    opls_140    0.060    28 
+  H12    opls_140    0.060    28 
+  H13    opls_140    0.060    28 
+  H21    opls_140    0.060    29 
+  H22    opls_140    0.060    29 
+  H23    opls_140    0.060    29 
+  H31    opls_140    0.060    30 
+  H32    opls_140    0.060    30 
+  H33    opls_140    0.060    30 
+  HA2    opls_140    0.060    31 
+  HA1    opls_140    0.060    31 
+  H61    opls_140    0.060    32 
+  H62    opls_140    0.060    32 
+  H63    opls_140    0.060    32
+ [ bonds ]
+ C4     C5   
+ C4     C1   
+ C4     C2   
+ C4     C3   
+ C5     CB   
+ CA     CB   
+ CB     C6   
+ C5     H51
+ C5     H52
+ CA     HA1
+ CA     HA2
+ C1     H11
+ C1     H12
+ C1     H13
+ C2     H21
+ C2     H22
+ C2     H23
+ C3     H31
+ C3     H32
+ C3     H33
+ C6     H61
+ C6     H62
+ C6     H63
+ CA    +CB

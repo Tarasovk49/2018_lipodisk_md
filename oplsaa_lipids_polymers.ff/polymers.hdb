@@ -1,0 +1,46 @@
+MA2     4
+1   5   HA1 CA  CB  CO1 +CB
+1   5   HB1 CB  CA  CO2 -CA
+1   2   HO1 OH1 CO1 CA
+1   2   HO2 OH2 CO2 CB
+MAR     3
+1   5   HA1 CA  CB  CO1 +CB
+1   5   HB1 CB  CA  CO2 -CA
+1   2   HO2 OH2 CO2 CB
+MAL     3
+1   5   HA1 CA  CB  CO1 +CB
+1   5   HB1 CB  CA  CO2 -CA
+1   2   HO1 OH1 CO1 CA
+MAD     2
+1   5   HA1 CA  CB  CO1 +CB
+1   5   HB1 CB  CA  CO2 -CA
+ST1     7
+1   5   HA1 CA  CB +CB  C6
+2   6   HB  CB  CA -CA
+1   1   H1  C1  C2  C6
+1   1   H2  C2  C3  C1
+1   1   H3  C3  C4  C2
+1   1   H4  C4  C5  C3
+1   1   H5  C5  C6  C4
+ST2     7
+1   5   HB1 CB  CA -CA  C6
+2   6   HA  CA  CB +CB  
+1   1   H1 C1  C2  C6
+1   1   H2 C2  C3  C1
+1   1   H3 C3  C4  C2
+1   1   H4 C4  C5  C3
+1   1   H5 C5  C6  C4
+DB1     6
+3   4   H1 C1  C4  C5
+3   4   H2 C2  C4  C5
+3   4   H3 C3  C4  C5
+3   4   H6 C6  CA  C5
+2   6   H5 C5  CA  C4
+2   6   HB CB  CA -CA
+DB2     6
+3   4   H1 C1  C4  C5
+3   4   H2 C2  C4  C5
+3   4   H3 C3  C4  C5
+3   4   H6 C6  CB  C5
+2   6   H5 C5  CB  C4
+2   6   HA CA  CB +CB

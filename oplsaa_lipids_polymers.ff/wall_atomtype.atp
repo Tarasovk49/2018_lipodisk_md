@@ -1,0 +1,2 @@
+; Wall atomtype with big sigma to push atoms away from walls
+ opls_wll   Cwl        12.01100     0.0         A    15.0000e+00  4.39320e-01
