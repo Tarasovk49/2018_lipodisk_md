@@ -14,7 +14,7 @@ sed -i -- 's/\#include \"posre_/\#include \"..\/posres\/posre_/g' $name
 done
 sed -i -- 's/\#include \"topol_/\#include \"itp\/topol_/g' topol.top
 ```
-### Define position restraints that will be applied during NPT simulation to keep membrane integral
+### Define position restraints that will be applied during steered simulation to keep membrane integral
 ```
 echo "#ifdef POSRES_LIPIDS" >> topol_Other*.itp
 var=`ls posre_Other*.itp`
