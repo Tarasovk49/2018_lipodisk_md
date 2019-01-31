@@ -10,3 +10,4 @@ Script *add_ter_between_chains.py* adds TER strings in *.pdb* files where resid 
 ```
 add_ter_between_chains.py -i infile_name.pdb -o outfile_name.pdb
 ```
+
