@@ -10,6 +10,6 @@ There are  files are:
 
 **Dependencies**
 1. python 3.*
-2. [Pysimm](https://github.com/Tarasovk49/pysimm) - fork contains changes providing ability to read atom names from *.mol2* files and write them and also resids and resnames to *.pdb* files.
+2. [Pysimm](https://github.com/Tarasovk49/pysimm) - branch contains changes providing ability to read atom names from *.mol2* files and write them and also resids and resnames to *.pdb* files.
 3. [MDAnalysis](https://github.com/MDAnalysis/mdanalysis).
 4. [Gromacs 2018.1](http://www.gromacs.org/)
