@@ -4,7 +4,13 @@
 from sys import argv
 from getopt import getopt
 
-opts, args = getopt(argv[1:], 'm:i:o:')
+opts, args = getopt(argv[1:], 'm:i:o:r:')
+
+input_mdp = 'config/lipodisk.mdp'
+index = 'index.ndx'
+output_mdp = 'config/lipodisk_flatbot.mdp'
+R = 4
+
 for o, a in opts:
     if o == '-m':
         # input mdp file (everything before pull options)
@@ -16,6 +22,9 @@ for o, a in opts:
     if o == '-o':
         # output mdp file with pull options
         output_mdp = a
+    if o == '-r':
+        # Forces are applied while distances are higher than R 
+        R = a
 
 def gen_mdp(input_mdp, index, output_mdp):
     sma_mol_count=0
@@ -38,7 +47,7 @@ def gen_mdp(input_mdp, index, output_mdp):
                 mdp.write('pull_coord{0}_geometry    = distance      ; '.format(i)+'\n')
                 mdp.write('pull_coord{0}_groups      = 1 {1}'.format(i,(i+1))+'\n')
                 mdp.write('pull_coord{0}_dim         = Y Y N'.format(i)+'\n')
-                mdp.write('pull_coord{0}_init        = 4             ; distance decreases while it is higher than 4 nm'.format(i)+'\n')
+                mdp.write('pull_coord{0}_init        = {1}           ; distance decreases while it is higher than {1} nm'.format(i,R)+'\n')
                 mdp.write('pull_coord{0}_k           = 50            ; kJ mol^-1 nm^-2'.format(i)+'\n')
                 mdp.write('\n')
                                 
