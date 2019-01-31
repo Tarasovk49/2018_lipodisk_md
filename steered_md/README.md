@@ -48,7 +48,7 @@ cat index_more.ndx >> index.ndx
 python gen_mdp.py -m config/lipodisk.mdp -i index.ndx -o config/lipodisk_flatbot.mdp
 ```
 
-### Prepare and run NPT
+### Prepare and run steered md
 ```
 gmx editconf -f lipodisk_nvt.gro -o lipodisk_bigbox.gro -box 30 30 8 -c -bt triclinic
 gmx grompp -f config/lipodisk_flatbot.mdp -c lipodisk_bigbox.gro -r lipodisk_bigbox.gro -n index.ndx -o lipodisk_flatbot.tpr -p topol.top -po mdout.mdp -maxwarn 1
