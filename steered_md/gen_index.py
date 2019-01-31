@@ -1,7 +1,7 @@
 # Generates .ndx file with groups needed for pulling: groups POL$N including backbone atoms
 # of polymers and group MEMBRANE including phosphorus atoms of membrane. These groups then
 # used during simulation to compute centers of mass of polymers and membrane.
-# Forces are applied on distances atoms from POL$N groups to pull polymers towards membrane.
+# Forces are applied on distances between $MEMBRANE and POL$N groups to pull polymers towards membrane.
 
 import sys
 from getopt import getopt
