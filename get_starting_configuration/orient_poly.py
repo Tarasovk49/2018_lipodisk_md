@@ -36,7 +36,7 @@ R = np.sqrt((xmax-xmin)**2 + (ymax-ymin)**2)/2
 # Decrease 2 coefficients below to place polymers with higher density
 # r_coeff = 1.0 is the least value when it is garanteed that none of the polymers overlap
 r_coeff = 0.7
-# alpha_coeff = 2.0 is the least value when it is garanteed that none of the polymers overlap
+# angle_coeff = 2.0 is the least value when it is garanteed that none of the polymers overlap
 angle_coeff = 0.9
 
 
