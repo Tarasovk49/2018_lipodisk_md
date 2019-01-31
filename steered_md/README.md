@@ -1,4 +1,4 @@
-**Usage**
+# Usage
 
 Simulation is carried out in vacuum. During the simulation harmonic potential is applied on distances between COMs of each polymer and COM of membrane and it is only applied when this distance is more than *R* nm. Position restraints are applied on lipids to keep membrane integral.
 
