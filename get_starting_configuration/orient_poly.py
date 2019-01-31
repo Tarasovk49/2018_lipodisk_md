@@ -31,7 +31,7 @@ ag_mem.translate(-ag_mem.center_of_geometry())
 xmax,ymax,zmax=np.amax(ag_mem.positions[:],0)
 xmin,ymin,zmin=np.amin(ag_mem.positions[:],0)
 R = np.sqrt((xmax-xmin)**2 + (ymax-ymin)**2)/2
-
+print(R)
 
 # Decrease 2 coefficients below to place polymers with higher density
 # r_coeff = 1.0 is the least value when it is garanteed that none of the polymers overlap
@@ -51,7 +51,6 @@ for pol_num, pol_name in enumerate(pol_list):
     PAX = np.matrix(polymers[pol_num].principal_axes())
     PAXI = PAX.I
     polymers[pol_num].rotate(PAX)
-    print(polymers[pol_num].principal_axes())
     xmax, ymax, zmax = np.amax(ag_mem.positions[:],0)
     xmin, ymin, zmin = np.amin(ag_mem.positions[:],0)
     r = np.sqrt((xmax-xmin)**2 + (ymax-ymin)**2)/2
