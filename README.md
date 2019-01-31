@@ -7,7 +7,7 @@
 3. Script for producing starting configuration of lipodisk for GROMACS simulations.
 4. Scripts to prepare all necessary files for steered GROMACS simulation to move polymer molecules towards membrane to form lipodisk.
 
-**Dependencies**
+**Dependencies:**
 1. python 3.*
 2. [Pysimm](https://github.com/Tarasovk49/pysimm) - branch contains changes providing ability to read atom names from *.mol2* files and write them and also resids and resnames to *.pdb* files.
 3. [MDAnalysis](https://github.com/MDAnalysis/mdanalysis).
