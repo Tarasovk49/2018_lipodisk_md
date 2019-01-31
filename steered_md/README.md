@@ -56,7 +56,7 @@ gmx grompp -f config/lipodisk_flatbot.mdp -c lipodisk_bigbox.gro -r lipodisk_big
 gmx mdrun -deffnm lipodisk_flatbot
 ```
 ### If any error occured during simulation
-To derive frame at *Nth* step (N ps) use *trjconv*:
+To derive frame at *N* ps use *trjconv*:
 ```
 gmx trjconv -f lipodisk_flatbot.trr -o lipodisk_1.pdb -s lipodisk_flatbot.tpr -dump N<<!
 0
