@@ -3,16 +3,15 @@ from pysimm.apps.random_walk import copolymer
 import numpy as np
 import shutil, os, sys
 ##############################################################################################
-#                Script builds styrol-maleic acid copolymers.
+#                Script builds styrol-diisobutylene-maleic acid copolymers.
 # The @n polymer molecules are constructed with mean length of one molecule @meanlen
-# and root mean square deviation of length @rmsd, probability of maleic acid to
-# be placed @pm, and @protstate from 1 to 7. @position variable which is passed to monomer build functions declares
+# and root mean square deviation of length @rmsd, incidence probabilities of monomers @ps, @pd and @pm,
+# and @protstate from 1 to 7. @position variable which is passed to monomer build functions declares
 # one of three positions monomer can reside: first(@position=1), last(@position=2) and middle(@position=0).
 # The difference between positions is that in case of first and last monomers terminal
-# hydrogens must not be removed during "polimerization". There are 6 monomers here: 4 for different states of protonation
-# of maleic acid (there are two different monomers when left or right acid group is protonated) and
-# two other are styrols with aromatic rings oriented closer to beginning and closer to 
-# end of polymer.
+# hydrogens must not be removed during "polimerization". There are 8 types of monomers here:
+# 4 for different states of protonation of maleic acid, 2 for diisobutylene monomers and
+# 2 for styrene monomers with radicals oriented close to beginning or close to end of polymer.
 ##############################################################################################
 def dib_monomer(position=0):
     try:
