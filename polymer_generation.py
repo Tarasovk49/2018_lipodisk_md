@@ -6,7 +6,17 @@ import shutil, os, sys
 #                Script builds styrol-diisobutylene-maleic acid copolymers.
 # The @n polymer molecules are constructed with mean length of one molecule @meanlen
 # and root mean square deviation of length @rmsd, incidence probabilities of monomers @ps, @pd and @pm,
-# and @protstate from 1 to 7. @position variable which is passed to monomer build functions declares
+# and @protstate from 1 to 7.
+#  
+#   Protonation states of maleic acid residues:
+#   number    1     2     3     4     5     6     7
+#   pH        5     6     7     8     9    10   >10
+#   charge -0.3  -0.5  -1.0  -1.2  -1.7  -1.9  -2.0
+# 
+# NOTE: THE SUM OF PROBABILITIES MUST BE EQUAL TO 1 (@ps + @pd + @pm = 1).
+#
+# @protstate = 0 is an option to create not random polymer. In this case you have to wrtite sequence manually.
+# There is an example in this script. @position variable which is passed to monomer build functions declares
 # one of three positions monomer can reside: first(@position=1), last(@position=2) and middle(@position=0).
 # The difference between positions is that in case of first and last monomers terminal
 # hydrogens must not be removed during "polimerization". There are 8 types of monomers here:
@@ -335,7 +345,7 @@ def mad_monomer(position=0):
 
     return s
 
-def run(meanlen, monomers, pm=0.0, pd=0.0, ps=1.0, rmsd=3, test=False, name="polymer.pdb", protstate=0):
+def run(meanlen, monomers, pm=0.25, pd=0.0, ps=0.75, rmsd=3, test=False, name="polymer.pdb", protstate=0):
     ################################################
     # This function builds one molecule of polymer #
     ################################################
@@ -455,49 +465,50 @@ def run(meanlen, monomers, pm=0.0, pd=0.0, ps=1.0, rmsd=3, test=False, name="pol
     polymer.write_pdb(name)
 
 if __name__ == '__main__':  
-    n = sys.argv[1]
-    meanlen = 36
-    rmsd = 3.0
-    ###############
-    # These are the frequencies of occurrence of monomers (pm - maleic acid, pd - diisobutylene, ps - styrol)
-    # NOTE, that sum of those frequencies must be equal to 1.
-    pm = 0.25
-    pd = 0.75
-    ps = 0.0
-    ###############
     
-    
-    monomers={'db': dib_monomer(),
-            'dbf': dib_monomer(1),
-            'dbl': dib_monomer(2),
-            'dbre': dib_monomer_reverted(),
-            'dbrf': dib_monomer_reverted(1),
-            'dbrl': dib_monomer_reverted(2),
-            'ma2': ma2_monomer(),
-            'ma2f' : ma2_monomer(1),
-            'ma2l' : ma2_monomer(2),
-            'mal': mal_monomer(),
-            'malf' : mal_monomer(1),
-            'mall' : mal_monomer(2),
-            'mar': mar_monomer(),
-            'marf' : mar_monomer(1),
-            'marl' : mar_monomer(2),
-            'mad': mad_monomer(),
-            'madf' : mad_monomer(1),
-            'madl' : mad_monomer(2),
-            'st' : st_monomer(),
-            'stf' : st_monomer(1),
-            'stl' : st_monomer(2),
-            'stre' : st_monomer_reverted(),
-            'strf' : st_monomer_reverted(1),
-            'strl' : st_monomer_reverted(2)}
+    monomers={'db' : dib_monomer(),
+             'dbf' : dib_monomer(1),
+             'dbl' : dib_monomer(2),
+             'dbre' : dib_monomer_reverted(),
+             'dbrf' : dib_monomer_reverted(1),
+             'dbrl' : dib_monomer_reverted(2),
+             'ma2' : ma2_monomer(),
+             'ma2f' : ma2_monomer(1),
+             'ma2l' : ma2_monomer(2),
+             'mal' : mal_monomer(),
+             'malf' : mal_monomer(1),
+             'mall' : mal_monomer(2),
+             'mar' : mar_monomer(),
+             'marf' : mar_monomer(1),
+             'marl' : mar_monomer(2),
+             'mad' : mad_monomer(),
+             'madf' : mad_monomer(1),
+             'madl' : mad_monomer(2),
+             'st' : st_monomer(),
+             'stf' : st_monomer(1),
+             'stl' : st_monomer(2),
+             'stre' : st_monomer_reverted(),
+             'strf' : st_monomer_reverted(1),
+             'strl' : st_monomer_reverted(2)}
             
     # During polymerization great amount of data is generated. It makes the main folder
     # look like a Trash. So we build polymer inside tmp folder and then remove it.
     os.mkdir('tmp')
     os.chdir('tmp')
+    
     # Generation of n pdbs of polymer molecules
+    n = sys.argv[1]
+    meanlen = 36
+    rmsd = 3.0
+    protstate = 3
+    ###############
+    # These are the incidence probabilities of monomers (pm - maleic acid, pd - diisobutylene, ps - styrol)
+    # NOTE, that the sum of those probabilities must be equal to 1.
+    pm = 0.25
+    pd = 0.75
+    ps = 0.0
+    ###############
     for i in xrange(int(n)):
-        run(meanlen, monomers, pm, pd, ps, rmsd, name='../initial_structures/polymer_%d.pdb'%i, protstate=3)
+        run(meanlen, monomers, pm, pd, ps, rmsd, name='../polymer_molecules/polymer_%d.pdb'%i, protstate=protstate)
     os.chdir('../')
     shutil.rmtree('tmp')
