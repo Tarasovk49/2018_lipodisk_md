@@ -4,17 +4,24 @@ from sys import argv
 from getopt import getopt
 import os
 
-opts, args = getopt(argv[1:], 'm:o:')
+opts, args = getopt(argv[1:], 'm:p:o:n:')
 
+# Defaults
 membrane = 'popc.pdb'
+pol_dir = 'polymer_molecules'
 outfile = 'lipodisk.pdb'
+layers = 2
 
 for o, a in opts:
     if o == '-m':
         membrane = a
+    if o == '-p':
+        pol_dir = a
     if o == '-o':
         outfile = a
-
+    if o == '-n':
+        layers = a
+        
 # Load membrane
 u_mem = mda.Universe(membrane)
 ag_mem = u_mem.select_atoms("resname POPC DOPC CHOL DPPC")
@@ -26,8 +33,6 @@ xmin,ymin,zmin=np.amin(ag_mem.positions[:],0)
 R = np.sqrt((xmax-xmin)**2 + (ymax-ymin)**2)/2
 
 
-# Number of polymer layers
-layers = 3
 # Decrease 2 coefficients below to place polymers with higher density
 # r_coeff = 1.0 is the least value when it is garanteed that none of the polymers overlap
 r_coeff = 0.7
@@ -36,11 +41,11 @@ angle_coeff = 0.9
 
 
 # Load polymers, place them in (0,0,0), compute the maximal radius
-pol_list = os.listdir('initial_structures')
+pol_list = os.listdir(pol_dir)
 polymers={}
 rmax = 0
 for pol_num, pol_name in enumerate(pol_list):
-    u = mda.Universe('initial_structures/%s'%pol_name)
+    u = mda.Universe(pol_dir + '/%s'%pol_name)
     polymers[pol_num] = u.select_atoms("resname DB1 DB2 MAR MAL MA2 MAD ST1 ST2")
     polymers[pol_num].translate(-polymers[pol_num].center_of_geometry())
     PAX = np.matrix(polymers[pol_num].principal_axes())
@@ -49,7 +54,7 @@ for pol_num, pol_name in enumerate(pol_list):
     print(polymers[pol_num].principal_axes())
     xmax, ymax, zmax = np.amax(ag_mem.positions[:],0)
     xmin, ymin, zmin = np.amin(ag_mem.positions[:],0)
-    r = np.sqrt((xmax-xmin)**2 + (ymax-ymin)**2 + (zmax-zmin)**2)/2
+    r = np.sqrt((xmax-xmin)**2 + (ymax-ymin)**2)/2
     if r > rmax:
         rmax = r
 
