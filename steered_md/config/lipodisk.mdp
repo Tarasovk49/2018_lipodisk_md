@@ -43,11 +43,11 @@ pcoupl             = no
 ;compressibility     = 4.5e-5  0.0     ; isothermal compressibility of water, bar^-1
 ;refcoord-scaling    = com        
 ; Periodic boundary conditions
-pbc		= xy		; XY-PBC
-nwall   = 2
-wall-atomtype = opls_wll opls_wll
-wall-type = 12-6
-wall-r-linpot = 2
+pbc		= xy		                      ; XY-PBC
+nwall   = 2                         ; Two virtual walls to keep polymers in plane of membrane
+wall-atomtype = opls_wll opls_wll   ; Types of atoms of wall. Stored in wall_atomtype.atp
+wall-type = 12-6                    ; Type of interaction with wall (LJ)
+wall-r-linpot = 2                   ; distance from membrane at which walls are situated
 ewald-geometry = 3dc
 ; Dispersion correction
 DispCorr	= EnerPres	; account for cut-off vdW scheme
