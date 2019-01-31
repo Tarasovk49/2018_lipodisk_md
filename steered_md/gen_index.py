@@ -7,6 +7,10 @@ import sys
 from getopt import getopt
 
 opts, args = getopt(sys.argv[1:], 'i:o:')
+
+in_filename = lipodisk.pdb
+out_filename = index_more.ndx
+
 for o, a in opts:
     if o == '-i':
         in_filename = a
