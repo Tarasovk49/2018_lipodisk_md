@@ -4,7 +4,7 @@
 
 1. Build polymer molecules using [Pysimm](https://github.com/Tarasovk49/pysimm) consisting of 3 types of monomers: Maleic acid, Diisobutylene, Styrene.
 2. Generate topology files with command *pdb2gmx* for systems, containing lipids and polymers.
-3. Produce starting configuration of lipodisk for [GROMACS](http://www.gromacs.org/) simulations.
+3. Produce starting configuration of lipodisk via [MDAnalysis](https://github.com/MDAnalysis/mdanalysis) for [GROMACS](http://www.gromacs.org/) simulations.
 4. Prepare all necessary files for steered molecular dynamics to move polymer molecules towards membrane.
 
 **Dependencies:**
