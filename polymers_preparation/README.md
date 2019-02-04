@@ -7,7 +7,7 @@
 
 The syntax is (default values are displayed):
 
-`polymer_generation.py -n 100 -l 36 -r 3 -p 3 -ps 0 -pm 0.25 -pd 0.75 -o polymer`
+`polymer_generation.py -n 100 -l 36 -r 3 -p 3 --ps 0 --pm 0.25 --pd 0.75 -o polymer`
 
 Options are:
 
