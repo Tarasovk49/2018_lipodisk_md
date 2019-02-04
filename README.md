@@ -11,4 +11,4 @@
 1. python 3.*
 2. [Pysimm](https://github.com/Tarasovk49/pysimm) - branch contains changes providing ability to read atom names from *.mol2* files and write them and also resids and resnames to *.pdb* files. LAMMPS installation is also needed (see Pysimm [installation guide](https://github.com/Tarasovk49/pysimm#complete-installation-pysimm-and-lammps)).
 3. [MDAnalysis](https://github.com/MDAnalysis/mdanalysis).
-4. [Gromacs 2018.1](http://www.gromacs.org/)
+4. [Gromacs 2018.1](http://manual.gromacs.org/documentation/)
