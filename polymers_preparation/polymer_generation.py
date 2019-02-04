@@ -562,7 +562,6 @@ if __name__ == '__main__':
         print('\n')
         print('Building polymer molecule %d'%i)
         name = '../polymer_molecules/%s_%d.pdb'%(out_filename,i)
-        print(name)
         run(monomers, meanlen=meanlen, pm=pm, pd=pd, ps=ps, rmsd=rmsd, name=name, protstate=protstate, i=i)
     os.chdir('../')
     shutil.rmtree('tmp')
