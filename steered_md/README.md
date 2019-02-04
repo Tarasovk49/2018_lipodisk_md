@@ -21,6 +21,8 @@ var=`ls posre_Other*.itp`
 echo "#include \"../posres/$var\"" >> topol_Other*.itp
 echo "#endif" >> topol_Other*.itp
 
+mkdir posres
+mkdir itp
 mv posre*.itp posres/.
 mv topol*.itp itp/.
 ```
