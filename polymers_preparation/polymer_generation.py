@@ -26,39 +26,7 @@ from getopt import getopt
 # 2 for styrene monomers with benzene group oriented closer to beginning or closer to end of polymer.
 ##############################################################################################
 
-opts, args = getopt(sys.argv[1:], 'n:l:r:p:pm:ps:pd:o:')
 
-n = 100
-meanlen = 36
-rmsd = 3.0
-protstate = 3
-
-# These are the occurrencies of monomers (pm - maleic acid, pd - diisobutylene, ps - styrol)
-# NOTE, that the sum of the occurrencies must be equal to 1.
-pm = 0.25
-pd = 0.75
-ps = 0.0
-out_filename = 'polymer'
-
-for o, a in opts:
-    if o == '-n':
-        n = a
-    if o == '-l':
-        meanlen = a
-    if o == '-r':
-        rmsd = a
-    if o == '-p':
-        protstate = a
-    if o == '-pm':
-        pm = a
-    if o == '-ps':
-        ps = a
-    if o == '-pd':
-        pd = a
-    if o == '-o':
-        out_filename = a
-        
-        
 def dib_monomer(position=0):
     try:
         s = system.read_mol('topology_generalized/DIB1.mol')
@@ -381,47 +349,17 @@ def mad_monomer(position=0):
 
     return s
 
-def run(meanlen, monomers, pm, pd, ps, rmsd, test=False, name, protstate, i):
+def run(monomers, meanlen, pm, pd, ps, rmsd, name, protstate, i):
     ################################################
     # This function builds one molecule of polymer #
     ################################################
-    print "Normalizing occurencies...\n"
-    s = pm + ps + pd
-    pm /= s
-    ps /= s
-    pd /= s
-    print "Normalized occurencies are:\n"
-    print('ps = '+ps+'; pm = '+pm+'; pd = '+pd+'\n')
+
     # NOTE that from this point 'ps' and 'pd' are not the probabilities to have styrol or diisobutylene
     # in any position, but probabilities to have left-oriented or right-oriented styrol\diisobutylene in that position!!
     ps = ps/2
     pd = pd/2
 
-    if (protstate > 7) or (protstate < 0):
-        while True:
-            try:
-                print "\n"
-                print "Protonation states of maleic acid residues"
-                print "number    1     2     3     4     5     6     7"
-                print "pH        5     6     7     8     9    10   >10"
-                print "charge -0.3  -0.5  -1.0  -1.2  -1.7  -1.9  -2.0"
-                protstate = int(raw_input("Select the number of protonation state: "))
-            except ValueError:
-                print("Sorry, I didn't understand that. Select the number from the table.")
-                print "Protonation states of maleic acid residues"
-                print "number    1     2     3     4     5     6     7"
-                print "pH        5     6     7     8     9    10   >10"
-                print "charge -0.3  -0.5  -1.0  -1.2  -1.7  -1.9  -2.0"
-                continue
-            if (protstate > 7) or (protstate < 1):
-                print("Wrong number. Select the one from the table.")
-                print "Protonation states of maleic acid residues"
-                print "number    1     2     3     4     5     6     7"
-                print "pH        5     6     7     8     9    10   >10"
-                print "charge -0.3  -0.5  -1.0  -1.2  -1.7  -1.9  -2.0"
-                continue
-            else:
-                break
+
 
     db = monomers['db']
     dbf = monomers['dbf']
@@ -459,7 +397,8 @@ def run(meanlen, monomers, pm, pd, ps, rmsd, test=False, name, protstate, i):
     
     # the length of polymer, list with sequence of monomers and pattern which is always [1, 1, 1, ...] are generated
     length = int(np.random.normal(meanlen,rmsd))
-    print('Length of polymer molecule is '+length+'\n')
+    print('\n')
+    print('Length of polymer molecule is '+str(length)+'\n')
     list = []
     pattern = [1]*length
     if protstate == 0:
@@ -516,7 +455,8 @@ def run(meanlen, monomers, pm, pd, ps, rmsd, test=False, name, protstate, i):
     
     # write a pdb file    
     polymer.write_pdb(name)
-    print(out_filename+'_%d.pdb'%i+' generated')
+    print('\n')
+    print(name+' generated')
 
 if __name__ == '__main__':  
     
@@ -547,13 +487,80 @@ if __name__ == '__main__':
             
     # During polymerization great amount of data is generated. It makes the main folder
     # look like a Trash. So we build polymer inside tmp folder and then remove it.
-    os.mkdir('tmp')
-    os.chdir('tmp')
-    
+    if os.path.isdir('tmp'):
+        shutil.rmtree('tmp')
+        os.mkdir('tmp')
+        os.chdir('tmp')
+    else:
+        os.mkdir('tmp')
+        os.chdir('tmp')
+        
+    opts, args = getopt(sys.argv[1:], 'n:l:r:p:o:',longopts=['pm=','ps=','pd='])
+    n = 100
+    meanlen = 36.0
+    rmsd = 3.0
+    protstate = 3
 
+    # These are the occurrencies of monomers (pm - maleic acid, pd - diisobutylene, ps - styrol)
+    pm = 0.25
+    pd = 0.75
+    ps = 0.0
+    out_filename = 'polymer'
+
+    for o, a in opts:
+        if o == '-n':
+            n = a
+        if o == '-l':
+            meanlen = float(a)
+        if o == '-r':
+            rmsd = float(a)
+        if o == '-p':
+            protstate = a
+        if o == '--pm':
+            pm = float(a)
+        if o == '--ps':
+            ps = float(a)
+        if o == '--pd':
+            pd = float(a)
+        if o == '-o':
+            out_filename = str(a)
+            
+       
+
+    print "Normalizing occurrencies..."
+    s = pm + ps + pd
+    pm /= s
+    ps /= s
+    pd /= s
+    print "Normalized occurrencies are:"
+    print('ps = '+str(ps)+'; pm = '+str(pm)+'; pd = '+str(pd))
+ 
+
+    if (protstate > 7) or (protstate < 0):
+        while True:
+            try:
+                print "\n"
+                print "Protonation states of maleic acid residues"
+                print "number    1     2     3     4     5     6     7"
+                print "pH        5     6     7     8     9    10   >10"
+                print "charge -0.3  -0.5  -1.0  -1.2  -1.7  -1.9  -2.0"
+                protstate = int(raw_input("Select the number of protonation state: "))
+            except ValueError:
+                print('\n')
+                print("Sorry, I didn't understand that.")
+                continue
+            if (protstate > 7) or (protstate < 1):
+                print('\n')
+                print("Wrong number. Select the one from the table.")
+                continue
+            else:
+                break
+            
     for i in xrange(int(n)):
+        print('\n')
         print('Building polymer molecule %d'%i)
-        name = '../polymer_molecules/'+out_filename+'_%d.pdb'%i
-        run(meanlen=meanlen, monomers, pm=pm, pd=pd, ps=ps, rmsd=rmsd, name=name, protstate=protstate, i=i)
+        name = '../polymer_molecules/%s_%d.pdb'%(out_filename,i)
+        print(name)
+        run(monomers, meanlen=meanlen, pm=pm, pd=pd, ps=ps, rmsd=rmsd, name=name, protstate=protstate, i=i)
     os.chdir('../')
     shutil.rmtree('tmp')
