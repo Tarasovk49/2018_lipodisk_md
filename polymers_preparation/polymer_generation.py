@@ -381,20 +381,17 @@ def mad_monomer(position=0):
 
     return s
 
-def run(meanlen, monomers, pm, pd, ps, rmsd, test=False, name, protstate):
+def run(meanlen, monomers, pm, pd, ps, rmsd, test=False, name, protstate, i):
     ################################################
     # This function builds one molecule of polymer #
     ################################################
-    if (pm+ps+pd)!=1:
-        print "\n"
-        print "Occurrencies of monomers are not normalized\n"
-        print "Normalizing occurencies...\n"
-        s = pm + ps + pd
-        pm /= s
-        ps /= s
-        pd /= s
-        print "Normalized occurencies are:\n"
-        print "ps = "+ps+"; pm = "+pm+"; pd = "+pd+"\n" 
+    print "Normalizing occurencies...\n"
+    s = pm + ps + pd
+    pm /= s
+    ps /= s
+    pd /= s
+    print "Normalized occurencies are:\n"
+    print('ps = '+ps+'; pm = '+pm+'; pd = '+pd+'\n')
     # NOTE that from this point 'ps' and 'pd' are not the probabilities to have styrol or diisobutylene
     # in any position, but probabilities to have left-oriented or right-oriented styrol\diisobutylene in that position!!
     ps = ps/2
@@ -462,6 +459,7 @@ def run(meanlen, monomers, pm, pd, ps, rmsd, test=False, name, protstate):
     
     # the length of polymer, list with sequence of monomers and pattern which is always [1, 1, 1, ...] are generated
     length = int(np.random.normal(meanlen,rmsd))
+    print('Length of polymer molecule is '+length+'\n')
     list = []
     pattern = [1]*length
     if protstate == 0:
@@ -516,8 +514,9 @@ def run(meanlen, monomers, pm, pd, ps, rmsd, test=False, name, protstate):
     # run the copolymer random walk method
     polymer = copolymer(list, length, pattern=pattern, forcefield=f, density=0.1, limit=0.2, capped=False, unwrap=True)
     
-    # write a pdb file
+    # write a pdb file    
     polymer.write_pdb(name)
+    print(out_filename+'_%d.pdb'%i+' generated')
 
 if __name__ == '__main__':  
     
@@ -553,6 +552,7 @@ if __name__ == '__main__':
     
 
     for i in xrange(int(n)):
-        run(meanlen=meanlen, monomers, pm=pm, pd=pd, ps=ps, rmsd, name='../polymer_molecules/'+out_filename+'_%d.pdb'%i, protstate=protstate)
+        print('Building polymer molecule %d'%i)
+        run(meanlen=meanlen, monomers, pm=pm, pd=pd, ps=ps, rmsd, name='../polymer_molecules/'+out_filename+'_%d.pdb'%i, protstate=protstate, i=i)
     os.chdir('../')
     shutil.rmtree('tmp')
