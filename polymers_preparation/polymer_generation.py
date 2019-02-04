@@ -15,8 +15,9 @@ from getopt import getopt
 #   pH        5     6     7     8     9    10   >10
 #   charge -0.3  -0.5  -1.0  -1.2  -1.7  -1.9  -2.0
 #
-# @protstate = 0 is an option to create not random polymer. In this case you have to write sequence manually.
-# There is an example of how to do it in script. @position variable which is passed to monomer build functions declares
+# @protstate = 0 is an option to create not random polymer. You have to pass @protstate=0 to run() function
+# and write sequence of monomers manually. There is an example of how to do it in script.
+# @position variable which is passed to monomer build functions declares
 # one of three positions monomer can reside: first(@position=1), last(@position=2) and middle(@position=0).
 # The difference between positions is that in case of first and last monomers terminal
 # hydrogens must not be removed during "polimerization".
