@@ -2,27 +2,63 @@ from pysimm import system, lmps, forcefield
 from pysimm.apps.random_walk import copolymer
 import numpy as np
 import shutil, os, sys
+from getopt import getopt
+
 ##############################################################################################
 #                Script builds styrol-diisobutylene-maleic acid copolymers.
 # The @n polymer molecules are constructed with mean length of one molecule @meanlen
-# and root mean square deviation of length @rmsd, incidence probabilities of monomers @ps, @pd and @pm,
-# and @protstate from 1 to 7.
+# and root mean square deviation of length @rmsd, occurrencies of monomers @ps, @pd and @pm,
+# and @protstate from 1 to 7. Output files are .pdb files with name @outfilename_X.pdb.
 #  
 #   Protonation states of maleic acid residues:
 #   number    1     2     3     4     5     6     7
 #   pH        5     6     7     8     9    10   >10
 #   charge -0.3  -0.5  -1.0  -1.2  -1.7  -1.9  -2.0
-# 
-# NOTE: THE SUM OF PROBABILITIES MUST BE EQUAL TO 1 (@ps + @pd + @pm = 1).
 #
-# @protstate = 0 is an option to create not random polymer. In this case you have to wrtite sequence manually.
-# There is an example in this script. @position variable which is passed to monomer build functions declares
+# @protstate = 0 is an option to create not random polymer. In this case you have to write sequence manually.
+# There is an example of how to do it in script. @position variable which is passed to monomer build functions declares
 # one of three positions monomer can reside: first(@position=1), last(@position=2) and middle(@position=0).
 # The difference between positions is that in case of first and last monomers terminal
-# hydrogens must not be removed during "polimerization". There are 8 types of monomers here:
-# 4 for different states of protonation of maleic acid, 2 for diisobutylene monomers and
-# 2 for styrene monomers with radicals oriented close to beginning or close to end of polymer.
+# hydrogens must not be removed during "polimerization".
+# There are 8 types of monomers:
+# 4 = (2 different states of protonation) x (2 different carboxyls of maleic acid),
+# 2 for diisobutylene monomers with radical group oriented closer to beginning or closer to end of polymer,
+# 2 for styrene monomers with benzene group oriented closer to beginning or closer to end of polymer.
 ##############################################################################################
+
+opts, args = getopt(sys.argv[1:], 'n:l:r:p:pm:ps:pd:o:')
+
+n = 100
+meanlen = 36
+rmsd = 3.0
+protstate = 3
+
+# These are the occurrencies of monomers (pm - maleic acid, pd - diisobutylene, ps - styrol)
+# NOTE, that the sum of the occurrencies must be equal to 1.
+pm = 0.25
+pd = 0.75
+ps = 0.0
+out_filename = 'polymer'
+
+for o, a in opts:
+    if o == '-n':
+        n = a
+    if o == '-l':
+        meanlen = a
+    if o == '-r':
+        rmsd = a
+    if o == '-p':
+        protstate = a
+    if o == '-pm':
+        pm = a
+    if o == '-ps':
+        ps = a
+    if o == '-pd':
+        pd = a
+    if o == '-o':
+        out_filename = a
+        
+        
 def dib_monomer(position=0):
     try:
         s = system.read_mol('topology_generalized/DIB1.mol')
@@ -345,14 +381,25 @@ def mad_monomer(position=0):
 
     return s
 
-def run(meanlen, monomers, pm=0.25, pd=0.0, ps=0.75, rmsd=3, test=False, name="polymer.pdb", protstate=0):
+def run(meanlen, monomers, pm, pd, ps, rmsd, test=False, name, protstate):
     ################################################
     # This function builds one molecule of polymer #
     ################################################
+    if (pm+ps+pd)!=1:
+        print "\n"
+        print "Occurrencies of monomers are not normalized\n"
+        print "Normalizing occurencies...\n"
+        s = pm + ps + pd
+        pm /= s
+        ps /= s
+        pd /= s
+        print "Normalized occurencies are:\n"
+        print "ps = "+ps+"; pm = "+pm+"; pd = "+pd+"\n" 
     # NOTE that from this point 'ps' and 'pd' are not the probabilities to have styrol or diisobutylene
     # in any position, but probabilities to have left-oriented or right-oriented styrol\diisobutylene in that position!!
     ps = ps/2
     pd = pd/2
+
     if (protstate > 7) or (protstate < 0):
         while True:
             try:
@@ -364,9 +411,17 @@ def run(meanlen, monomers, pm=0.25, pd=0.0, ps=0.75, rmsd=3, test=False, name="p
                 protstate = int(raw_input("Select the number of protonation state: "))
             except ValueError:
                 print("Sorry, I didn't understand that. Select the number from the table.")
+                print "Protonation states of maleic acid residues"
+                print "number    1     2     3     4     5     6     7"
+                print "pH        5     6     7     8     9    10   >10"
+                print "charge -0.3  -0.5  -1.0  -1.2  -1.7  -1.9  -2.0"
                 continue
             if (protstate > 7) or (protstate < 1):
                 print("Wrong number. Select the one from the table.")
+                print "Protonation states of maleic acid residues"
+                print "number    1     2     3     4     5     6     7"
+                print "pH        5     6     7     8     9    10   >10"
+                print "charge -0.3  -0.5  -1.0  -1.2  -1.7  -1.9  -2.0"
                 continue
             else:
                 break
@@ -496,19 +551,8 @@ if __name__ == '__main__':
     os.mkdir('tmp')
     os.chdir('tmp')
     
-    # Generation of n pdbs of polymer molecules
-    n = sys.argv[1]
-    meanlen = 36
-    rmsd = 3.0
-    protstate = 3
-    ###############
-    # These are the incidence probabilities of monomers (pm - maleic acid, pd - diisobutylene, ps - styrol)
-    # NOTE, that the sum of those probabilities must be equal to 1.
-    pm = 0.25
-    pd = 0.75
-    ps = 0.0
-    ###############
+
     for i in xrange(int(n)):
-        run(meanlen, monomers, pm, pd, ps, rmsd, name='../polymer_molecules/polymer_%d.pdb'%i, protstate=protstate)
+        run(meanlen=meanlen, monomers, pm=pm, pd=pd, ps=ps, rmsd, name='../polymer_molecules/'+out_filename+'_%d.pdb'%i, protstate=protstate)
     os.chdir('../')
     shutil.rmtree('tmp')
