@@ -20,7 +20,7 @@ for o, a in opts:
     if o == '-o':
         outfile = a
     if o == '-n':
-        layers = a
+        layers = int(a)
         
 # Load membrane
 u_mem = mda.Universe(membrane)
@@ -31,7 +31,7 @@ ag_mem.translate(-ag_mem.center_of_geometry())
 xmax,ymax,zmax=np.amax(ag_mem.positions[:],0)
 xmin,ymin,zmin=np.amin(ag_mem.positions[:],0)
 R = np.sqrt((xmax-xmin)**2 + (ymax-ymin)**2)/2
-print('R of membrane is '+R)
+print('R of membrane is '+str(R))
 
 # Decrease 2 coefficients below to place polymers with higher density
 # r_coeff = 1.0 is the least value when it is garanteed that none of the polymers overlap
