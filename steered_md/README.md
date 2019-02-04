@@ -39,7 +39,7 @@ gmx grompp -f config/nvt.mdp -c lipodisk_em.gro -r lipodisk_em.gro -o lipodisk_n
 gmx mdrun -deffnm lipodisk_nvt
 ```
 ### Prepare index file with groups for pulling and mdp file
-Option *-r* determines minimal distances (in nm) between COM of membrane and COMs of polymer molecules to apply the force. When distance are less than specified with *-r* no force is applied on that polymer molecule. The distance depends on radius of membrane - optional value is *R + 2*, where *R* is membrane radius. It is printed in Terminal while generating starting configuration for md as `R of membrane is ..`. If you use provided *popc.pdb* as membrane, than *-r 4* is optimal.
+Option **-r** determines minimal distances (in nm) between COM of membrane and COMs of polymer molecules to apply the force. When distance are less than specified with **-r** no force is applied on that polymer molecule. The distance depends on radius of membrane - optional value is *R + 2*, where *R* is membrane radius. It is printed in Terminal while generating starting configuration for md as `R of membrane is ..`. If you use provided *popc.pdb* as membrane, than **-r 4** is optimal.
 ```
 gmx make_ndx -f SMALP_nvt.tpr<<!
 q
@@ -62,7 +62,7 @@ gmx trjconv -f lipodisk_flatbot.trr -o lipodisk_1.pdb -s lipodisk_flatbot.tpr -d
 0
 !
 ```
-Then it is needed to add TER in new *.pdb* file:
+Then it is needed to add TER in new *.pdb* file (*add_ter_between_chains.py* is located in *get_starting_configuration* folder):
 ```
 python add_ter_between_chains.py -i lipodisk_1.pdb -o lipodisk_ter.pdb
 ```
