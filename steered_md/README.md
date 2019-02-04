@@ -43,7 +43,7 @@ gmx mdrun -deffnm lipodisk_nvt
 ### Prepare index file with groups for pulling and mdp file
 Option **-r** determines minimal distances (in nm) between COM of membrane and COMs of polymer molecules to apply the force. When distance are less than specified with **-r** no force is applied on that polymer molecule. The distance depends on radius of membrane - optional value is *R + 2*, where *R* is membrane radius. It is printed in Terminal while generating starting configuration for md as `R of membrane is ..`. If you use provided *popc.pdb* as membrane, than **-r 4** is optimal.
 ```
-gmx make_ndx -f SMALP_nvt.tpr<<!
+gmx make_ndx -f lipodisk_nvt.tpr<<!
 q
 !
 python gen_index.py -i lipodisk.pdb -o index_more.ndx
