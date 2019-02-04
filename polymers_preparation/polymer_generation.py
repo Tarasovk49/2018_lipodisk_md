@@ -553,6 +553,7 @@ if __name__ == '__main__':
 
     for i in xrange(int(n)):
         print('Building polymer molecule %d'%i)
-        run(meanlen=meanlen, monomers, pm=pm, pd=pd, ps=ps, rmsd, name='../polymer_molecules/'+out_filename+'_%d.pdb'%i, protstate=protstate, i=i)
+        name = '../polymer_molecules/'+out_filename+'_%d.pdb'%i
+        run(meanlen=meanlen, monomers, pm=pm, pd=pd, ps=ps, rmsd=rmsd, name=name, protstate=protstate, i=i)
     os.chdir('../')
     shutil.rmtree('tmp')
