@@ -403,7 +403,8 @@ def run(monomers, meanlen, pm, pd, ps, rmsd, name, protstate, i):
     pattern = [1]*length
     if protstate == 0:
         # This is not a protstate. This is the option to create not random polymers.
-        # For example, here 21-monomer-S-and-M-alterating-polymer with 10 M and 11 S (SMSMSMSMSMSMSMSMSMSMS) is contructed. Maleic acids are with charge -1.
+        # For example, here 21-monomer-S-and-M-alterating-polymer with 10 M and 11 S (SMSMSMSMSMSMSMSMSMSMS) is contructed.
+        # Maleic acids are with charge -1.
         length = 21
         pattern = [1]*length
         list.append(np.random.choice([stf,strf], p=[0.5, 0.5]))
