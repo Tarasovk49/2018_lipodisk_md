@@ -512,13 +512,13 @@ if __name__ == '__main__':
 
     for o, a in opts:
         if o == '-n':
-            n = a
+            n = int(a)
         if o == '-l':
             meanlen = float(a)
         if o == '-r':
             rmsd = float(a)
         if o == '-p':
-            protstate = a
+            protstate = int(a)
         if o == '--pm':
             pm = float(a)
         if o == '--ps':
@@ -559,7 +559,7 @@ if __name__ == '__main__':
             else:
                 break
             
-    for i in xrange(int(n)):
+    for i in xrange(n):
         print('\n')
         print('Building polymer molecule %d'%i)
         name = '../polymer_molecules/%s_%d.pdb'%(out_filename,i)
