@@ -15,4 +15,4 @@
 4. [Gromacs 2018.1.](http://manual.gromacs.org/documentation/)
 
 ### NOTE
-For all Gromacs simulations use the forcefield provided (*oplsaa_lipids_polymers.ff* and *residuetypes.dat*). It includes necessary files for polymers and for 4 types of lipids.
+For all Gromacs simulations use the forcefield provided (*oplsaa_lipids_polymers.ff* and *residuetypes.dat*). It includes all necessary files for polymers and for 4 types of lipids.
