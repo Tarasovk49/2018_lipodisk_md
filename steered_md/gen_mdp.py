@@ -24,7 +24,7 @@ for o, a in opts:
         output_mdp = a
     if o == '-r':
         # Forces are applied while distances are higher than R 
-        R = a
+        R = int(a)
 
 def gen_mdp(input_mdp, index, output_mdp):
     sma_mol_count=0
