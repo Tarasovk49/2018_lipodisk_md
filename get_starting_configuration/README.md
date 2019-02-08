@@ -7,7 +7,7 @@ python orient_poly.py -m membrane.pdb -p directory_polymer_molecules_reside -o o
 There are two coefficients **--r_coeff** and **--angle_coeff**. *r_coeff = 1.0* and *angle_coeff = 2.0* are the least values when it is garanteed that none of the polymer molecules overlap. Decrease these coefficients for packing polymer molecules closer to each other but always check the conformation obtained because overlapping of the structures may occur.
 
 <p align="center">
-  <img width="800" src="../images/starting_configuration.png">
+  <img width="500" src="../images/starting_configuration.png">
 </p>
 
 *add_ter_between_chains.py* adds TER strings in *.pdb* files in places where the new count of resid begins.
