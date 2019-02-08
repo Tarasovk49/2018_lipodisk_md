@@ -1,7 +1,7 @@
 # Description
 
 *polymer_generation.py* builds polymer molecules consisting of diisobutylene, maleic acid, styrene monomers. 8 types of monomers are built with structure provided by *topology_generalized/.mol*:
-- 4 types of maleic acid monomers = (2 different states of protonation) x (2 different carboxyls of maleic acid),
+- 4 types of maleic acid monomers = (2 different states of protonation) x (2 different carboxyl groups of maleic acid),
 - 2 types of diisobutylene monomers with radical group oriented closer to beginning or closer to end of polymer,
 - 2 types of styrene monomers with benzene group oriented closer to beginning or closer to end of polymer.
 
