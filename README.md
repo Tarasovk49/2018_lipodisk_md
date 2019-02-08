@@ -7,7 +7,6 @@
 <p align="center">
   <img src="images/monomers.jpg">
 </p>
-![MONOMERS](images/monomers.jpg)
 2. Generate topology files with command *pdb2gmx* for systems, containing 4 types of lipids (POPC, DOPC, DPPC, CHOL) and polymer molecules. Topologies for lipids were taken from [1](https://www.ncbi.nlm.nih.gov/pubmed/26568975), [2](https://www.ncbi.nlm.nih.gov/pubmed/24745688), [3](https://www.ncbi.nlm.nih.gov/pubmed/26187855).
 3. Produce starting configuration of lipodisk via [MDAnalysis](https://github.com/MDAnalysis/mdanalysis) for [Gromacs](http://www.gromacs.org/) simulations.
 4. Prepare all necessary files for steered molecular dynamics to move polymer molecules towards membrane.
