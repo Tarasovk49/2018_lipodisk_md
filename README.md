@@ -4,7 +4,7 @@
 **Lipodisk_md** contains scripts and files to perform GROMACS simulations of lipodisks. Lipodisk is membrane system for extracting membrane proteins. Lipodisk comprises a part of lipid membrane, stabilized on ridges by amphiphilic polymers. The polymers usually used for producing lipodisks are SMA (Styrene and Maleic Acid copolymer) and DIBMA (Diisobutylene and Maleic Acid copolymer). Lipodisks are therefore called SMALPs and DIBMALPs. **Lipodisk_md** allows:
 
 1. Build polymer molecules using [Pysimm](https://github.com/Tarasovk49/pysimm) consisting of 3 types of monomers: Maleic acid, Diisobutylene, Styrene.
-![What is this](../monomers.jpg)
+![MONOMERS](images/monomers.jpg)
 2. Generate topology files with command *pdb2gmx* for systems, containing 4 types of lipids (POPC, DOPC, DPPC, CHOL) and polymer molecules. Topologies for lipids were taken from [1](https://www.ncbi.nlm.nih.gov/pubmed/26568975), [2](https://www.ncbi.nlm.nih.gov/pubmed/24745688), [3](https://www.ncbi.nlm.nih.gov/pubmed/26187855).
 3. Produce starting configuration of lipodisk via [MDAnalysis](https://github.com/MDAnalysis/mdanalysis) for [Gromacs](http://www.gromacs.org/) simulations.
 4. Prepare all necessary files for steered molecular dynamics to move polymer molecules towards membrane.
