@@ -33,6 +33,6 @@ Options are:
 **-out_filename** Name of generated *.pdb* files (*polymer_X.pdb* by default). Files are generated in *polymer_molecules* directory
 
 <p float="left">
-  <img src="../images/pol_SMA.png" width="400" />
-  <img src="../images/pol_DIBMA.png" width="400" /> 
+  <img src="../images/pol_SMA.png" width="300" />
+  <img src="../images/pol_DIBMA.png" width="450" /> 
 </p>
