@@ -57,7 +57,7 @@ gmx editconf -f lipodisk_nvt.gro -o lipodisk_bigbox.gro -box 30 30 8 -c -bt tric
 gmx grompp -f config/lipodisk_flatbot.mdp -c lipodisk_bigbox.gro -r lipodisk_bigbox.gro -n index.ndx -o lipodisk_flatbot.tpr -p topol.top -po mdout.mdp -maxwarn 1
 gmx mdrun -deffnm lipodisk_flatbot
 ```
-After simulation the configuration should look like this
+After simulation the configuration should look like this:
 <p align="center">
   <img width="500" src="../images/after_steeredmd.png">
 </p>
