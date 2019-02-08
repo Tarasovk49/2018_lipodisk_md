@@ -5,7 +5,7 @@
 
 1. Build polymer molecules using [Pysimm](https://github.com/Tarasovk49/pysimm) consisting of 3 types of monomers: Maleic acid, Diisobutylene, Styrene.
 <p align="center">
-  <img width="600" height="300" src="images/monomers.jpg">
+  <img width="600" height="350" src="images/monomers.jpg">
 </p>
 
 2. Generate topology files with command *pdb2gmx* for systems, containing 4 types of lipids (POPC, DOPC, DPPC, CHOL) and polymer molecules. Topologies for lipids were taken from [1](https://www.ncbi.nlm.nih.gov/pubmed/26568975), [2](https://www.ncbi.nlm.nih.gov/pubmed/24745688), [3](https://www.ncbi.nlm.nih.gov/pubmed/26187855).
