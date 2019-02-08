@@ -32,6 +32,10 @@ Options are:
 
 **-out_filename** Name of generated *.pdb* files (*polymer_X.pdb* by default). Files are generated in *polymer_molecules* directory
 
+|SMA molecule|DIBMA molecule|
+|----|----|
+|![SMA](../images/pol_SMA.png)|![DIBMA](../images/pol_DIBMA.png)|
+
 <p align="center">
   <img src="../images/pol_SMA.png" width="300" title="SMA molecule"/>
   <img src="../images/pol_DIBMA.png" width="450" title="DIBMA molecule"/> 
