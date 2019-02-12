@@ -28,7 +28,7 @@ mv topol*.itp itp/.
 ```
 ### Set box size
 ```
-gmx editconf -f lipodisk_processed.gro -o lipodisk_newbox.gro -d 0.1 -c -bt triclinic
+gmx editconf -f lipodisk_processed.gro -o lipodisk_newbox.gro -d 1.0 -c -bt triclinic
 ```
 ### Prepare and run EM
 ```
