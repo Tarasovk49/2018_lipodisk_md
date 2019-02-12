@@ -23,8 +23,8 @@ from getopt import getopt
 # hydrogens must not be removed during "polimerization".
 # There are 8 types of monomers:
 # 4 = (2 different states of protonation) x (2 different carboxyls of maleic acid),
-# 2 for diisobutylene monomers with radical group oriented closer to beginning or closer to end of polymer,
-# 2 for styrene monomers with benzene group oriented closer to beginning or closer to end of polymer.
+# 2 for diisobutylene monomers with radical group oriented closer to head or tail of polymer molecule,
+# 2 for styrene monomers with benzene group oriented closer to head or tail of polymer molecule.
 ##############################################################################################
 
 
