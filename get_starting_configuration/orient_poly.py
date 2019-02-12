@@ -40,7 +40,7 @@ ag_mem.translate(-ag_mem.center_of_geometry())
 xmax,ymax,zmax=np.amax(ag_mem.positions[:],0)
 xmin,ymin,zmin=np.amin(ag_mem.positions[:],0)
 R = np.sqrt((xmax-xmin)**2 + (ymax-ymin)**2)/2
-print('R of membrane is '+str(R))
+print('R of membrane is '+str(R)+' angstroms')
 
 # Load polymers, place them in (0,0,0), compute the maximal radius
 pol_list = os.listdir(pol_dir)
