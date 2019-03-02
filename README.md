@@ -19,4 +19,4 @@
 4. [Gromacs 2018.1.](http://manual.gromacs.org/documentation/)
 
 ### NOTE
-For all Gromacs simulations use the forcefield provided (*oplsaa_lipids_polymers.ff* and *residuetypes.dat*). It includes topology files for polymers and for 4 types of lipids.
+For all Gromacs simulations use the forcefield provided (*oplsaa_lipids_polymers.ff* and *residuetypes.dat*). It contains topology files for polymers and for lipids (POPC, DOPC, DPPC, CHOL).
