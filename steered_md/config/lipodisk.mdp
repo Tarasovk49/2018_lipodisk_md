@@ -47,7 +47,9 @@ pbc		= xy		                      ; XY-PBC
 nwall   = 2                         ; Two virtual walls to keep polymers in plane of membrane
 wall-atomtype = opls_wll opls_wll   ; Types of atoms of wall. Stored in wall_atomtype.atp
 wall-type = 12-6                    ; Type of interaction with wall (LJ)
-wall-r-linpot = 2                   ; distance from membrane at which walls are situated
+wall-r-linpot = 2                   ; Below this distance from the wall the potential is continued linearly and thus the force is constant.
+                                    ; Setting this option to a postive value is useful for equilibration when some atoms are beyond a wall.
+                                    ; When the value is ≤0 (<0 for wall-type=table), a fatal error is generated when atoms are beyond a wall.
 ewald-geometry = 3dc
 ; Dispersion correction
 DispCorr	= EnerPres	; account for cut-off vdW scheme
