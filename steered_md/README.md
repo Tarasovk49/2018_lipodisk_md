@@ -69,7 +69,8 @@ gmx trjconv -f lipodisk_flatbot.trr -o lipodisk_1.pdb -s lipodisk_flatbot.tpr -d
 0
 !
 ```
-Then it is needed to add TER in new *.pdb* file (*add_ter_between_chains.py* is located in *get_starting_configuration* folder):
+Then you need to add TER in new *.pdb* file (*add_ter_between_chains.py* is located in *get_starting_configuration* folder):
 ```
 python add_ter_between_chains.py -i lipodisk_1.pdb -o lipodisk_ter.pdb
 ```
+You can continue calculation with or without forces with the extracted frame as a starting configuration.
