@@ -14,8 +14,8 @@ coulombtype	  = PME		; Treatment of long range electrostatic interactions
 rcoulomb	    = 1.0		; Short-range electrostatic cut-off
 rvdw		      = 1.0		; Short-range Van der Waals cut-off
 
-pbc		= xy		                ; XY-PBC
-nwall   = 2                         ; Two virtual walls to keep polymers in plane of membrane
+pbc     =     xy		                ; XY-PBC
+nwall   =     2                     ; Two virtual walls to keep polymers in plane of membrane
 wall-atomtype = opls_wll opls_wll   ; Types of atoms of wall. Stored in wall_atomtype.atp
 wall-type = 12-6                    ; Type of interaction with wall (LJ)
 wall-r-linpot = 2                   ; Below this distance from the wall the potential is continued linearly
