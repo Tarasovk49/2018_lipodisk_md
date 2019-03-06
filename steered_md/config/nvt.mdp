@@ -33,7 +33,12 @@ ref_t		= 300     300            ; reference temperature, one for each group, in 
 ; Pressure coupling is off
 pcoupl		= no 		; no pressure coupling in NVT
 ; Periodic boundary conditions
-pbc		= xyz		    ; 3-D PBC
+pbc     =     xy                    ; XY-PBC
+nwall   =     2                     ; Two virtual walls to keep polymers in plane of membrane
+wall-atomtype = opls_wll opls_wll   ; Types of atoms of wall. Stored in wall_atomtype.atp
+wall-type = 12-6                    ; Type of interaction with wall (LJ)
+wall-r-linpot = 2                   ; Below this distance from the wall the potential is continued linearly
+                                    ; and thus the force is constant. See more at Gromacs mdp options.
 ; Dispersion correction
 DispCorr	= EnerPres	; account for cut-off vdW scheme
 ; Velocity generation
