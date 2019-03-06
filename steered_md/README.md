@@ -1,6 +1,6 @@
 # Description
 
-Simulation is carried out in vacuum. During the simulation harmonic potentials are applied on distances between COMs of each polymer and COM of membrane and they are only applied when these distances are more than *R* nm. Position restraints are applied on lipids to keep membrane integral. There are two virtual walls in 2 nm higher and lower the plane of membrane to keep polymers in plane of membrane (stored in *wall_atomtype.atp*).
+Simulation is carried out in vacuum. During the simulation harmonic potentials are applied on distances between COMs of each polymer and COM of membrane and they are only applied when these distances are more than *R* nm. Position restraints are applied on lipids to keep membrane integral. There are two virtual walls in z=0 nm and z=8 nm (approximately 2 nm higher and lower the choline groups of lipids) to keep polymers in plane of membrane (stored in *wall_atomtype.atp*).
 
 ### Generate topology
 ```
