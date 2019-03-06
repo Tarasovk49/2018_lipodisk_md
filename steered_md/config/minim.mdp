@@ -13,7 +13,15 @@ ns_type		    = grid	; Method to determine neighbor list (simple, grid)
 coulombtype	  = PME		; Treatment of long range electrostatic interactions
 rcoulomb	    = 1.0		; Short-range electrostatic cut-off
 rvdw		      = 1.0		; Short-range Van der Waals cut-off
-pbc		        = xyz 	; Periodic Boundary Conditions (yes/no)
+
+pbc		= xy		                ; XY-PBC
+nwall   = 2                         ; Two virtual walls to keep polymers in plane of membrane
+wall-atomtype = opls_wll opls_wll   ; Types of atoms of wall. Stored in wall_atomtype.atp
+wall-type = 12-6                    ; Type of interaction with wall (LJ)
+wall-r-linpot = 2                   ; Below this distance from the wall the potential is continued linearly
+                                    ; and thus the force is constant. See more at Gromacs mdp options.
+
+ewald-geometry = 3dc
 
 constraints             = h-bonds
 constraint_algorithm    = LINCS
