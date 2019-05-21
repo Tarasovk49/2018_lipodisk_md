@@ -498,7 +498,7 @@ if __name__ == '__main__':
         os.chdir('tmp')
         
     opts, args = getopt(sys.argv[1:], 'n:l:r:p:o:',longopts=['pm=','ps=','pd='])
-    # Number of polymer molecules to be generated, their mean length, rmsd of length, protonation state of MA monomers
+    # Number of polymer molecules to be generated, mean of their length, rmsd of length, protonation state of MA monomers
     n = 100
     meanlen = 36.0
     rmsd = 3.0
