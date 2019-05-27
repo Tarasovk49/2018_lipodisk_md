@@ -41,7 +41,7 @@ gmx grompp -f config/nvt.mdp -c lipodisk_em.gro -r lipodisk_em.gro -o lipodisk_n
 gmx mdrun -deffnm lipodisk_nvt
 ```
 ### Prepare index file with groups for pulling and mdp file
-Option **-r** determines minimal distances (in nm) between COM of membrane and COMs of polymer molecules to apply the force. When distance are less than specified with **-r** no force is applied on that polymer molecule. The distance depends on radius of membrane - optional value is *R + 2*, where *R* is membrane radius. It is printed in Terminal while generating starting configuration for md as `R of membrane is .. angstroms`. If you use provided *popc.pdb* for membrane, than **-r 4** is optimal.
+Option **-r** determines minimal distances (in nm) between COM of membrane and COMs of polymer molecules to apply the force. When distance are less than specified with **-r** no force is applied on that polymer molecule. The distance depends on radius of membrane - optional value is *R + 2*, where *R* is membrane radius. It is printed in Terminal while generating starting configuration for md as `R of membrane is .. angstroms`. In case of using *popc.pdb* provided **-r 4** is optimal.
 ```
 gmx make_ndx -f lipodisk_nvt.tpr<<!
 q
@@ -63,6 +63,7 @@ After simulation the configuration should look like this:
 </p>
 
 ### If any error occured during simulation
+Errors will definitely occur due to high velocities. Just derive last frame and start new simulation with velocities generation.
 To derive frame at *N* ps use *trjconv*:
 ```
 gmx trjconv -f lipodisk_flatbot.trr -o lipodisk_1.pdb -s lipodisk_flatbot.tpr -dump N<<!
