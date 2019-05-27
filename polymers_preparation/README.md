@@ -17,7 +17,7 @@ Options are:
 
 **-rmsd** Root mean square deviation of length of polymer molecules
 
-**-protstate** Protonation state is a number that defines the mean charge of maleic acid monomer. Correspondence of protonation state, pH value and mean charge of MA monomer is given by table:
+**-protstate** Protonation state defines the mean charge of maleic acid monomer. Correspondence of protonation state, pH value and mean charge of MA monomer is given by table:
 
 | Protonation state   | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
