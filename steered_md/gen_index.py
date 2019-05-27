@@ -25,7 +25,7 @@ def make_ndx(in_filename, out_filename):
             line_value_num = 0 # Counts written numbers of atoms in strings (numbers are written by 15 in one string)
             for line in pdb.readlines():
                 if (line[:4]=='ATOM') and ((line[17:21]=='POPC') or (line[17:21]=='DPPC')\
-                                      or (line[17:21]=='DOPC') or (line[17:21]=='CHOL')) \
+                 or (line[17:21]=='DMPC') or (line[17:21]=='DOPC') or (line[17:21]=='CHOL')) \
                                       and ('P' in line[12:16]):
                     if int(line[23:26] )<resid:
                         ndx.write('\n' + '[ MEMBRANE ]' + '\n')
