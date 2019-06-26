@@ -74,4 +74,4 @@ Then you need to add TER in new *.pdb* file (*add_ter_between_chains.py*):
 ```
 python add_ter_between_chains.py -i lipodisk_1.pdb -o lipodisk_ter.pdb
 ```
-You can continue calculation with or without forces with the extracted frame as a starting configuration.
+You can continue calculation with or without forces starting from extracted frame.
