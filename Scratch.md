@@ -11,6 +11,7 @@ gmx_2018 trjconv -f ../../SMA_lipodisk/lipodisk_simulation_noforces_ring_solv/SM
 !
 ```
 2. **For -2 SMALP were run:**
+
 Cut everything except polymers and write them to another file. Generate new pdb with pdb2gmx option `-ignh` and merge two files together.
 ```
 sed -i 's/MAL/MAD/g' SMALP_14ns.pdb
@@ -108,7 +109,7 @@ gmx_2018 pdb2gmx -f SMALP_fin_ter.pdb -o SMALP_processed.gro -ff oplsaa_lipids_p
 
 |Lower leaflet|Upper leaflet|
 |----|----|
-|![Lower](../images/APL_lower.png)|![Upper](../images/APL_upper.png)|
+|![Lower](/images/APL_lower.png)|![Upper](/images/APL_upper.png)|
 
 ## Prepare lipodisk with sensory rhodopsin in DMPC.
 1. Prepare topology for DMPC. Cut down the DPPC by two atoms on each chain - C215, C216, C315, C316. Delete all bonded interactions from *lipids.rtp*.
