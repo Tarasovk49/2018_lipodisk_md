@@ -1,11 +1,81 @@
 # This is scratch document for algorithms, plots, logs and everything else that can be useful.
 
 ### Obtain charge dependance of Area Per Lipid in lipodisks.
+Charge on Maleic acid monomers changes from -2 to 0. 
+#### For -2 SMALP were run:
+1. Obtain starting configuration from previous 14 ns run of SMALP simulation.
+```
+gmx_2018 trjconv -f ../../SMA_lipodisk/lipodisk_simulation_noforces_ring_solv/SMALP_14ns.xtc -s ../../SMA_lipodisk/lipodisk_simulation_noforces_ring_solv/SMALP_noforces_solv.tpr -pbc cluster -o SMALP_14ns.pdb -dump 14000<<!
+1
+0
+!
+```
+2. Cut everything except polymers and write them to another file.
+```
+sed -i 's/MAL/MAD/g' SMALP_14ns.pdb
+cp SMALP_14ns.pdb polymers.pdb
+cat SMALP_14ns.pdb | grep POPC > no_pol.pdb
+cat SMALP_14ns.pdb | grep SOL >> no_pol.pdb
+cat SMALP_14ns.pdb | grep NA >> no_pol.pdb
+cat SMALP_14ns.pdb | grep CL >> no_pol.pdb
+sed -i '/POPC/d' polymers.pdb
+sed -i '/NA/d' polymers.pdb
+sed -i '/CL/d' polymers.pdb
+sed -i '/SOL/d' polymers.pdb
+```
+3. Generate new pdb with pdb2gmx option `-ignh` and merge two files together.
+```
+gmx_2018 pdb2gmx -f polymers.pdb -o polymers_new.pdb -ff oplsaa_lipids_polymers -water spce -ignh
+
+rm *Protein*
+rm topol.top
+python renumber_atoms.py -i polymers_new.pdb -e no_pol.pdb -o SMALP_merged.pdb
+python add_ter_between_chains.py -i SMALP_merged.pdb -o SMALP_merged_ter.pdb
+```
+4. Then classic way of EM, NVT, NPT 1 ns.
+```
+gmx_2018 pdb2gmx -f SMALP_merged_ter.pdb -o SMALP_processed.gro -ff oplsaa_lipids_polymers -water spce -p topol.top
+.......
+```
+#### For -1.7, -1.2, -1.0, -0.5 charge starting from *SMALP_merged_ter.pdb*
+1. *substitute.py* substitutes the MAD record with MA2, MAL, MAR or MAD.
+Table of frequencies:
+| 1 | pH | Z | MA2 | MAL | MAR | MAD |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 1 | 5 | -0.3 | 0.7 | 0.15 | 0.15 | - |
+| 2 | 6 | -0.5 | 0.5 | 0.25 | 0.25 | - |
+| 3 | 7 | -1.0 | - | 0.5 | 0.5 | - |
+| 4 | 8 | -1.2 | - | 0.4 | 0.4 | 0.2 |
+| 5 | 9 | -1.7 | - | 0.15 | 0.15 | 0.7 |
+| 6 | 10 | -1.9 | - | 0.05 | 0.05 | 0.9 |
+| 7 | >10 | -2.0 | - | - | - | 1 |
+```
+python substitute.py -i SMALP_merged_ter.pdb -o SMALP_half.pdb
+```
+2. Then same thing that in -2 charge case:
+```
+cp SMALP_half.pdb polymers.pdb
+cat SMALP_half.pdb | grep POPC > no_pol.pdb
+cat SMALP_half.pdb | grep SOL >> no_pol.pdb
+cat SMALP_half.pdb | grep NA >> no_pol.pdb
+cat SMALP_half.pdb | grep CL >> no_pol.pdb
+sed -i '/POPC/d' polymers.pdb
+sed -i '/NA/d' polymers.pdb
+sed -i '/CL/d' polymers.pdb
+sed -i '/SOL/d' polymers.pdb
+
+gmx_2018 pdb2gmx -f polymers.pdb -o polymers_new.pdb -ff oplsaa_lipids_polymers -water spce -ignh
+
+rm *Protein*
+rm topol.top
+python renumber_atoms.py -i polymers_new.pdb -e no_pol.pdb -o SMALP_fin.pdb
+python add_ter_between_chains.py -i SMALP_fin.pdb -o SMALP_fin_ter.pdb
+
+gmx_2018 pdb2gmx -f SMALP_fin_ter.pdb -o SMALP_processed.gro -ff oplsaa_lipids_polymers -water spce -p topol.top
+......
+```
+#### For -1.2 charge
 1. 
-
-
-
-
 ### Prepare lipodisk with sensory rhodopsin in DMPC.
 1. Prepare topology for DMPC. Cut down the DPPC by two atoms on each chain - C215, C216, C315, C316. Delete all bonded interactions from *lipids.rtp*.
 <p align="center">
