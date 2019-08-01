@@ -6,9 +6,11 @@
 * Modify *ffbonded.itp* and *ffnonbonded.itp*.
 
 **ffbonded.itp**
-`; Retinal+lysine
+```
+; Retinal+lysine
   C=      C     NC      1   116.000    585.760   ; wlj
   CT     NC      C      1   118.600    585.760   ; 
   C=     C=     C=      1   124.000    585.760   ; wlj
   C=     CT     CT      1   116.000    585.760   ; wlj
-  C=     C=      C      1   124.000    585.760   ; wlj`
+  C=     C=      C      1   124.000    585.760   ; wlj
+```
