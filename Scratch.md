@@ -51,10 +51,10 @@
 4. Preparation of 1H2S sensory rhodopsin in DMPC membrane.
 * Manual merge of LYS 205 and RET 302 in pdb file to REK 205. Deleting all water molecules from pdb. Rename and renumber REK residue to LYR. Correspondence table for renumbering of REK residue:
 
-| lyr | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | c9 | c10 | c11 | c12 | c13 | c14 | c15 | c16 | c17 | c18 | c19 | c80 |
+| LYR | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | c9 | c10 | c11 | c12 | c13 | c14 | c15 | c16 | c17 | c18 | c19 | c80 |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| rek | c15 | c14 | c13 | c20 | c12 | c11 | c10 | c19 | c8 | c7 | c6 | c5 | c18 | c4 | c3 | c2 | c1 | c17 | c16 | c9 |
-
+| REK | c15 | c14 | c13 | c20 | c12 | c11 | c10 | c19 | c8 | c7 | c6 | c5 | c18 | c4 | c3 | c2 | c1 | c17 | c16 | c9 |
+<!-- 
 | lyr | rek |
 |:---:|:---:|
 | c1 | c15 | 
@@ -76,8 +76,7 @@
 | c17 | c1 |
 | c18 | c17 |
 | c19 | c16 |
-| c80 | c9 |
-
+| c80 | c9 | -->
 * Duplicate 1h2s monomer using MDAnalysis. Add TER records after each chain of protein.
 * Upload 1h2s dimer to CHARMM-GUI Membraine Builder and embed it in 11\*11 nm^2 DMPC bilayer, add water, 0.15 KCL. Download output for Gromacs. Run all steps of minimization and equilibration provided by CHARMM and also 2 ns of NPT simulation.
 * Extract last pdb frame from NPT. Rename LYR residue to REK and renumber atoms back. Delete HZ1 atoms because NZ atom of lysine REK was parametrized in OPLS-AA deprotonated. Renumber atoms with *renumber_atoms.py*. Perform a series of `sed` exchange:
