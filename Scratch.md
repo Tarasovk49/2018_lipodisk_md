@@ -1,6 +1,6 @@
 # This is scratch document for algorithms, plots, logs and everything else that can be useful.
 
-### Obtain charge dependance of Area Per Lipid in lipodisks.
+### Obtain charge dependence of Area Per Lipid in lipodisks.
 Charge on Maleic acid monomers changes from -2 to 0. 
 #### For -2 SMALP were run:
 1. Obtain starting configuration from previous 14 ns run of SMALP simulation.
