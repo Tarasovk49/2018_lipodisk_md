@@ -85,7 +85,20 @@ sed -i 's/HG3 REK/HG1 REK' from_charmm.pdb
 sed -i 's/HD3 REK/HD1 REK' from_charmm.pdb
 sed -i 's/HE3 REK/HE1 REK' from_charmm.pdb
 ```
-Add TER records after each protein chain. Note, that *add_ter_between_chains.py* fails to add TER before DMPC records. You need to add it manually.
-Delete water and potassium and chlorate ions.
+Add TER records after each protein chain. Note, that *add_ter_between_chains.py* fails to add TER before DMPC records. You need to add it manually. Delete water, potassium and chlorate ions.
+
 5. Perform equilibrating simulation in OPLS-AA forcefield (fill the box of water, add ions, run EM, NVT with restraints, NPT with restraints, NPT 1 ns).
+
 6. Extract the last frame of trajectory with option `-pbc whole`. Delete CRYST record in the beginning of the extracted pdb.
+
+7. Assemble initial system with `system_assembly.py`. It cuts membrane into round piece and places polymer molecules in the rings round membrane. Add TER records in pdb.
+
+8. Run simulation in vacuum with two virtual walls 2 nm higher and 2 nm lower membrane COM. The forces are applied on polymer molecules which push them towards membrane COM. Restraints on protein and lipids.
+
+9. Run simulation in solvent without forces (EM, NVT with restraints, NPT).
+
+10. Perform analysis.
+* Lipid density versus thickness.
+* SASA versus time.
+* Gyration radii of Maleic acid monomers, Styrol monomers and both versus time.
+* Rotational ACF of myristoil atoms C11 C12 C13 (as template POPC where C15 C16 C17 were chosen in previous calculations).
