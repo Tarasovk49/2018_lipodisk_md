@@ -40,6 +40,7 @@ gmx_2018 pdb2gmx -f SMALP_merged_ter.pdb -o SMALP_processed.gro -ff oplsaa_lipid
 #### For -1.7, -1.2, -1.0, -0.5 charge starting from *SMALP_merged_ter.pdb*
 1. *substitute.py* substitutes the MAD record with MA2, MAL, MAR or MAD.
 Table of frequencies:
+
 | 1 | pH | Z | MA2 | MAL | MAR | MAD |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | 1 | 5 | -0.3 | 0.7 | 0.15 | 0.15 | - |
@@ -49,6 +50,7 @@ Table of frequencies:
 | 5 | 9 | -1.7 | - | 0.15 | 0.15 | 0.7 |
 | 6 | 10 | -1.9 | - | 0.05 | 0.05 | 0.9 |
 | 7 | >10 | -2.0 | - | - | - | 1 |
+
 ```
 python substitute.py -i SMALP_merged_ter.pdb -o SMALP_half.pdb
 ```
