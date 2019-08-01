@@ -1,4 +1,11 @@
 # This is scratch document for algorithms, plots, logs and everything else that can be useful.
+
+### Obtain charge dependance of Area Per Lipid in lipodisks.
+1. 
+
+
+
+
 ### Prepare lipodisk with sensory rhodopsin in DMPC.
 1. Prepare topology for DMPC. Cut down the DPPC by two atoms on each chain - C215, C216, C315, C316. Delete all bonded interactions from *lipids.rtp*.
 <p align="center">
@@ -83,12 +90,12 @@
 * Upload 1h2s dimer to CHARMM-GUI Membraine Builder and embed it in 11\*11 nm^2 DMPC bilayer, add water, 0.15 KCL. Download output for Gromacs. Run all steps of minimization and equilibration provided by CHARMM and also 2 ns of NPT simulation.
 * Extract last pdb frame from NPT. Rename LYR residue to REK and renumber atoms back. Delete HZ1 atoms because NZ atom of lysine REK was parametrized in OPLS-AA deprotonated. Renumber atoms with *renumber_atoms.py*. Perform a series of `sed` exchange:
 ```
-sed -i 's/HSD /HISD' from_charmm.pdb
-sed -i 's/HG1 SER/HG  SER' from_charmm.pdb
-sed -i 's/HB3 REK/HB1 REK' from_charmm.pdb
-sed -i 's/HG3 REK/HG1 REK' from_charmm.pdb
-sed -i 's/HD3 REK/HD1 REK' from_charmm.pdb
-sed -i 's/HE3 REK/HE1 REK' from_charmm.pdb
+sed -i 's/HSD /HISD/g' from_charmm.pdb
+sed -i 's/HG1 SER/HG  SER/g' from_charmm.pdb
+sed -i 's/HB3 REK/HB1 REK/g' from_charmm.pdb
+sed -i 's/HG3 REK/HG1 REK/g' from_charmm.pdb
+sed -i 's/HD3 REK/HD1 REK/g' from_charmm.pdb
+sed -i 's/HE3 REK/HE1 REK/g' from_charmm.pdb
 ```
 Add TER records after each protein chain. Note, that *add_ter_between_chains.py* fails to add TER before DMPC records. You need to add it manually. Delete water, potassium and chlorate ions.
 
