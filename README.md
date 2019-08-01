@@ -13,7 +13,7 @@
 4. Prepare all necessary files for steered molecular dynamics to move polymer molecules towards membrane.
 
 ### Dependencies
-1. python 3.*
+1. python 3.6.
 2. [Pysimm](https://github.com/Tarasovk49/pysimm) - branch with modified files to read atom names from *.mol2* files and write them (along with resids and resnames) to *.pdb* files. LAMMPS installation also required (see Pysimm [installation guide](https://github.com/Tarasovk49/pysimm#complete-installation-pysimm-and-lammps)).
 3. [MDAnalysis](https://github.com/MDAnalysis/mdanalysis).
 4. [Gromacs 2018.1.](http://manual.gromacs.org/documentation/)
