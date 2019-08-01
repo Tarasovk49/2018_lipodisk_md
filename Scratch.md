@@ -1,6 +1,9 @@
 # This is scratch document for algorithms, plots, logs and everything else that can be useful.
 ### Prepare lipodisk with sensory rhodopsin in DMPC.
 1. Prepare topology for DMPC. Cut down the DPPC by two atoms on each chain - C215, C216, C315, C316. Delete all bonded interactions from *lipids.rtp*.
+<p align="center">
+  <img width="600" height="350" src="images/DMPC.png">
+</p>
 2. Prepare topology for Retinal-lysine (residue REK).
 * Upload retinal without C15 linkage to lysine to [TTPMKTOP](http://erg.biophys.msu.ru/erg/tpp/). Manually change some atom names according to alkane and alkene atomname specifications.
 * Manually modify *ffbonded.itp*. Add specific angles and dihedrals which are absent in normal opls-aa forcefield. The parameters for such angles and dihedrals were chosen corresponding to alkane and alkene topology specifications. The lines added can be seen below.
