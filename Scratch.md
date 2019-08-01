@@ -219,3 +219,4 @@ Add TER records after each protein chain. Note, that *add_ter_between_chains.py*
 * SASA versus time.
 * Gyration radii of Maleic acid monomers, Styrol monomers and both versus time.
 * Rotational ACF of myristoil atoms C11 C12 C13 (as template POPC where C15 C16 C17 were chosen in previous calculations).
+# ГРАФИКИ ПОВСТАВЛЯТЬ !!!!!!!!!!!!!!
