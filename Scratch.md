@@ -1,8 +1,8 @@
 # This is scratch document for algorithms, plots, logs and everything else that can be useful.
 
-### Obtain charge dependence of Area Per Lipid in lipodisks.
+## Obtain charge dependence of Area Per Lipid in lipodisks.
 Charge on Maleic acid monomers changes from -2 to 0. 
-#### For -2 SMALP were run:
+
 1. Obtain starting configuration from previous 14 ns run of SMALP simulation.
 ```
 gmx_2018 trjconv -f ../../SMA_lipodisk/lipodisk_simulation_noforces_ring_solv/SMALP_14ns.xtc -s ../../SMA_lipodisk/lipodisk_simulation_noforces_ring_solv/SMALP_noforces_solv.tpr -pbc cluster -o SMALP_14ns.pdb -dump 14000<<!
@@ -10,7 +10,8 @@ gmx_2018 trjconv -f ../../SMA_lipodisk/lipodisk_simulation_noforces_ring_solv/SM
 0
 !
 ```
-2. Cut everything except polymers and write them to another file.
+2. **For -2 SMALP were run:**
+Cut everything except polymers and write them to another file. Generate new pdb with pdb2gmx option `-ignh` and merge two files together.
 ```
 sed -i 's/MAL/MAD/g' SMALP_14ns.pdb
 cp SMALP_14ns.pdb polymers.pdb
@@ -22,9 +23,7 @@ sed -i '/POPC/d' polymers.pdb
 sed -i '/NA/d' polymers.pdb
 sed -i '/CL/d' polymers.pdb
 sed -i '/SOL/d' polymers.pdb
-```
-3. Generate new pdb with pdb2gmx option `-ignh` and merge two files together.
-```
+
 gmx_2018 pdb2gmx -f polymers.pdb -o polymers_new.pdb -ff oplsaa_lipids_polymers -water spce -ignh
 
 rm *Protein*
@@ -32,13 +31,15 @@ rm topol.top
 python renumber_atoms.py -i polymers_new.pdb -e no_pol.pdb -o SMALP_merged.pdb
 python add_ter_between_chains.py -i SMALP_merged.pdb -o SMALP_merged_ter.pdb
 ```
-4. Then classic way of EM, NVT, NPT 1 ns.
+
+Then classic way of EM, NVT, NPT 1 ns.
+
 ```
 gmx_2018 pdb2gmx -f SMALP_merged_ter.pdb -o SMALP_processed.gro -ff oplsaa_lipids_polymers -water spce -p topol.top
 .......
 ```
-#### For -1.7, -1.2, -1.0, -0.5 charge starting from *SMALP_merged_ter.pdb*
-1. *substitute.py* substitutes the MAD record with MA2, MAL, MAR or MAD.
+**For -1.7, -1.2, -1.0, -0.5 charge starting from *SMALP_merged_ter.pdb***
+*substitute.py* substitutes the MAD record with MA2, MAL, MAR or MAD.
 Table of frequencies:
 
 | 1 | pH | Z | MA2 | MAL | MAR | MAD |
@@ -54,7 +55,7 @@ Table of frequencies:
 ```
 python substitute.py -i SMALP_merged_ter.pdb -o SMALP_half.pdb
 ```
-2. Then same thing that in -2 charge case:
+Then same thing that in -2 charge case:
 ```
 cp SMALP_half.pdb polymers.pdb
 cat SMALP_half.pdb | grep POPC > no_pol.pdb
@@ -76,7 +77,7 @@ python add_ter_between_chains.py -i SMALP_fin.pdb -o SMALP_fin_ter.pdb
 gmx_2018 pdb2gmx -f SMALP_fin_ter.pdb -o SMALP_processed.gro -ff oplsaa_lipids_polymers -water spce -p topol.top
 ......
 ```
-#### For 0 charge
+**For 0 charge**
 
 Substitution is performed with `sed` without *substitute.py*.
 
@@ -103,8 +104,13 @@ python add_ter_between_chains.py -i SMALP_fin.pdb -o SMALP_fin_ter.pdb
 gmx_2018 pdb2gmx -f SMALP_fin_ter.pdb -o SMALP_processed.gro -ff oplsaa_lipids_polymers -water spce -p topol.top
 ........
 ```
+3. After 1 ns simulations [APL\@Voro](https://sourceforge.net/projects/aplvoro2/) were used to generate area.xvg files with area for each Voronoi tile. Tiles were chosen by phosphorus atom in each lipid. Two .xvg files were obtained for each simulation (0, -0.5, -1.0, -1.2, -1.7, -2.0) representing lower and upper leaflets of lipids. *APL_plot.py* for APL plots:
 
-### Prepare lipodisk with sensory rhodopsin in DMPC.
+|Lower leaflet|Upper leaflet|
+|----|----|
+|![Lower](../images/APL_lower.png)|![Upper](../images/APL_upper.png)|
+
+## Prepare lipodisk with sensory rhodopsin in DMPC.
 1. Prepare topology for DMPC. Cut down the DPPC by two atoms on each chain - C215, C216, C315, C316. Delete all bonded interactions from *lipids.rtp*.
 <p align="center">
   <img width="600" height="350" src="images/DMPC.png">
