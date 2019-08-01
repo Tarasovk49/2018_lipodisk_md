@@ -76,7 +76,7 @@
 
 * Duplicate 1h2s monomer using MDAnalysis. Add TER records after each chain of protein.
 * Upload 1h2s dimer to CHARMM-GUI Membraine Builder and embed it in 11\*11 nm^2 DMPC bilayer, add water, 0.15 KCL. Download output for Gromacs. Run all steps of minimization and equilibration provided by CHARMM and also 2 ns of NPT simulation.
-* Extract last pdb frame from NPT. Rename LYR residue to REK and renumber atoms back. Delete HZ1 atoms because NZ atom of lysine REK was parametrized in OPLS-AA deprotonated. Perform a series of `sed` exchange:
+* Extract last pdb frame from NPT. Rename LYR residue to REK and renumber atoms back. Delete HZ1 atoms because NZ atom of lysine REK was parametrized in OPLS-AA deprotonated. Renumber atoms with *renumber_atoms.py*. Perform a series of `sed` exchange:
 ```
 sed -i 's/HSD /HISD' from_charmm.pdb
 sed -i 's/HG1 SER/HG  SER' from_charmm.pdb
@@ -85,3 +85,7 @@ sed -i 's/HG3 REK/HG1 REK' from_charmm.pdb
 sed -i 's/HD3 REK/HD1 REK' from_charmm.pdb
 sed -i 's/HE3 REK/HE1 REK' from_charmm.pdb
 ```
+Add TER records after each protein chain. Note, that *add_ter_between_chains.py* fails to add TER before DMPC records. You need to add it manually.
+Delete water and potassium and chlorate ions.
+5. Perform equilibrating simulation in OPLS-AA forcefield (fill the box of water, add ions, run EM, NVT with restraints, NPT with restraints, NPT 1 ns).
+6. Extract the last frame of trajectory with option `-pbc whole`. Delete CRYST record in the beginning of the extracted pdb.
