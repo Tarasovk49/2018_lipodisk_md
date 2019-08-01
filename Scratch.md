@@ -4,7 +4,8 @@
 2. Prepare topology for Retinal-lysine (residue REK).
 * Upload retinal without C15 linkage to lysine to [TTPMKTOP](http://erg.biophys.msu.ru/erg/tpp/).
 * Modify *ffbonded.itp* and *ffnonbonded.itp*.
-*ffbonded.itp*
+
+**ffbonded.itp**
 `; Retinal+lysine
   C=      C     NC      1   116.000    585.760   ; wlj
   CT     NC      C      1   118.600    585.760   ; 
