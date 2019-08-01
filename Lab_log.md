@@ -1,7 +1,7 @@
 # Laboratory journal
 
 ### 01.08.19
-**Analysis of trajectory 1h2s in DMPC layer of ~11\*11 nm^2.**
+**Analysis of trajectory 1h2s in DMPC layer of ~11\*11 nm^2. Whole system size is 20\*20\*12 nm^3.**
 
 Computed, plotted, analysed:
 1. Lipid density versus thickness.
