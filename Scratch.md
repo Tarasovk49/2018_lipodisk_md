@@ -76,8 +76,34 @@ python add_ter_between_chains.py -i SMALP_fin.pdb -o SMALP_fin_ter.pdb
 gmx_2018 pdb2gmx -f SMALP_fin_ter.pdb -o SMALP_processed.gro -ff oplsaa_lipids_polymers -water spce -p topol.top
 ......
 ```
-#### For -1.2 charge
-1. 
+#### For 0 charge
+
+Substitution is performed with `sed` without *substitute.py*.
+
+```
+sed -i 's/MAD/MA2/g' SMALP_merged_ter.pdb
+cp SMALP_merged_ter.pdb SMALP_half.pdb
+cp SMALP_half.pdb polymers.pdb
+cat SMALP_half.pdb | grep POPC > no_pol.pdb
+cat SMALP_half.pdb | grep SOL >> no_pol.pdb
+cat SMALP_half.pdb | grep NA >> no_pol.pdb
+cat SMALP_half.pdb | grep CL >> no_pol.pdb
+sed -i '/POPC/d' polymers.pdb
+sed -i '/NA/d' polymers.pdb
+sed -i '/CL/d' polymers.pdb
+sed -i '/SOL/d' polymers.pdb
+
+gmx_2018 pdb2gmx -f polymers.pdb -o polymers_new.pdb -ff oplsaa_lipids_polymers -water spce -ignh
+
+rm *Protein*
+rm topol.top
+python renumber_atoms.py -i polymers_new.pdb -e no_pol.pdb -o SMALP_fin.pdb
+python add_ter_between_chains.py -i SMALP_fin.pdb -o SMALP_fin_ter.pdb
+
+gmx_2018 pdb2gmx -f SMALP_fin_ter.pdb -o SMALP_processed.gro -ff oplsaa_lipids_polymers -water spce -p topol.top
+........
+```
+
 ### Prepare lipodisk with sensory rhodopsin in DMPC.
 1. Prepare topology for DMPC. Cut down the DPPC by two atoms on each chain - C215, C216, C315, C316. Delete all bonded interactions from *lipids.rtp*.
 <p align="center">
