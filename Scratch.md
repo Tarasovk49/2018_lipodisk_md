@@ -48,7 +48,7 @@
 <p align="center">
   <img width="1000" height="350" src="images/Nodoublemal algorithm.png">
 </p>
-4. Preparation of 1H2S sensory rhodopsin.
+4. Preparation of 1H2S sensory rhodopsin in DMPC membrane.
 * Manual merge of LYS 205 and RET 302 in pdb file to REK 205. Deleting all water molecules from pdb. Rename and renumber REK residue to LYR. Correspondence table for renumbering of REK residue:
 
 | lyr | rek |
@@ -74,3 +74,14 @@
 | c19 | c16 |
 | c80 | c9 |
 
+* Duplicate 1h2s monomer using MDAnalysis. Add TER records after each chain of protein.
+* Upload 1h2s dimer to CHARMM-GUI Membraine Builder and embed it in 11\*11 nm^2 DMPC bilayer, add water, 0.15 KCL. Download output for Gromacs. Run all steps of minimization and equilibration provided by CHARMM and also 2 ns of NPT simulation.
+* Extract last pdb frame from NPT. Rename LYR residue to REK and renumber atoms back. Delete HZ1 atoms because NZ atom of lysine REK was parametrized in OPLS-AA deprotonated. Perform a series of `sed` exchange:
+```
+sed -i 's/HSD /HISD' from_charmm.pdb
+sed -i 's/HG1 SER/HG  SER' from_charmm.pdb
+sed -i 's/HB3 REK/HB1 REK' from_charmm.pdb
+sed -i 's/HG3 REK/HG1 REK' from_charmm.pdb
+sed -i 's/HD3 REK/HD1 REK' from_charmm.pdb
+sed -i 's/HE3 REK/HE1 REK' from_charmm.pdb
+```
