@@ -50,6 +50,7 @@
 </p>
 4. Preparation of 1H2S sensory rhodopsin.
 * Manual merge of LYS 205 and RET 302 in pdb file to REK 205. Deleting all water molecules from pdb. Rename and renumber REK residue to LYR. Correspondence table for renumbering of REK residue:
+
 | lyr | rek |
 |:---:|:---:|
 | c1 | c15 | 
@@ -72,3 +73,4 @@
 | c18 | c17 |
 | c19 | c16 |
 | c80 | c9 |
+
