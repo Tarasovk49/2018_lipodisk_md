@@ -2,6 +2,7 @@
 
 ### 01.08.19
 Analysis of trajectory 1h2s in DMPC layer 20\*20 nm^2.
+
 Computed, plotted, analysed:
 1. Lipid density versus thickness.
 2. SASA versus time.
