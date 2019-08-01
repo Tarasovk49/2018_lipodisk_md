@@ -6,7 +6,7 @@
 </p>
 2. Prepare topology for Retinal-lysine (residue REK).
 
-* Upload retinal without C15 linkage to lysine to [TTPMKTOP](http://erg.biophys.msu.ru/erg/tpp/). Manually change some atom names according to alkane and alkene atomname specifications.
+* Upload retinal with hydrogenes linked to C15 to [TTPMKTOP](http://erg.biophys.msu.ru/erg/tpp/). Manually change some atom names and charges according to alkane and alkene atomname specifications.
 
 * Manually modify *ffbonded.itp*. Add specific angles and dihedrals which are absent in normal opls-aa forcefield. The parameters for such angles and dihedrals were chosen corresponding to alkane and alkene topology specifications. The lines added can be seen below.
 
