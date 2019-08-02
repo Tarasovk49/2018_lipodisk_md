@@ -112,7 +112,7 @@ gmx_2018 pdb2gmx -f SMALP_fin_ter.pdb -o SMALP_processed.gro -ff oplsaa_lipids_p
 |![Lower](/images/APL_lower.png)|![Upper](/images/APL_upper.png)|
 
 ## Prepare lipodisk with sensory rhodopsin in DMPC.
-1. Prepare topology for DMPC. Cut down the DPPC by two atoms on each chain - C215, C216, C315, C316. Delete all bonded interactions from *lipids.rtp*.
+1. Prepare topology for DMPC. Cut down the DPPC by two atoms on each chain - C215, C216, C315, C316. Delete corresponding bonded interactions from *lipids.rtp*.
 <p align="center">
   <img width="600" height="350" src="images/DMPC.png">
 </p>
