@@ -1,36 +1,48 @@
 # Description
 
-*polymer_generation.py* builds polymer molecules consisting of diisobutylene, maleic acid, styrene monomers. 8 types of monomers are built with structure provided by *topology_generalized/.mol*:
-- 4 types of maleic acid monomers = (2 different states of protonation) x (2 different carboxyl groups of maleic acid),
-- 2 types of diisobutylene monomers with radical group oriented closer to head or tail of polymer molecule,
-- 2 types of styrene monomers with benzene group oriented closer to head or tail of polymer molecule.
+*polymer_generation.py* builds polymer molecules consisting of diisobutylene, maleic acid, styrene monomers. 8 types of monomers are provided by *topology_generalized/.mol*:
+- 4 types of maleic acid monomers = (2 states of protonation (protonated/deprotonated)) x (2 different carboxyl groups of maleic acid (left/right)),
+- 2 types of diisobutylene monomers with radical group on the left/right side,
+- 2 types of styrene monomers with benzene group on the left/right side.
 
-The syntax is (default values are displayed):
+The syntax is (with defaults):
 
-`polymer_generation.py -n 100 -l 36 -r 3 -p 3 --ps 0 --pm 0.25 --pd 0.75 -o polymer`
+`polymer_generation.py -n 100 --length 36 --rmsd 3 --protstate 3 --ps 0.75 --pm 0.25 --pd 0.0 --random yes --seq_file not_specified --dir_name polymer_molecules --out_filename polymer`
 
-Options are:
+The options provided are (with defaults):
 
-**-n** Number of polymer molecules to generate
+- `-n 100`  number of polymers to be generated. Is taken into account only with '--random'='yes'
 
-**-meanlen** Mean length of polymer molecules
+- `--length 36` mean length of polymer molecule in monomers. Is taken into account only with '--random'='yes'
 
-**-rmsd** Root mean square deviation of length of polymer molecules
+- `--rmsd 3` RMSD of lengths of polymer molecules in monomers. Is taken into account only with '--random'='yes'
 
-**-protstate** Protonation state defines the mean charge of maleic acid monomer. Correspondence of protonation state, pH value and mean charge of MA monomer is given by table:
+- `--protstate 3` Protonation state defines the mean charge on maleic acid carboxyl groups. Correspondence of protonation state, pH value and mean charge of MA monomer is given by table:
 
-| Protonation state   | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+| Protstate   | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | pH  | 5 | 6 | 7 | 8 | 9 | 10 | >10 |
 | charge | -0.3 | -0.5 | -1.0 | -1.2 | -1.7 | -1.9 | -2.0 |
 
-**-pm** Occurrence of maleic acid monomer
+- `--pm 0.25` Occurrence of maleic acid monomer. Is taken into account only with '--random'='yes'
 
-**-pd** Occurrence of diisobutylene monomer
+- `--pd 0.0` Occurrence of diisobutylene monomer. Is taken into account only with '--random'='yes'
 
-**-ps** Occurrence of styrene monomer
+- `--ps 0.75` Occurrence of styrene monomer. Is taken into account only with '--random'='yes'
 
-**-out_filename** Name of generated *.pdb* files (*polymer_X.pdb* by default). Files are generated in *polymer_molecules* directory
+- `--random yes` You may support a text file with sequences ('--random'='no'), write them manually ('--random'='no') or specify all the flags listed above to generate random polymers ('--random'='yes')        
+
+- `--seq_file not_specified` You may support a txt file with sequences of polymer molecules. Every string is the sequence of one polymer molecule. It should look like:
+```
+SMSDMMMDDDMMMSDSSSSSMSMSDDDD 
+DDDSSMSSDMSDSSMSMSDDDMSSSSMDSSM 
+MDDDSSMDDSMSMSDMSMSSMMDS 
+...                          
+```
+
+- `--dir_name polymer_structures` Name of generated *.pdb* files. Files are generated in `--dir_name` directory
+
+- `--out_filename polymer` Name of generated *.pdb* files. Files are generated in `--dir_name` directory
 
 |SMA molecule|DIBMA molecule|
 |----|----|
