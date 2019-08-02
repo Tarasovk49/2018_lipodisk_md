@@ -1,4 +1,4 @@
-# Laboratory journal
+# Lab journal
 
 
 ### 02.08.19
