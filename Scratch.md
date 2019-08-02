@@ -118,9 +118,9 @@ gmx_2018 pdb2gmx -f SMALP_fin_ter.pdb -o SMALP_processed.gro -ff oplsaa_lipids_p
 </p>
 2. Prepare topology for Retinal-lysine (residue REK).
 
-* Upload retinal with hydrogenes linked to C15 to [TTPMKTOP](http://erg.biophys.msu.ru/erg/tpp/). Manually change some atom names and charges according to alkane and alkene atomname specifications.
+- Upload retinal with hydrogenes linked to C15 to [TTPMKTOP](http://erg.biophys.msu.ru/erg/tpp/). Manually change some atom names and charges according to alkane and alkene atomname specifications.
 
-* Manually modify *ffbonded.itp*. Add specific angles and dihedrals which are absent in normal opls-aa forcefield. The parameters for such angles and dihedrals were chosen corresponding to alkane and alkene topology specifications. The lines added can be seen below.
+- Manually modify *ffbonded.itp*. Add specific angles and dihedrals which are absent in normal opls-aa forcefield. The parameters for such angles and dihedrals were chosen corresponding to alkane and alkene topology specifications. The lines added can be seen below.
 
 **Angles**
 ```
@@ -163,7 +163,7 @@ gmx_2018 pdb2gmx -f SMALP_fin_ter.pdb -o SMALP_processed.gro -ff oplsaa_lipids_p
   <img width="1000" height="300" src="images/Nodoublemal algorithm.png">
 </p>
 4. Preparation of 1H2S sensory rhodopsin in DMPC membrane.
-* Manual merge of LYS 205 and RET 302 in pdb file to REK 205. Deleting all water molecules from pdb. Rename and renumber REK residue to LYR. Correspondence table for renumbering of REK residue:
+- Manual merge of LYS 205 and RET 302 in pdb file to REK 205. Deleting all water molecules from pdb. Rename and renumber REK residue to LYR. Correspondence table for renumbering of REK residue:
 
 | LYR | c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | c9 | c10 | c11 | c12 | c13 | c14 | c15 | c16 | c17 | c18 | c19 | c80 |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -191,9 +191,9 @@ gmx_2018 pdb2gmx -f SMALP_fin_ter.pdb -o SMALP_processed.gro -ff oplsaa_lipids_p
 | c18 | c17 |
 | c19 | c16 |
 | c80 | c9 | -->
-* Duplicate 1h2s monomer using MDAnalysis. Add TER records after each chain of protein.
-* Upload 1h2s dimer to CHARMM-GUI Membraine Builder and embed it in 11\*11 nm^2 DMPC bilayer, add water, 0.15 KCL. Download output for Gromacs. Run all steps of minimization and equilibration provided by CHARMM and also 2 ns of NPT simulation.
-* Extract last pdb frame from NPT. Rename LYR residue to REK and renumber atoms back. Delete HZ1 atoms because NZ atom of lysine REK was parametrized in OPLS-AA deprotonated. Renumber atoms with *renumber_atoms.py*. Perform a series of `sed` exchange:
+- Duplicate 1h2s monomer using MDAnalysis. Add TER records after each chain of protein.
+- Upload 1h2s dimer to CHARMM-GUI Membraine Builder and embed it in 11\*11 nm^2 DMPC bilayer, add water, 0.15 KCL. Download output for Gromacs. Run all steps of minimization and equilibration provided by CHARMM and also 2 ns of NPT simulation.
+- Extract last pdb frame from NPT. Rename LYR residue to REK and renumber atoms back. Delete HZ1 atoms because NZ atom of lysine REK was parametrized in OPLS-AA deprotonated. Renumber atoms with *renumber_atoms.py*. Perform a series of `sed` exchange:
 ```
 sed -i 's/HSD /HISD/g' from_charmm.pdb
 sed -i 's/HG1 SER/HG  SER/g' from_charmm.pdb
@@ -251,6 +251,7 @@ python density_profile.py
 <p align="center">
   <img width="600" height="350" src="images/lipid_density.png">
 </p>
+
 - SASA versus time.
 ```
 gmx_2018 sasa -f lipodisk_npt.xtc -n index.ndx -s lipodisk_npt.tpr -o sasa.xvg<<!
@@ -261,6 +262,7 @@ python sasa.py
 <p align="center">
   <img width="600" height="350" src="images/sasa.png">
 </p>
+
 - Gyration radii of Maleic acid monomers, Styrol monomers and both versus time.
 ```
 gmx_2018 gyrate -f lipodisk_npt.xtc -s lipodisk_npt.tpr -n index.ndx -o MA_gyr.xvg<<!
@@ -277,6 +279,7 @@ python gyration_radii.py
 <p align="center">
   <img width="600" height="350" src="images/gyr_radii.png">
 </p>
+
 - Rotational ACF of myristoil atoms C11 C12 C13 (as template POPC where C15 C16 C17 were chosen in previous calculations).
 ```
 gmx_2018 rotacf -f lipodisk_npt.xtc -s lipodisk_npt.tpr -n index.ndx -o lipodisk_rotacf.xvg -P 2<<!
@@ -285,5 +288,5 @@ C11-C12-C13-myristoil
 python acf_fit.py
 ```
 <p align="center">
-  <img width="600" height="350" src="images/lipodisk_rotacf.png">
+  <img width="1000" height="300" src="images/lipodisk_rotacf.png">
 </p>
