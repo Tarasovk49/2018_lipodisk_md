@@ -2,7 +2,7 @@
 
 
 ### 02.08.19
-#### Completely rewritten `polymer_generation.py`.
+#### Completely rewritten [`polymer_generation.py`](polymers_preparation/polymer_generation.py).
 It now has friendly inteface and also there are three ways to build polymer molecules: 
 1. Generate random polymer molecules.
 2. Generate polymer molecules from txt file.
