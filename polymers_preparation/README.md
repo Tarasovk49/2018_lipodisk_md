@@ -40,7 +40,7 @@ MDDDSSMDDSMSMSDMSMSSMMDS
 ...                          
 ```
 
-- `--dir_name polymer_structures` Name of generated *.pdb* files. Files are generated in `--dir_name` directory
+- `--dir_name polymer_molecules` Name of generated *.pdb* files. Files are generated in `--dir_name` directory
 
 - `--out_filename polymer` Name of generated *.pdb* files. Files are generated in `--dir_name` directory
 
