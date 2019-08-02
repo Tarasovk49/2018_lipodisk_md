@@ -1,6 +1,6 @@
 ;
 ;
-;               CHOL POPC DPPC and DOPC rtps merged together.
+;               CHOL POPC DPPC DMPC and DOPC rtps merged together.
 ;
 ; rtps were derived using script itp2rtp.py from http://www.nmr.chem.uu.nl/~tsjerk/
 ;
@@ -13,6 +13,8 @@
 ; 2) Kulig, W., Pasenkiewicz-Gierula, M.,  and Rog, T. Cis and Trans 
 ;    Unsaturated Phosphatidylcholine Bilayers: A Molecular Dynamics Simulation 
 ;    Study, Chemistry and Physics of Lipids, in press.
+;
+; DMPC was made by cutting 2 carbons from DPPC
 ;
 
 [ bondedtypes ]
@@ -3282,3 +3284,786 @@
  C314  C315  C316  H16X    
  H15Y  C315  C316  H16X    
  H15X  C315  C316  H16X    
+ ; DMPC:
+[ DMPC ]
+ [ atoms ]
+    N   N3c   0.3372     4
+  C13   CN3  -0.2795     1
+ H13A   HCN   0.1484     1
+ H13B   HCN   0.1484     1
+ H13C   HCN   0.1484     1
+  C14   CN3  -0.2795     2
+ H14A   HCN   0.1484     2
+ H14B   HCN   0.1484     2
+ H14C   HCN   0.1484     2
+  C15   CN3  -0.2795     3
+ H15A   HCN   0.1484     3
+ H15B   HCN   0.1484     3
+ H15C   HCN   0.1484     3
+  C12    CT  -0.1311     4
+ H12A    HC   0.1484     4
+ H12B    HC   0.1484     4
+  C11    CT   0.2654     5
+ H11A    HC   0.0161     5
+ H11B    HC   0.0161     5
+    P     P   1.5572    37
+  O13   O2P  -0.9666    37
+  O14   O2P  -0.9666    37
+  O11   OSp  -0.6096    37
+  O12   OSp  -0.6096    37
+   C1    CT   0.2654     6
+   HA    HC   0.0161     6
+   HB    HC   0.0161     6
+   C2    CT   0.2496     7
+   HS    HC   0.0500     7
+  O21   OSa  -0.5083     8
+  C21   CLL   0.9766     8
+  O22   OLL  -0.6887     8
+  C22   CL2  -0.4104     9
+  H2R   HLC   0.1656     9
+  H2S   HLC   0.1656     9
+   C3    CT   0.1996    10
+   HX    HC   0.0500    10
+   HY    HC   0.0500    10
+  O31   OSa  -0.5083    11
+  C31   CLL   0.9766    11
+  O32   OLL  -0.6887    11
+  C32   CL2  -0.4104    12
+  H2X   HLC   0.1656    12
+  H2Y   HLC   0.1656    12
+  C23   CL2  -0.1200    13
+  H3R   HLC   0.0600    13
+  H3S   HLC   0.0600    13
+  C24   CL2  -0.1200    14
+  H4R   HLC   0.0600    14
+  H4S   HLC   0.0600    14
+  C25   CL2  -0.1200    15
+  H5R   HLC   0.0600    15
+  H5S   HLC   0.0600    15
+  C26   CL2  -0.1200    16
+  H6R   HLC   0.0600    16
+  H6S   HLC   0.0600    16
+  C27   CL2  -0.1200    17
+  H7R   HLC   0.0600    17
+  H7S   HLC   0.0600    17
+  C28   CL2  -0.1200    18
+  H8R   HLC   0.0600    18
+  H8S   HLC   0.0600    18
+  C29   CL2  -0.1200    19
+  H9R   HLC   0.0600    19
+  H9S   HLC   0.0600    19
+ C210   CL2  -0.1200    20
+ H10R   HLC   0.0600    20
+ H10S   HLC   0.0600    20
+ C211   CL2  -0.1200    21
+ H11R   HLC   0.0600    21
+ H11S   HLC   0.0600    21
+ C212   CL2  -0.1200    22
+ H12R   HLC   0.0600    22
+ H12S   HLC   0.0600    22
+ C213   CL2  -0.1200    23
+ H13R   HLC   0.0600    23
+ H13S   HLC   0.0600    23
+ C214   CL3  -0.1800    24
+ H14R   HLC   0.0600    24
+ H14S   HLC   0.0600    24
+ H14T   HLC   0.0600    24
+  C33   CL2  -0.1200    25
+  H3X   HLC   0.0600    25
+  H3Y   HLC   0.0600    25
+  C34   CL2  -0.1200    26
+  H4X   HLC   0.0600    26
+  H4Y   HLC   0.0600    26
+  C35   CL2  -0.1200    27
+  H5X   HLC   0.0600    27
+  H5Y   HLC   0.0600    27
+  C36   CL2  -0.1200    28
+  H6X   HLC   0.0600    28
+  H6Y   HLC   0.0600    28
+  C37   CL2  -0.1200    29
+  H7X   HLC   0.0600    29
+  H7Y   HLC   0.0600    29
+  C38   CL2  -0.1200    30
+  H8X   HLC   0.0600    30
+  H8Y   HLC   0.0600    30
+  C39   CL2  -0.1200    31
+  H9X   HLC   0.0600    31
+  H9Y   HLC   0.0600    31
+ C310   CL2  -0.1200    32
+ H10X   HLC   0.0600    32
+ H10Y   HLC   0.0600    32
+ C311   CL2  -0.1200    33
+ H11X   HLC   0.0600    33
+ H11Y   HLC   0.0600    33
+ C312   CL2  -0.1200    34
+ H12X   HLC   0.0600    34
+ H12Y   HLC   0.0600    34
+ C313   CL2  -0.1200    35
+ H13X   HLC   0.0600    35
+ H13Y   HLC   0.0600    35
+ C314   CL3  -0.1800    36
+ H14X   HLC   0.0600    36
+ H14Y   HLC   0.0600    36
+ H14Z   HLC   0.0600    36
+ [ bonds ]
+    N   C12    
+    N   C15    
+    N   C14    
+    N   C13    
+  C13  H13C    
+  C13  H13B    
+  C13  H13A    
+  C14  H14C    
+  C14  H14B    
+  C14  H14A    
+  C15  H15C    
+  C15  H15B    
+  C15  H15A    
+  C12   C11    
+  C12  H12B    
+  C12  H12A    
+  C11   O12    
+  C11  H11B    
+  C11  H11A    
+    P   O12    
+    P   O11    
+    P   O14    
+    P   O13    
+  O11    C1    
+   C1    C2    
+   C1    HB    
+   C1    HA    
+   C2    C3    
+   C2   O21    
+   C2    HS    
+  O21   C21    
+  C21   C22    
+  C21   O22    
+  C22   C23    
+  C22   H2S    
+  C22   H2R    
+   C3   O31    
+   C3    HY    
+   C3    HX    
+  O31   C31    
+  C31   C32    
+  C31   O32    
+  C32   C33    
+  C32   H2Y    
+  C32   H2X    
+  C23   C24    
+  C23   H3S    
+  C23   H3R    
+  C24   C25    
+  C24   H4S    
+  C24   H4R    
+  C25   C26    
+  C25   H5S    
+  C25   H5R    
+  C26   C27    
+  C26   H6S    
+  C26   H6R    
+  C27   C28    
+  C27   H7S    
+  C27   H7R    
+  C28   C29    
+  C28   H8S    
+  C28   H8R    
+  C29  C210    
+  C29   H9S    
+  C29   H9R    
+ C210  C211    
+ C210  H10S    
+ C210  H10R    
+ C211  C212    
+ C211  H11S    
+ C211  H11R    
+ C212  C213    
+ C212  H12S    
+ C212  H12R    
+ C213  C214    
+ C213  H13S    
+ C213  H13R       
+ C214  H14S    
+ C214  H14R    
+ C214  H14T    
+  C33   C34    
+  C33   H3Y    
+  C33   H3X    
+  C34   C35    
+  C34   H4Y    
+  C34   H4X    
+  C35   C36    
+  C35   H5Y    
+  C35   H5X    
+  C36   C37    
+  C36   H6Y    
+  C36   H6X    
+  C37   C38    
+  C37   H7Y    
+  C37   H7X    
+  C38   C39    
+  C38   H8Y    
+  C38   H8X    
+  C39  C310    
+  C39   H9Y    
+  C39   H9X    
+ C310  C311    
+ C310  H10Y    
+ C310  H10X    
+ C311  C312    
+ C311  H11Y    
+ C311  H11X    
+ C312  C313    
+ C312  H12Y    
+ C312  H12X    
+ C313  C314    
+ C313  H13Y    
+ C313  H13X    
+ C314  H14Y    
+ C314  H14X    
+ C314  H14Z    
+ [ angles ]
+    N   C12   C11    
+    N   C12  H12B    
+    N   C12  H12A    
+    N   C15  H15C    
+    N   C15  H15B    
+    N   C15  H15A    
+    N   C14  H14C    
+    N   C14  H14B    
+    N   C14  H14A    
+    N   C13  H13C    
+    N   C13  H13B    
+    N   C13  H13A    
+  C13     N   C12    
+  C13     N   C15    
+  C13     N   C14    
+ H13A   C13  H13C    
+ H13A   C13  H13B    
+ H13B   C13  H13C    
+  C14     N   C12    
+  C14     N   C15    
+ H14A   C14  H14C    
+ H14A   C14  H14B    
+ H14B   C14  H14C    
+  C15     N   C12    
+ H15A   C15  H15C    
+ H15A   C15  H15B    
+ H15B   C15  H15C    
+  C12   C11   O12    
+  C12   C11  H11B    
+  C12   C11  H11A    
+ H12A   C12   C11    
+ H12A   C12  H12B    
+ H12B   C12   C11    
+  C11   O12     P    
+ H11A   C11   O12    
+ H11A   C11  H11B    
+ H11B   C11   O12    
+    P   O11    C1    
+  O13     P   O12    
+  O13     P   O11    
+  O13     P   O14    
+  O14     P   O12    
+  O14     P   O11    
+  O11     P   O12    
+  O11    C1    C2    
+  O11    C1    HB    
+  O11    C1    HA    
+   C1    C2    C3    
+   C1    C2   O21    
+   C1    C2    HS    
+   HA    C1    C2    
+   HA    C1    HB    
+   HB    C1    C2    
+   C2    C3   O31    
+   C2    C3    HY    
+   C2    C3    HX    
+   C2   O21   C21    
+   HS    C2    C3    
+   HS    C2   O21    
+  O21    C2    C3    
+  O21   C21   C22    
+  O21   C21   O22    
+  C21   C22   C23    
+  C21   C22   H2S    
+  C21   C22   H2R    
+  O22   C21   C22    
+  C22   C23   C24    
+  C22   C23   H3S    
+  C22   C23   H3R    
+  H2R   C22   C23    
+  H2R   C22   H2S    
+  H2S   C22   C23    
+   C3   O31   C31    
+   HX    C3   O31    
+   HX    C3    HY    
+   HY    C3   O31    
+  O31   C31   C32    
+  O31   C31   O32    
+  C31   C32   C33    
+  C31   C32   H2Y    
+  C31   C32   H2X    
+  O32   C31   C32    
+  C32   C33   C34    
+  C32   C33   H3Y    
+  C32   C33   H3X    
+  H2X   C32   C33    
+  H2X   C32   H2Y    
+  H2Y   C32   C33    
+  C23   C24   C25    
+  C23   C24   H4S    
+  C23   C24   H4R    
+  H3R   C23   C24    
+  H3R   C23   H3S    
+  H3S   C23   C24    
+  C24   C25   C26    
+  C24   C25   H5S    
+  C24   C25   H5R    
+  H4R   C24   C25    
+  H4R   C24   H4S    
+  H4S   C24   C25    
+  C25   C26   C27    
+  C25   C26   H6S    
+  C25   C26   H6R    
+  H5R   C25   C26    
+  H5R   C25   H5S    
+  H5S   C25   C26    
+  C26   C27   C28    
+  C26   C27   H7S    
+  C26   C27   H7R    
+  H6R   C26   C27    
+  H6R   C26   H6S    
+  H6S   C26   C27    
+  C27   C28   C29    
+  C27   C28   H8S    
+  C27   C28   H8R    
+  H7R   C27   C28    
+  H7R   C27   H7S    
+  H7S   C27   C28    
+  C28   C29  C210    
+  C28   C29   H9S    
+  C28   C29   H9R    
+  H8R   C28   C29    
+  H8R   C28   H8S    
+  H8S   C28   C29    
+  C29  C210  C211    
+  C29  C210  H10S    
+  C29  C210  H10R    
+  H9R   C29  C210    
+  H9R   C29   H9S    
+  H9S   C29  C210    
+ C210  C211  C212    
+ C210  C211  H11S    
+ C210  C211  H11R    
+ H10R  C210  C211    
+ H10R  C210  H10S    
+ H10S  C210  C211    
+ C211  C212  C213    
+ C211  C212  H12S    
+ C211  C212  H12R    
+ H11R  C211  C212    
+ H11R  C211  H11S    
+ H11S  C211  C212    
+ C212  C213  C214    
+ C212  C213  H13S    
+ C212  C213  H13R    
+ H12R  C212  C213    
+ H12R  C212  H12S    
+ H12S  C212  C213       
+ C213  C214  H14S    
+ C213  C214  H14R
+ C213  C214  H14T    
+ H13R  C213  C214    
+ H13R  C213  H13S    
+ H13S  C213  C214    
+ H14R  C214  H14S 
+ H14R  C214  H14T
+ H14T  C214  H14S  
+  C33   C34   C35    
+  C33   C34   H4Y    
+  C33   C34   H4X    
+  H3X   C33   C34    
+  H3X   C33   H3Y    
+  H3Y   C33   C34    
+  C34   C35   C36    
+  C34   C35   H5Y    
+  C34   C35   H5X    
+  H4X   C34   C35    
+  H4X   C34   H4Y    
+  H4Y   C34   C35    
+  C35   C36   C37    
+  C35   C36   H6Y    
+  C35   C36   H6X    
+  H5X   C35   C36    
+  H5X   C35   H5Y    
+  H5Y   C35   C36    
+  C36   C37   C38    
+  C36   C37   H7Y    
+  C36   C37   H7X    
+  H6X   C36   C37    
+  H6X   C36   H6Y    
+  H6Y   C36   C37    
+  C37   C38   C39    
+  C37   C38   H8Y    
+  C37   C38   H8X    
+  H7X   C37   C38    
+  H7X   C37   H7Y    
+  H7Y   C37   C38    
+  C38   C39  C310    
+  C38   C39   H9Y    
+  C38   C39   H9X    
+  H8X   C38   C39    
+  H8X   C38   H8Y    
+  H8Y   C38   C39    
+  C39  C310  C311    
+  C39  C310  H10Y    
+  C39  C310  H10X    
+  H9X   C39  C310    
+  H9X   C39   H9Y    
+  H9Y   C39  C310    
+ C310  C311  C312    
+ C310  C311  H11Y    
+ C310  C311  H11X    
+ H10X  C310  C311    
+ H10X  C310  H10Y    
+ H10Y  C310  C311    
+ C311  C312  C313    
+ C311  C312  H12Y    
+ C311  C312  H12X    
+ H11X  C311  C312    
+ H11X  C311  H11Y    
+ H11Y  C311  C312    
+ C312  C313  C314    
+ C312  C313  H13Y    
+ C312  C313  H13X    
+ H12X  C312  C313    
+ H12X  C312  H12Y    
+ H12Y  C312  C313       
+ C313  C314  H14Y    
+ C313  C314  H14X    
+ C313  C314  H14Z 
+ H13X  C313  C314   
+ H13X  C313  H13Y    
+ H13Y  C313  C314    
+ H14X  C314  H14Y
+ H14X  C314  H14Z
+ H14Y  C314  H14Z
+ [ impropers ]
+  O21   C22   C21   O22     0.00000E+00 0.16740E+03 ; C=O
+  O31   C32   C31   O32     0.00000E+00 0.16740E+03 ; C=O
+ [ dihedrals ]
+  C15     N   C12   C11    
+  C14     N   C12   C11    
+  C13     N   C12   C11    
+  C15     N   C12  H12B    
+  C14     N   C12  H12B    
+  C13     N   C12  H12B    
+  C15     N   C12  H12A    
+  C14     N   C12  H12A    
+  C13     N   C12  H12A    
+  C12     N   C15  H15C    
+  C14     N   C15  H15C    
+  C13     N   C15  H15C    
+  C12     N   C15  H15B    
+  C14     N   C15  H15B    
+  C13     N   C15  H15B    
+  C12     N   C15  H15A    
+  C14     N   C15  H15A    
+  C13     N   C15  H15A    
+  C12     N   C14  H14C    
+  C15     N   C14  H14C    
+  C13     N   C14  H14C    
+  C12     N   C14  H14B    
+  C15     N   C14  H14B    
+  C13     N   C14  H14B    
+  C12     N   C14  H14A    
+  C15     N   C14  H14A    
+  C13     N   C14  H14A    
+  C12     N   C13  H13C    
+  C15     N   C13  H13C    
+  C14     N   C13  H13C    
+  C12     N   C13  H13B    
+  C15     N   C13  H13B    
+  C14     N   C13  H13B    
+  C12     N   C13  H13A    
+  C15     N   C13  H13A    
+  C14     N   C13  H13A    
+    N   C12   C11   O12    
+ H12B   C12   C11   O12    
+ H12A   C12   C11   O12    
+    N   C12   C11  H11B    
+ H12B   C12   C11  H11B    
+ H12A   C12   C11  H11B    
+    N   C12   C11  H11A    
+ H12B   C12   C11  H11A    
+ H12A   C12   C11  H11A    
+  C12   C11   O12     P    
+ H11B   C11   O12     P    
+ H11A   C11   O12     P    
+  O11     P   O12   C11    
+  O14     P   O12   C11    
+  O13     P   O12   C11    
+  O12     P   O11    C1    
+  O14     P   O11    C1    
+  O13     P   O11    C1    
+    P   O11    C1    C2    
+    P   O11    C1    HB    
+    P   O11    C1    HA    
+  O11    C1    C2    C3    
+   HB    C1    C2    C3    
+   HA    C1    C2    C3    
+  O11    C1    C2   O21    
+   HB    C1    C2   O21    
+   HA    C1    C2   O21    
+  O11    C1    C2    HS    
+   HB    C1    C2    HS    
+   HA    C1    C2    HS    
+   C1    C2    C3   O31    
+  O21    C2    C3   O31    
+   HS    C2    C3   O31    
+   C1    C2    C3    HY    
+  O21    C2    C3    HY    
+   HS    C2    C3    HY    
+   C1    C2    C3    HX    
+  O21    C2    C3    HX    
+   HS    C2    C3    HX    
+   C1    C2   O21   C21    
+   C3    C2   O21   C21    
+   HS    C2   O21   C21    
+   C2   O21   C21   C22    
+   C2   O21   C21   O22    
+  O21   C21   C22   C23    
+  O22   C21   C22   C23    
+  O21   C21   C22   H2S    
+  O22   C21   C22   H2S    
+  O21   C21   C22   H2R    
+  O22   C21   C22   H2R    
+  C21   C22   C23   C24    
+  H2S   C22   C23   C24    
+  H2R   C22   C23   C24    
+  C21   C22   C23   H3S    
+  H2S   C22   C23   H3S    
+  H2R   C22   C23   H3S    
+  C21   C22   C23   H3R    
+  H2S   C22   C23   H3R    
+  H2R   C22   C23   H3R    
+   C2    C3   O31   C31    
+   HY    C3   O31   C31    
+   HX    C3   O31   C31    
+   C3   O31   C31   C32    
+   C3   O31   C31   O32    
+  O31   C31   C32   C33    
+  O32   C31   C32   C33    
+  O31   C31   C32   H2Y    
+  O32   C31   C32   H2Y    
+  O31   C31   C32   H2X    
+  O32   C31   C32   H2X    
+  C31   C32   C33   C34    
+  H2Y   C32   C33   C34    
+  H2X   C32   C33   C34    
+  C31   C32   C33   H3Y    
+  H2Y   C32   C33   H3Y    
+  H2X   C32   C33   H3Y    
+  C31   C32   C33   H3X    
+  H2Y   C32   C33   H3X    
+  H2X   C32   C33   H3X    
+  C22   C23   C24   C25    
+  H3S   C23   C24   C25    
+  H3R   C23   C24   C25    
+  C22   C23   C24   H4S    
+  H3S   C23   C24   H4S    
+  H3R   C23   C24   H4S    
+  C22   C23   C24   H4R    
+  H3S   C23   C24   H4R    
+  H3R   C23   C24   H4R    
+  C23   C24   C25   C26    
+  H4S   C24   C25   C26    
+  H4R   C24   C25   C26    
+  C23   C24   C25   H5S    
+  H4S   C24   C25   H5S    
+  H4R   C24   C25   H5S    
+  C23   C24   C25   H5R    
+  H4S   C24   C25   H5R    
+  H4R   C24   C25   H5R    
+  C24   C25   C26   C27    
+  H5S   C25   C26   C27    
+  H5R   C25   C26   C27    
+  C24   C25   C26   H6S    
+  H5S   C25   C26   H6S    
+  H5R   C25   C26   H6S    
+  C24   C25   C26   H6R    
+  H5S   C25   C26   H6R    
+  H5R   C25   C26   H6R    
+  C25   C26   C27   C28    
+  H6S   C26   C27   C28    
+  H6R   C26   C27   C28    
+  C25   C26   C27   H7S    
+  H6S   C26   C27   H7S    
+  H6R   C26   C27   H7S    
+  C25   C26   C27   H7R    
+  H6S   C26   C27   H7R    
+  H6R   C26   C27   H7R    
+  C26   C27   C28   C29    
+  H7S   C27   C28   C29    
+  H7R   C27   C28   C29    
+  C26   C27   C28   H8S    
+  H7S   C27   C28   H8S    
+  H7R   C27   C28   H8S    
+  C26   C27   C28   H8R    
+  H7S   C27   C28   H8R    
+  H7R   C27   C28   H8R    
+  C27   C28   C29  C210    
+  H8S   C28   C29  C210    
+  H8R   C28   C29  C210    
+  C27   C28   C29   H9S    
+  H8S   C28   C29   H9S    
+  H8R   C28   C29   H9S    
+  C27   C28   C29   H9R    
+  H8S   C28   C29   H9R    
+  H8R   C28   C29   H9R    
+  C28   C29  C210  C211    
+  H9S   C29  C210  C211    
+  H9R   C29  C210  C211    
+  C28   C29  C210  H10S    
+  H9S   C29  C210  H10S    
+  H9R   C29  C210  H10S    
+  C28   C29  C210  H10R    
+  H9S   C29  C210  H10R    
+  H9R   C29  C210  H10R    
+  C29  C210  C211  C212    
+ H10S  C210  C211  C212    
+ H10R  C210  C211  C212    
+  C29  C210  C211  H11S    
+ H10S  C210  C211  H11S    
+ H10R  C210  C211  H11S    
+  C29  C210  C211  H11R    
+ H10S  C210  C211  H11R    
+ H10R  C210  C211  H11R    
+ C210  C211  C212  C213    
+ H11S  C211  C212  C213    
+ H11R  C211  C212  C213    
+ C210  C211  C212  H12S    
+ H11S  C211  C212  H12S    
+ H11R  C211  C212  H12S    
+ C210  C211  C212  H12R    
+ H11S  C211  C212  H12R    
+ H11R  C211  C212  H12R    
+ C211  C212  C213  C214    
+ H12S  C212  C213  C214    
+ H12R  C212  C213  C214    
+ C211  C212  C213  H13S    
+ H12S  C212  C213  H13S    
+ H12R  C212  C213  H13S    
+ C211  C212  C213  H13R    
+ H12S  C212  C213  H13R    
+ H12R  C212  C213  H13R 
+ C212  C213  C214  H14S    
+ H13S  C213  C214  H14S    
+ H13R  C213  C214  H14S    
+ C212  C213  C214  H14R    
+ H13S  C213  C214  H14R    
+ H13R  C213  C214  H14R    
+ C212  C213  C214  H14T    
+ H13S  C213  C214  H14T    
+ H13R  C213  C214  H14T      
+  C32   C33   C34   C35    
+  H3Y   C33   C34   C35    
+  H3X   C33   C34   C35    
+  C32   C33   C34   H4Y    
+  H3Y   C33   C34   H4Y    
+  H3X   C33   C34   H4Y    
+  C32   C33   C34   H4X    
+  H3Y   C33   C34   H4X    
+  H3X   C33   C34   H4X    
+  C33   C34   C35   C36    
+  H4Y   C34   C35   C36    
+  H4X   C34   C35   C36    
+  C33   C34   C35   H5Y    
+  H4Y   C34   C35   H5Y    
+  H4X   C34   C35   H5Y    
+  C33   C34   C35   H5X    
+  H4Y   C34   C35   H5X    
+  H4X   C34   C35   H5X    
+  C34   C35   C36   C37    
+  H5Y   C35   C36   C37    
+  H5X   C35   C36   C37    
+  C34   C35   C36   H6Y    
+  H5Y   C35   C36   H6Y    
+  H5X   C35   C36   H6Y    
+  C34   C35   C36   H6X    
+  H5Y   C35   C36   H6X    
+  H5X   C35   C36   H6X    
+  C35   C36   C37   C38    
+  H6Y   C36   C37   C38    
+  H6X   C36   C37   C38    
+  C35   C36   C37   H7Y    
+  H6Y   C36   C37   H7Y    
+  H6X   C36   C37   H7Y    
+  C35   C36   C37   H7X    
+  H6Y   C36   C37   H7X    
+  H6X   C36   C37   H7X    
+  C36   C37   C38   C39    
+  H7Y   C37   C38   C39    
+  H7X   C37   C38   C39    
+  C36   C37   C38   H8Y    
+  H7Y   C37   C38   H8Y    
+  H7X   C37   C38   H8Y    
+  C36   C37   C38   H8X    
+  H7Y   C37   C38   H8X    
+  H7X   C37   C38   H8X    
+  C37   C38   C39  C310    
+  H8Y   C38   C39  C310    
+  H8X   C38   C39  C310    
+  C37   C38   C39   H9Y    
+  H8Y   C38   C39   H9Y    
+  H8X   C38   C39   H9Y    
+  C37   C38   C39   H9X    
+  H8Y   C38   C39   H9X    
+  H8X   C38   C39   H9X    
+  C38   C39  C310  C311    
+  H9Y   C39  C310  C311    
+  H9X   C39  C310  C311    
+  C38   C39  C310  H10Y    
+  H9Y   C39  C310  H10Y    
+  H9X   C39  C310  H10Y    
+  C38   C39  C310  H10X    
+  H9Y   C39  C310  H10X    
+  H9X   C39  C310  H10X    
+  C39  C310  C311  C312    
+ H10X  C310  C311  C312    
+ H10Y  C310  C311  C312    
+  C39  C310  C311  H11X    
+ H10X  C310  C311  H11X    
+ H10Y  C310  C311  H11X    
+  C39  C310  C311  H11Y    
+ H10X  C310  C311  H11Y    
+ H10Y  C310  C311  H11Y    
+ C310  C311  C312  C313    
+ H11X  C311  C312  C313    
+ H11Y  C311  C312  C313    
+ C310  C311  C312  H12X    
+ H11X  C311  C312  H12X    
+ H11Y  C311  C312  H12X    
+ C310  C311  C312  H12Y    
+ H11X  C311  C312  H12Y    
+ H11Y  C311  C312  H12Y    
+ C311  C312  C313  C314    
+ H12X  C312  C313  C314    
+ H12Y  C312  C313  C314    
+ C311  C312  C313  H13X    
+ H12X  C312  C313  H13X    
+ H12Y  C312  C313  H13X    
+ C311  C312  C313  H13Y    
+ H12X  C312  C313  H13Y    
+ H12Y  C312  C313  H13Y 
+ C312  C313  C314  H14X    
+ H13X  C313  C314  H14X    
+ H13Y  C313  C314  H14X    
+ C312  C313  C314  H14Y    
+ H13X  C313  C314  H14Y    
+ H13Y  C313  C314  H14Y    
+ C312  C313  C314  H14Z    
+ H13X  C313  C314  H14Z    
+ H13Y  C313  C314  H14Z

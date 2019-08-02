@@ -33,7 +33,7 @@ for o, a in opts:
         
 # Load membrane
 u_mem = mda.Universe(membrane)
-ag_mem = u_mem.select_atoms("resname POPC DOPC CHOL DPPC")
+ag_mem = u_mem.select_atoms("resname DMPC POPC DOPC CHOL DPPC")
 # Place membrane in (0,0,0)
 ag_mem.translate(-ag_mem.center_of_geometry())
 # Compute radius of membrane

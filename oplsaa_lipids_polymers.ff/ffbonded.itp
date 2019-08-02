@@ -302,7 +302,7 @@
   C     CW      1    0.14900   334720.0   ;
   C_2   CW      1    0.14900   334720.0   ;
   C_3   CW      1    0.14900   334720.0   ;
-
+    
 [ constrainttypes ]
 ; this section is implemented manually from bond & angle values
 ; account for larger inertia with heavy hydrogens
@@ -1300,7 +1300,13 @@
   S      CA     CA      1   119.400    711.280   ; thioanisole             copy from SY-CA-CA      rcr HIVRT
   P      CA     CA      1   119.400    711.280   ; 
   CA     S      CT      1   104.200    518.816   ; thioanisole             adjusted from CT-S-CT  rcr HIVRT
- 
+
+; Retinal+lysine
+  C=      C     NC      1   116.000    585.760   ; wlj
+  CT     NC      C      1   118.600    585.760   ; 
+  C=     C=     C=      1   124.000    585.760   ; wlj
+  C=     CT     CT      1   116.000    585.760   ; wlj
+  C=     C=      C      1   124.000    585.760   ; wlj
 ; Charged Glutamine
 ; See. Patriksson et al. Int. J. Mass. Spectrom. 248 pp 124-135 (2006)
   OH     C      N       1   115.43     292.88
@@ -2358,6 +2364,31 @@
   C3     CT     NT     C_2     3      1.78866   3.49154   0.53555  -5.81576   0.00000   0.00000 ; (From wildcard) amine all-atom
   C3     CT     NT     C_3     3      1.78866   3.49154   0.53555  -5.81576   0.00000   0.00000 ; (From wildcard) amine all-atom
   C3     CT     NT     C3      3      1.78866   3.49154   0.53555  -5.81576   0.00000   0.00000 ; (From wildcard) amine all-atom
+
+; Retinal+lysine
+  HC     CT     CT     NC      3      5.77183  -2.67148   0.95814  -4.05848   0.00000   0.00000 ; 
+  CT     CT     NC     C       3      3.80117  -6.95172  -1.01671   4.16726   0.00000   0.00000 ; 
+  HC     CT     NC     C       3      3.80117  -6.95172  -1.01671   4.16726   0.00000   0.00000 ; JUST COPIED FROM C-C-N-C!
+  CT     NC      C     C=      3     58.57600   0.00000 -58.57600   0.00000   0.00000   0.00000 ; imine 
+  CT     NC      C     HC      3      3.80117  -6.95172  -1.01671   4.16726   0.00000   0.00000 ; JUST COPIED FROM C-C-N-C!
+  CT     CM     C=     C=      3      2.92880  -1.46440   0.20920  -1.67360   0.00000   0.00000 ; hydrocarbon all-atom
+  C=     CM     CT     HC      3      0.62760   1.88280   0.00000  -2.51040   0.00000   0.00000 ;
+  CM     C=     C=     C=      3     58.57600   0.00000 -58.57600   0.00000   0.00000   0.00000 ; alkene
+  CT     C=     C=     C=      3     58.57600   0.00000 -58.57600   0.00000   0.00000   0.00000 ; alkene
+  CM     C=     CT     CT      3      2.92880  -1.46440   0.20920  -1.67360   0.00000   0.00000 ; hydrocarbon all-atom
+  C=     C=     CT     CT      3      2.92880  -1.46440   0.20920  -1.67360   0.00000   0.00000 ; hydrocarbon all-atom
+  C=     C=     C=     HC      3     58.57600   0.00000 -58.57600   0.00000   0.00000   0.00000 ; alkene
+  C=     C=     C=     C=      3     58.57600   0.00000 -58.57600   0.00000   0.00000   0.00000 ; alkene
+  C=     CT     CT     HC      3      0.62760   1.88280   0.00000  -2.51040   0.00000   0.00000 ;
+  C=     CT     CT     CT      3      2.92880  -1.46440   0.20920  -1.67360   0.00000   0.00000 ; hydrocarbon all-atom
+  C=     C=     C=     C       3     58.57600   0.00000 -58.57600   0.00000   0.00000   0.00000 ; alkene
+  CT     C=     C=     C       3     58.57600   0.00000 -58.57600   0.00000   0.00000   0.00000 ; alkene
+  C=     C=     CT     HC      3      0.62760   1.88280   0.00000  -2.51040   0.00000   0.00000 ;
+  C=     C=     C      NC      3      5.77183  -2.67148   0.95814  -4.05848   0.00000   0.00000 ; 
+  C=     C=     C      HC      3      0.62760   1.88280   0.00000  -2.51040   0.00000   0.00000 ;
+  HC     C=     C      HC      3      0.62760   1.88280   0.00000  -2.51040   0.00000   0.00000 ; hydrocarbon *new* 11/99
+  HC     C=     C      NC      3      5.77183  -2.67148   0.95814  -4.05848   0.00000   0.00000 ; 
+  
 ; Residue-specific sidechain dihedrals, and sidechain acids. Use explicitly in rtp or top files.
 ; Chi-1 N-C-C-O in SER & THR
 #define dih_SER_THR_chi1_N_C_C_O             9.89307  -4.71746   3.67774  -8.85335   0.00000   0.00000
