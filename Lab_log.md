@@ -28,7 +28,7 @@ MA_backbone, ST_backbone, both_backbone are groups for gyration radii calculatio
 
 except_wat_and_ions is a group for SASA calculation
 
-Computed, plotted, analysed:
+**Computed, plotted, analysed:**
 1. Lipid density versus thickness.
 ```
 gmx_2018 density -f lipodisk_npt.xtc -s lipodisk_npt.tpr -n index.ndx -o lipid_density.xvg -dt 10000 -center -d Z#<<!
