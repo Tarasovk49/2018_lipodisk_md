@@ -23,11 +23,11 @@ from getopt import getopt
 #               pH           5     6     7     8     9    10   >10                                                       #
 #               charge    -0.3  -0.5  -1.0  -1.2  -1.7  -1.9  -2.0                                                       #
 #                                                                                                                        #
-# '--pm': (0.25) frequency of occurence of maleic acid monomer. Is taken into account only with '--random'='yes'         #
+# '--pm': (0.25)              occurence of maleic acid monomer. Is taken into account only with '--random'='yes'         #
 #                                                                                                                        #
-# '--ps': (0.75) frequency of occurence of styrol monomer. Is taken into account only with '--random'='yes'              #
+# '--ps': (0.75)              occurence of styrol monomer. Is taken into account only with '--random'='yes'              #
 #                                                                                                                        #
-# '--pd': (0.0) frequency of occurence of diisobutylene monomer. Is taken into account only with '--random'='yes'        #
+# '--pd': (0.0)              occurence of diisobutylene monomer. Is taken into account only with '--random'='yes'        #
 #                                                                                                                        #
 # '--random': (yes) You may support a text file with sequences ('--random'='no'), write them manually ('--random'='no'), #
 #                   or specify all the flags listed above to generate random polymers ('--random'='yes')                 #
@@ -40,7 +40,7 @@ from getopt import getopt
 #                         SSMMSMSMSMSMSSMMS                                                                              #
 #                         ...                                                                                            #
 #                                                                                                                        #
-# '--dir_name': (polymer_structures) name of folder to store pdb files for polymer molecules                             #
+# '--dir_name': (polymer_molecules) name of folder to store pdb files for polymer molecules                              #
 #                                                                                                                        #
 # '--out_filename': (polymer) prefix of name of pdb files for polymer molecules                                          #
 #                                                                                                                        #
@@ -446,7 +446,7 @@ if __name__ == '__main__':
     
     # prefix of name of pdb files for polymer molecules and name of folder to store them
     out_filename = 'polymer'
-    dir_name = 'polymer_structures'
+    dir_name = 'polymer_molecules'
     
     ####################################################
     ################# END OF DEFAULTS ##################
