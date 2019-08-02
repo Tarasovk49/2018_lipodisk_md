@@ -63,7 +63,7 @@ After simulation the configuration should look like this:
 </p>
 
 ### If any error occured during simulation
-Errors will definitely occur due to high velocities. Just derive last frame and start new simulation with velocities generation.
+Errors may occur due to high velocities. Just derive last frame and start new simulation with velocities generation.
 To derive frame at *N* ps use *trjconv*:
 ```
 gmx trjconv -f lipodisk_flatbot.trr -o lipodisk_1.pdb -s lipodisk_flatbot.tpr -dump N<<!
