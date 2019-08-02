@@ -249,7 +249,7 @@ DMPC
 python density_profile.py
 ```
 <p align="center">
-  <img width="600" height="350" src="images/lipid_density.png">
+  <img width="500" height="350" src="images/lipid_density.png">
 </p>
 
 - SASA versus time.
@@ -260,7 +260,7 @@ except_wat_and_ions
 python sasa.py
 ```
 <p align="center">
-  <img width="600" height="350" src="images/sasa.png">
+  <img width="500" height="350" src="images/sasa.png">
 </p>
 
 - Gyration radii of Maleic acid monomers, Styrol monomers and both versus time.
@@ -277,7 +277,7 @@ both_backbone
 python gyration_radii.py
 ```
 <p align="center">
-  <img width="600" height="350" src="images/gyr_radii.png">
+  <img width="500" height="350" src="images/gyr_radii.png">
 </p>
 
 - Rotational ACF of myristoil atoms C11 C12 C13 (as template POPC where C15 C16 C17 were chosen in previous calculations).
