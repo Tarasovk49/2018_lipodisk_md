@@ -13,7 +13,7 @@ It now has friendly inteface and also there are three ways to build polymer mole
 
 ### 01.08.19
 #### Analysis of trajectory 1h2s in DMPC layer of ~11\*11 nm^2. Whole system size is 20\*20\*12 nm^3.
-First we need to generate index file with groups needed for analysis:
+Generated index file with groups needed for analysis:
 ```
 gmx_2018 make_ndx -f lipodisk_npt.tpr<<EOF
 a C211 | a C212 | a C213
@@ -92,6 +92,6 @@ python acf_fit.py
 </p>
 
 
-#### Uploaded 2 complete algorithms
+#### Uploaded 2 complete algorithms to [Scratch.md](Scratch.md)
 1. Charge dependence simulation.
 2. Sensory rhodopsin 1h2s preparation and simulation from the very beginning.
