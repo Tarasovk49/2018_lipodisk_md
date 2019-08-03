@@ -1,6 +1,9 @@
 # Description
 
-*polymer_generation.py* builds polymer molecules consisting of diisobutylene, maleic acid, styrene monomers. 8 types of monomers are provided by *topology_generalized/.mol*:
+***nodoublemal.py*** generates txt file with sequences of SMA copolymer - each string comprises sequence of one polymer molecule.
+`nodoublemal.py - `
+
+***polymer_generation.py*** builds polymer molecules consisting of diisobutylene, maleic acid, styrene monomers. 8 types of monomers are provided by *topology_generalized/.mol*:
 - 4 types of maleic acid monomers = (2 states of protonation (protonated/deprotonated)) x (2 different carboxyl groups of maleic acid (left/right)),
 - 2 types of diisobutylene monomers with radical group on the left/right side,
 - 2 types of styrene monomers with benzene group on the left/right side.
