@@ -28,7 +28,7 @@ The options provided are (with defaults):
 
 The syntax is (with defaults):
 
-`polymer_generation.py -n 100 --length 36 --rmsd 3 --protstate 3 --ps 0.75 --pm 0.25 --pd 0.0 --random yes --seq_file not_specified --dir_name polymer_molecules --out_filename polymer`
+`polymer_generation.py -n (100) --length (36) --rmsd (3) --protstate (3) --ps (0.75) --pm (0.25) --pd (0.0) --random (yes) --seq_file (not_specified) --dir_name (polymer_molecules) --out_filename (polymer)`
 
 The options provided are (with defaults):
 
