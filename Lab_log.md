@@ -1,7 +1,7 @@
 # Lab journal
 
 ### 03.08.19
-#### Uploaded and partly rewritten [`nodoublemal.py`](polymers_preparation/nodoublemal.py).
+#### Uploaded and partially rewritten [`nodoublemal.py`](polymers_preparation/nodoublemal.py).
 Added option to build DIBMA sequences with that script.
 
 ### 02.08.19
