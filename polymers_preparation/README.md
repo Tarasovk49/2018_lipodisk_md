@@ -1,7 +1,25 @@
 # Description
 
 ***nodoublemal.py*** generates txt file with sequences of SMA copolymer - each string comprises sequence of one polymer molecule.
-`nodoublemal.py - `
+
+`nodoublemal.py -n 100 --length 36 --rmsd 3 --out_filename sequences.txt --pm 0.25 --ph 0.75 --polymer sma`
+
+The options provided are (with defaults):
+
+- `-n 100` number of polymers to be generated
+
+- `--length 36` mean length of polymer molecule in monomers
+
+- `--rmsd 3` RMSD of lengths of polymer molecules in monomers
+
+- `--out_filename sequences.txt` name of generated file with sequences
+
+- `--pm 0.25` occurence of Maleic acid monomer
+
+- `--ph 0.75` occurence of Hydrophobic monomer (Diisobutylene or Styrol)
+
+- `--polymer sma` wished polymer - DIBMA (Diisobutylene-Maleic acid copolymer) or SMA (Styrene--Maleic acid copolymer)
+
 
 ***polymer_generation.py*** builds polymer molecules consisting of diisobutylene, maleic acid, styrene monomers. 8 types of monomers are provided by *topology_generalized/.mol*:
 - 4 types of maleic acid monomers = (2 states of protonation (protonated/deprotonated)) x (2 different carboxyl groups of maleic acid (left/right)),
@@ -14,7 +32,7 @@ The syntax is (with defaults):
 
 The options provided are (with defaults):
 
-- `-n 100`  number of polymers to be generated. Is taken into account only with '--random'='yes'
+- `-n 100` number of polymers to be generated. Is taken into account only with '--random'='yes'
 
 - `--length 36` mean length of polymer molecule in monomers. Is taken into account only with '--random'='yes'
 
