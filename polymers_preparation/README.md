@@ -2,7 +2,7 @@
 
 [***nodoublemal.py***](nodoublemal.py) generates txt file with sequences of SMA copolymer - each string comprises sequence of one polymer molecule.
 
-`nodoublemal.py -n 100 --length 36 --rmsd 3 --out_filename sequences.txt --pm 0.25 --ph 0.75 --polymer sma`
+`nodoublemal.py -n (100) --length (36) --rmsd (3) --out_filename (sequences.txt) --pm (0.25) --ph (0.75) --polymer (sma)`
 
 The options provided are (with defaults):
 
