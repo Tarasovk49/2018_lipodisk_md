@@ -18,6 +18,10 @@ for o, a in opts:
         out_filename = a
 
 def make_ndx(in_filename, out_filename):
+    """
+    Creates gromacs index file with groups: POL@X - backbone carbons of polymer molecule X
+    and MEMBRANE - phosphorus atoms of lipids.
+    """
     with open(in_filename) as pdb:
         with open(out_filename,'w') as ndx:
             resid=1000
