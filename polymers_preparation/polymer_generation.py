@@ -546,7 +546,7 @@ if __name__ == '__main__':
     
     if (random=='yes') and (seq_file != 'not_specified'):
         print('\nSeems like you have just put it up to eleven!!')
-        print('\nYou specified file with sequencies '+seq_file+' and nonetheless want to build random polymers!\n')
+        print('\nYou specified file with sequences '+seq_file+' and nonetheless want to build random polymers!\n')
         from_file='thisstringdoesntmeananything'
         while True:
             if not ((from_file == 'yes') or (from_file == 'no')):
