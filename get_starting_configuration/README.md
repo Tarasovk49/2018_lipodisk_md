@@ -1,6 +1,6 @@
 # Description
 
-*orient_poly.py* places polymer molecules in rings around lipid membrane ridges. **-n** specifies the number of rings.
+***orient_poly.py*** places polymer molecules in rings around lipid membrane ridges. **-n** specifies the number of rings.
 ```
 python orient_poly.py -m membrane.pdb -p directory_polymer_molecules_reside -o outfile_name.pdb -n 2 --r_coeff 1.0 --angle_coeff 2.0
 ```
