@@ -20,6 +20,8 @@ IdentityFile ~/.ssh/mgu
 ```
 Now you can access Lomonosov with `ssh lomonosov`. *~/lomonosov/* for such purposes.
 
+The rules of supercomputer calculations https://parallel.ru/cluster/rules.
+
 ### 03.08.19 Saturday
 #### Uploaded and partially rewritten [`nodoublemal.py`](polymers_preparation/nodoublemal.py).
 Added option to build DIBMA sequences with that script.
