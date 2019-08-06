@@ -6,6 +6,8 @@ Generation of key:
 
 `ssh-keygen -t rsa -b 2048 -C 'mgu-tarasovk49' -f ~/.ssh/mgu`
 
+Change access permissions `chmod 600 ~/.ssh/mgu`.
+
 Copy public key from *~/.ssh/mgu.pub* to https://users.parallel.ru/ > Профиль > ssh-ключи.
 
 Create *~/.ssh/config* with private key:
