@@ -1,7 +1,5 @@
-# Generates .ndx file with groups needed for pulling: groups POL$N including backbone atoms
-# of polymers and group MEMBRANE including phosphorus atoms of membrane. These groups then
-# used during simulation to compute centers of mass of polymers and membrane.
-# Forces are applied on distances between $MEMBRANE and POL$N groups to pull polymers towards membrane.
+
+# 
 
 import sys
 from getopt import getopt
@@ -21,6 +19,8 @@ def make_ndx(in_filename, out_filename):
     """
     Creates gromacs index file with groups: POL@X - backbone carbons of polymer molecule X
     and MEMBRANE - phosphorus atoms of lipids.
+    Forces are applied during steered simulation on distances between $MEMBRANE
+    and POL$N centers of mass to pull polymers towards membrane.
     """
     with open(in_filename) as pdb:
         with open(out_filename,'w') as ndx:
