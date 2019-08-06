@@ -1,17 +1,35 @@
 # Lab journal
 
-### 03.08.19
+### 06.08.19 Tuesday
+#### Supercomputer access endeavours
+Generation of key:
+
+`ssh-keygen -t rsa -b 2048 -C 'mgu-tarasovk49' -f ~/.ssh/mgu`
+
+Copy public key from *~/.ssh/mgu.pub* to https://users.parallel.ru/ > Профиль > ssh-ключи.
+Create *~/.ssh/config* with private key:
+
+```
+Host lomonosov
+HostName lomonosov.parallel.ru
+User tarasovk49_1869
+IdentityFile ~/.ssh/mgu
+```
+Now you can access Lomonosov with `ssh lomonosov`
+
+### 03.08.19 Saturday
 #### Uploaded and partially rewritten [`nodoublemal.py`](polymers_preparation/nodoublemal.py).
 Added option to build DIBMA sequences with that script.
+#### Work in construction zone
 
-### 02.08.19
+### 02.08.19 Friday
 #### Completely rewritten [`polymer_generation.py`](polymers_preparation/polymer_generation.py).
 It now has friendly inteface and also there are three ways to build polymer molecules: 
 1. Generate random polymer molecules.
 2. Generate polymer molecules from txt file.
 3. Generate polymer molecules from manually submitted sequences.
 
-### 01.08.19
+### 01.08.19 Thursday
 #### Analysis of trajectory 1h2s in DMPC layer of ~11\*11 nm^2. Whole system size is 20\*20\*12 nm^3.
 Generated index file with groups needed for analysis:
 ```
