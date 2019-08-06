@@ -18,7 +18,7 @@ HostName lomonosov.parallel.ru
 User tarasovk49_1869
 IdentityFile ~/.ssh/mgu
 ```
-Now you can access Lomonosov with `ssh lomonosov`.
+Now you can access Lomonosov with `ssh lomonosov`. *~/lomonosov/* for such purposes.
 
 ### 03.08.19 Saturday
 #### Uploaded and partially rewritten [`nodoublemal.py`](polymers_preparation/nodoublemal.py).
