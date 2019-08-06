@@ -1,5 +1,3 @@
-# Adds pull options to mdp file. Center of mass of each polymer molecule is pulled
-# towards center of mass of membrane by applying harmonic potential until distance become 4 nm
 
 from sys import argv
 from getopt import getopt
@@ -27,6 +25,10 @@ for o, a in opts:
         R = int(a)
 
 def gen_mdp(input_mdp, index, output_mdp):
+    """
+    Adds pull options to mdp file. Center of mass of each polymer molecule is pulled
+    towards center of mass of membrane by applying harmonic potential until distance become @R nm
+    """
     sma_mol_count=0
     with open(index) as ndx:
         for line in ndx.readlines():
