@@ -7,6 +7,7 @@ Generation of key:
 `ssh-keygen -t rsa -b 2048 -C 'mgu-tarasovk49' -f ~/.ssh/mgu`
 
 Copy public key from *~/.ssh/mgu.pub* to https://users.parallel.ru/ > Профиль > ssh-ключи.
+
 Create *~/.ssh/config* with private key:
 
 ```
@@ -15,7 +16,7 @@ HostName lomonosov.parallel.ru
 User tarasovk49_1869
 IdentityFile ~/.ssh/mgu
 ```
-Now you can access Lomonosov with `ssh lomonosov`
+Now you can access Lomonosov with `ssh lomonosov`.
 
 ### 03.08.19 Saturday
 #### Uploaded and partially rewritten [`nodoublemal.py`](polymers_preparation/nodoublemal.py).
