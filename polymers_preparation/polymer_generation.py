@@ -684,7 +684,7 @@ if __name__ == '__main__':
                     
             mol_list = []
             for molecule_number in range(n):
-                sequence = 'thisstringdoesntmeananythingifyouthinkitmeanssomethingyouneedimmediatelyvisityourdoctor'
+                sequence = 'thisstringdoesntmeananything'
                 while True:
                     if len(set(sequence).difference("MSD")) != 0:
                         sequence = raw_input('Enter your sequence. Only "M","S","D" monomers are allowed. Example: MSMMSDMS\n')
