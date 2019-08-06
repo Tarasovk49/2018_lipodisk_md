@@ -1,6 +1,3 @@
-
-# 
-
 import sys
 from getopt import getopt
 
