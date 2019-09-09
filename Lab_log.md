@@ -3,6 +3,9 @@
 ### 09.09.19 Monday
 #### Analysis of trajectory of SMALP with DMPC.
 1. Lipid density versus thickness.
+<p align="center">
+  <img width="500" height="350" src="images/lipid_density_noprot_smalp.png">
+</p>
 2. SASA versus time.
 3. Gyration radii of Maleic acid monomers, Styrol monomers and both versus time.
 4. Rotational ACF of myristoil atoms C11 C12 C13 (as template POPC where C15 C16 C17 were chosen in previous calculations).
@@ -79,7 +82,7 @@ DMPC
 python density_profile.py
 ```
 <p align="center">
-  <img width="500" height="350" src="images/lipid_density.png">
+  <img width="500" height="350" src="images/lipid_density_1h2s_smalp.png">
 </p>
 
 2. SASA versus time.
@@ -90,7 +93,7 @@ except_wat_and_ions
 python sasa.py
 ```
 <p align="center">
-  <img width="500" height="350" src="images/sasa.png">
+  <img width="500" height="350" src="images/sasa_1h2s_smalp.png">
 </p>
 
 3. Gyration radii of Maleic acid monomers, Styrol monomers and both versus time.
@@ -107,7 +110,7 @@ both_backbone
 python gyration_radii.py
 ```
 <p align="center">
-  <img width="500" height="350" src="images/gyr_radii.png">
+  <img width="500" height="350" src="images/gyr_radii_1h2s_smalp.png">
 </p>
 
 4. Rotational ACF of myristoil atoms C11 C12 C13 (as template POPC where C15 C16 C17 were chosen in previous calculations).
@@ -118,7 +121,7 @@ C11-C12-C13-myristoil
 python acf_fit.py
 ```
 <p align="center">
-  <img width="1000" height="300" src="images/lipodisk_rotacf.png">
+  <img width="1000" height="300" src="images/lipodisk_rotacf_1h2s_smalp.png">
 </p>
 
 
