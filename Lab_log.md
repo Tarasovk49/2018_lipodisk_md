@@ -1,5 +1,12 @@
 # Lab journal
 
+### 09.09.19 Monday
+#### Analysis of trajectory of SMALP with DMPC.
+1. Lipid density versus thickness.
+2. SASA versus time.
+3. Gyration radii of Maleic acid monomers, Styrol monomers and both versus time.
+4. Rotational ACF of myristoil atoms C11 C12 C13 (as template POPC where C15 C16 C17 were chosen in previous calculations).
+
 ### 06.08.19 Tuesday
 #### Supercomputer access endeavours
 Generation of key:
