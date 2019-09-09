@@ -1,14 +1,27 @@
 # Lab journal
 
 ### 09.09.19 Monday
-#### Analysis of trajectory of SMALP with DMPC.
+#### Start of 1h2s simulation in DIBMALP.
+#### Analysis of trajectory of SMALP with no protein in it.
 1. Lipid density versus thickness.
 <p align="center">
   <img width="500" height="350" src="images/lipid_density_noprot_smalp.png">
 </p>
+
 2. SASA versus time.
+<p align="center">
+  <img width="500" height="350" src="images/sasa_noprot_smalp.png">
+</p>
+
 3. Gyration radii of Maleic acid monomers, Styrol monomers and both versus time.
+<p align="center">
+  <img width="500" height="350" src="images/gyr_radii_noprot_smalp.png">
+</p>
+
 4. Rotational ACF of myristoil atoms C11 C12 C13 (as template POPC where C15 C16 C17 were chosen in previous calculations).
+<p align="center">
+  <img width="1000" height="300" src="images/lipodisk_rotacf_noprot_smalp.png">
+</p>
 
 ### 06.08.19 Tuesday
 #### Supercomputer access endeavours
