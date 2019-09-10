@@ -1,5 +1,7 @@
 # Lab journal
 
+### 10.09.19 Tuesday
+#### S.
 ### 09.09.19 Monday
 #### Start of 1h2s simulation in DIBMALP.
 #### Analysis of trajectory of SMALP with no protein in it.
