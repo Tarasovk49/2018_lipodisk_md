@@ -1,9 +1,10 @@
 # Lab journal
 
 ### 10.09.19 Tuesday
-#### S.
+#### IntAct database update scripts.
+#### Start of 1h2s simulation in DIBMALP - 10 a.m. 4 p.m. - nvt ended (200k steps).
 ### 09.09.19 Monday
-#### Start of 1h2s simulation in DIBMALP.
+#### Preparation of 1h2s simulation in DIBMALP.
 #### Analysis of trajectory of SMALP with no protein in it.
 1. Lipid density versus thickness.
 <p align="center">
