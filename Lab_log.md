@@ -1,7 +1,6 @@
 # Lab journal
 
 ### 10.09.19 Tuesday
-#### IntAct database update script is written.
 #### Start of 1h2s simulation in DIBMALP - 10 a.m. 4 p.m. - nvt ended (200k steps).
 ### 09.09.19 Monday
 #### Preparation of 1h2s simulation in DIBMALP.
