@@ -18,7 +18,7 @@ sed -i 's/MAL/MAD/g' SMALP_14ns.pdb
 cp SMALP_14ns.pdb polymers.pdb
 cat SMALP_14ns.pdb | grep POPC > no_pol.pdb
 cat SMALP_14ns.pdb | grep SOL >> no_pol.pdb
-cat SMALP_14ns.pdb | grep NA >> no_pol.pdb
+cat SMALP_14ns.pdb | grep 'NA ' >> no_pol.pdb
 cat SMALP_14ns.pdb | grep CL >> no_pol.pdb
 sed -i '/POPC/d' polymers.pdb
 sed -i '/NA/d' polymers.pdb
