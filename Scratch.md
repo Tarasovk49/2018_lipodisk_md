@@ -41,7 +41,7 @@ gmx_2018 pdb2gmx -f SMALP_merged_ter.pdb -o SMALP_processed.gro -ff oplsaa_lipid
 ```
 **For -1.7, -1.2, -1.0, -0.5 charge starting from *SMALP_merged_ter.pdb***
 *substitute.py* substitutes the MAD record with MA2, MAL, MAR or MAD.
-Table of frequencies:
+Table of occurencies:
 
 | 1 | pH | Z | MA2 | MAL | MAR | MAD |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -105,7 +105,7 @@ python add_ter_between_chains.py -i SMALP_fin.pdb -o SMALP_fin_ter.pdb
 gmx_2018 pdb2gmx -f SMALP_fin_ter.pdb -o SMALP_processed.gro -ff oplsaa_lipids_polymers -water spce -p topol.top
 ........
 ```
-3. After 1 ns simulations [APL\@Voro](https://sourceforge.net/projects/aplvoro2/) were used to generate area.xvg files with area for each Voronoi tile. Tiles were chosen by phosphorus atom in each lipid. Two .xvg files were obtained for each simulation (0, -0.5, -1.0, -1.2, -1.7, -2.0) representing lower and upper leaflets of lipids. *APL_plot.py* for APL plots:
+3. After 1 ns simulations [APL\@Voro](https://sourceforge.net/projects/aplvoro2/) was used to generate area.xvg files with area for each Voronoi tile. Tile center is represented by phosphorus atom in each lipid. Two .xvg files were obtained for each simulation (0, -0.5, -1.0, -1.2, -1.7, -2.0) representing lower and upper leaflets of lipids. *APL_plot.py* for APL plots:
 
 |Lower leaflet|Upper leaflet|
 |----|----|
