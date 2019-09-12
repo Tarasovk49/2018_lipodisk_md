@@ -4,7 +4,7 @@
 #### Prepared files for start of long simulation of 13 nm SMALP with no protein. Charge dependence of APL.
 Longer simulations are required than those carried out previously. And also SMALP is bigger (13 nm in diameter vs. 9 nm before).
 ### 10.09.19 Tuesday
-#### Start of 1h2s simulation in DIBMALP - 10 a.m. 4 p.m. - nvt ended (200k steps).
+#### 10 a.m. - Start of 1h2s simulation in DIBMALP. 4 p.m. - nvt ended (200k steps).
 ### 09.09.19 Monday
 #### Preparation of 1h2s simulation in DIBMALP.
 #### Analysis of trajectory of SMALP with no protein in it.
