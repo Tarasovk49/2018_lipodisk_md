@@ -1,5 +1,8 @@
 # Lab journal
 
+### 16.09.19 Monday
+#### ??????
+
 ### 12.09.19 Thursday
 #### Prepared files for start of long simulation of 13 nm SMALP with no protein. Charge dependence of APL.
 Longer simulations are required than those carried out previously. And also SMALP is bigger (13 nm in diameter vs. 9 nm before).
