@@ -3,11 +3,14 @@
 ### 14.10.19 Monday
 #### Comparison of DIBMALP and SMALP
 1. Overview.
+
 |  | SMA | DIBMA |
 |:---:|:---:|:---:|
 | with protein | 5 | -0.3 |
 | without protein | 6 | -0.5 |
+
 2. SASA.
+
 |  | SMA | DIBMA |
 |:---:|:---:|:---:|
 | with protein | 5 | -0.3 |
