@@ -6,7 +6,7 @@
 
 |  | SMA | DIBMA |
 |:---:|:---:|:---:|
-| with protein | 5 | -0.3 |
+| with protein |<p align="center"> <img width="500" height="350" src="images/lipid_density_noprot_smalp.png"> </p> | -0.3 |
 | without protein | 6 | -0.5 |
 
 2. SASA.
