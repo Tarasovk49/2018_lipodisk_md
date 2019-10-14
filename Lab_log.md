@@ -6,15 +6,29 @@
 
 |  | SMA | DIBMA |
 |:---:|:---:|:---:|
-| with protein |<p align="center"> <img width="500" height="350" src="images/lipid_density_noprot_smalp.png"> </p> | -0.3 |
+| with protein |<p align="center"> <img width="300" height="200" src="images/lipid_density_noprot_smalp.png"> </p> | NA |
 | without protein | 6 | -0.5 |
 
 2. SASA.
 
 |  | SMA | DIBMA |
 |:---:|:---:|:---:|
-| with protein | 5 | -0.3 |
-| without protein | 6 | -0.5 |
+| with protein | <p align="center"> <img width="300" height="200" src="images/sasa_1h2s_smalp.png"> </p> | NA |
+| without protein | <p align="center">  <img width="300" height="200" src="images/sasa_noprot_smalp.png"> </p> | <p align="center">  <img width="300" height="200" src="images/sasa_noprot_dibmalp.png"> </p> |
+
+3. Rotational time.
+
+|  | SMA | DIBMA |
+|:---:|:---:|:---:|
+| with protein | <p align="center">  <img width="500" height="150" src="images/lipodisk_rotacf_1h2s_smalp.png"> </p> | NA |
+| without protein | <p align="center">  <img width="500" height="150" src="images/lipodisk_rotacf_noprot_smalp.png"> </p> | <p align="center">  <img width="500" height="150" src="images/lipodisk_rotacf_noprot_dibmalp.png"> </p> |
+
+4. Gyration radii.
+
+|  | SMA | DIBMA |
+|:---:|:---:|:---:|
+| with protein | <p align="center"> <img width="300" height="200" src="images/gyr_radii_1h2s_smalp.png"> </p> | NA |
+| without protein | <p align="center"> <img width="300" height="200" src="images/gyr_radii_noprot_smalp.png"> </p> | <p align="center"> <img width="300" height="200" src="images/gyr_radii_noprot_dibmalp.png"> </p> |
 
 ### 12.09.19 Thursday
 #### Prepared files for start of long simulation of 13 nm SMALP with no protein. Charge dependence of APL.
