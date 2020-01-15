@@ -18,7 +18,7 @@ The options provided are (with defaults):
 
 - `--ph 0.75` occurence of Hydrophobic monomer (Diisobutylene or Styrol)
 
-- `--polymer sma` wished polymer - DIBMA (Diisobutylene-Maleic acid copolymer) or SMA (Styrene--Maleic acid copolymer)
+- `--polymer sma` wished polymer - DIBMA (Diisobutylene-Maleic acid copolymer) or SMA (Styrene-Maleic acid copolymer)
 
 
 [***polymer_generation.py***](polymer_generation.py) builds polymer molecules consisting of diisobutylene, maleic acid, styrene monomers. 8 types of monomers are provided by *topology_generalized/.mol*:
