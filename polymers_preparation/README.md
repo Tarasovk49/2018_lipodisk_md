@@ -32,11 +32,11 @@ The syntax is (with defaults):
 
 The options provided are (with defaults):
 
-- `-n 100` number of polymers to be generated. Is taken into account only with '--random'='yes'
+- `-n 100` number of polymers to be generated. It is taken into account only with '--random'='yes'
 
-- `--length 36` mean length of polymer molecule in monomers. Is taken into account only with '--random'='yes'
+- `--length 36` mean length of polymer molecule in monomers. It is taken into account only with '--random'='yes'
 
-- `--rmsd 3` RMSD of lengths of polymer molecules in monomers. Is taken into account only with '--random'='yes'
+- `--rmsd 3` RMSD of lengths of polymer molecules in monomers. It is taken into account only with '--random'='yes'
 
 - `--protstate 3` Protonation state defines the mean charge on maleic acid carboxyl groups. Correspondence of protonation state, pH value and mean charge of MA monomer is given by table:
 
@@ -45,15 +45,15 @@ The options provided are (with defaults):
 | pH  | 5 | 6 | 7 | 8 | 9 | 10 | >10 |
 | charge | -0.3 | -0.5 | -1.0 | -1.2 | -1.7 | -1.9 | -2.0 |
 
-- `--pm 0.25` Occurrence of maleic acid monomer. Is taken into account only with '--random'='yes'
+- `--pm 0.25` Occurrence of maleic acid monomer. It is taken into account only with '--random'='yes'
 
-- `--pd 0.0` Occurrence of diisobutylene monomer. Is taken into account only with '--random'='yes'
+- `--pd 0.0` Occurrence of diisobutylene monomer. It is taken into account only with '--random'='yes'
 
-- `--ps 0.75` Occurrence of styrene monomer. Is taken into account only with '--random'='yes'
+- `--ps 0.75` Occurrence of styrene monomer. It is taken into account only with '--random'='yes'
 
 - `--random yes` You may support a text file with sequences ('--random'='no'), write them manually ('--random'='no') or specify all the flags listed above to generate random polymers ('--random'='yes')        
 
-- `--seq_file not_specified` You may support a txt file with sequences of polymer molecules. Every string is the sequence of one polymer molecule. It should look like:
+- `--seq_file not_specified` You may support a txt file with sequences of polymer molecules. Every string is the sequence of one polymer molecule. You can use *nodoublemal.py* for generating such file. It should look like:
 ```
 SMSDMMMDDDMMMSDSSSSSMSMSDDDD 
 DDDSSMSSDMSDSSMSMSDDDMSSSSMDSSM 
