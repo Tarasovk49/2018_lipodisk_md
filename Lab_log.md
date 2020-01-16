@@ -1,5 +1,9 @@
 # Lab journal
 
+### 16.01.20 Thursday
+#### Preparation of 1h2s_DIBMALP starting configuration
+Two steps of steered MD with force constants 50 kJ mol*-1 nm*-2 and 20 kJ mol*-1 nm*-2.
+
 ### 14.10.19 Monday
 #### Comparison of DIBMALP and SMALP
 1. Overview.
@@ -33,8 +37,10 @@
 ### 12.09.19 Thursday
 #### Prepared files for start of long simulation of 13 nm SMALP with no protein. Charge dependence of APL.
 Longer simulations are required than those carried out previously. And also SMALP is bigger (13 nm in diameter vs. 9 nm before).
+
 ### 10.09.19 Tuesday
 #### 10 a.m. - Start of 1h2s simulation in DIBMALP. 4 p.m. - nvt ended (200k steps). Finally failed (wrong polymer).
+
 ### 09.09.19 Monday
 #### Preparation of 1h2s simulation in DIBMALP.
 #### Analysis of trajectory of SMALP with no protein in it.
