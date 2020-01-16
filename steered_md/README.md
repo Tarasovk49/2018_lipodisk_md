@@ -42,7 +42,7 @@ gmx mdrun -deffnm lipodisk_nvt
 ```
 ### Prepare index file with groups for pulling and mdp file
 Option **-r** determines minimal distances (in nm) between COM of membrane and COMs of polymer molecules to apply the force. When distance are less than specified with **-r** no force is applied on that polymer molecule. The distance depends on radius of membrane - optional value is *R + 2*, where *R* is membrane radius in  nanometers. It is printed in Terminal while generating starting configuration for md as `R of membrane is .. angstroms`. In case of using *popc.pdb* provided **-r 4** is optimal.
-Oprion **-e** defines force constant of potential, kJ mol*-1 nm*-2. Default value is 50 kJ mol*-1 nm*-2.
+Option **-e** defines force constant of potential, kJ mol*-1 nm*-2. Default value is 50 kJ mol*-1 nm*-2.
 ```
 gmx make_ndx -f lipodisk_nvt.tpr<<!
 q
