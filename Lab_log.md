@@ -1,5 +1,8 @@
 # Lab journal
 
+### 21.01.20 Tuesday
+#### Still preparing.
+
 ### 17.01.20 Friday
 #### Preparation of 1h2s_DIBMALP starting configuration
 Steered MD with force constant 150 kJ mol*-1 nm*-2.
