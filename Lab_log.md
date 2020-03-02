@@ -1,5 +1,8 @@
 # Lab journal
 
+### 02.03.20 Monday
+#### Analysis of SMALP trajectories.
+
 ### 21.01.20 Tuesday
 #### Still preparing.
 
