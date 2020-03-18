@@ -1,5 +1,8 @@
 # Lab journal
 
+### 18.03.20 Wednesday
+#### APL analysis script and correlation times analysis script written.
+
 ### 02.03.20 Monday
 #### Analysis of SMALP trajectories.
 
