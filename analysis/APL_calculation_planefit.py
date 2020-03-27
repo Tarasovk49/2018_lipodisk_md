@@ -39,24 +39,24 @@ import os, sys
 from getopt import getopt
 
 
-opts, args = getopt(sys.argv[1:], 's:e:i:',longopts=['structure=','trajectory=','planefit_sel=','dots_sel='])
+opts, args = getopt(sys.argv[1:], 's:e:i:',longopts=['step=', 'write_freq=', 'structure=','trajectory=','planefit_sel=','dots_sel='])
 
 #############################################
 ################  DEFAULTS  #################
 #############################################
 
-## Start and end frames to calculate APL, interval to recalculate plane
+## Start and end frames to calculate APL, interval to recalculate plane in ps
 start_frame = 0
 end_frame = 1000000
 interval = 1
 
+step = 2 # Step of integration in fs
+write_freq = 5000 # Number of steps that elapse between writing coordinates to output trajectory file
 
 #membrane = 'SMALP_npt.gro'
 membrane = 'SMALP_ions.gro'
 #traj = 'SMALP_npt.xtc'
 traj = 'test.xtc'
-
-
 
 selection1 = 'resname DMPC and name C27'
 selection2 = '(resname ST1 ST2 MAL MAR DB1 DB2 MAD MA2 and name CA CB) or (protein and name CA)'
@@ -73,6 +73,10 @@ for o, a in opts:
             end_frame = int(a)
         if o == '-i':
             interval = int(a)
+        if o == '-step':
+            step = int(a)
+        if o == '-write_freq':
+            write_freq=int(a)
         if o == '--structure':
             membrane = str(a)
         if o == '--trajectory':
@@ -82,7 +86,11 @@ for o, a in opts:
         if o == '--dots_sel':
             selection2 = str(a)
 
-
+        
+start_frame = int(s/step)
+end_frame = int(e/step)
+interval = int(500000/(step*write_freq))
+        
 universe = mda.Universe(membrane, traj)
 
 
