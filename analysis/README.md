@@ -29,6 +29,25 @@ It also contains original Jupyter notebooks fro those two scripts - [*APL_calcul
 
 [*LOP_all_atoms.py*](LOP_all_atoms.py) calculates lipid order parameters for each type of lipid fatty acid chain carbon atom - C2, C3, C4, C5, ..., C14. Order parameters are also calculated for three different subsets of lipids - for all lipids, for central (inner) lipids that located at distance more than 2 nm from polymer molecules and peripheral (outer) lipids of lipodisk that located at distance less than 2 nm from polymer molecules.
 
+
+`LOP_all_atoms.py -s (0) --e (1000000) --i (1) --structure (SMALP_ions.gro) --trajectory (SMALP_npt.xtc) --planefit_sel (resname DMPC and name C27) --dots_sel ((resname ST1 ST2 MAL MAR DB1 DB2 MAD MA2 and name CA CB) or (protein and name CA))`
+
+- `-s 0` start frame in ps
+
+- `-e 1000000` end frame in ps
+
+- `-i 1` interval to update fitted plane in ps
+
+- `--step` Step of integration in fs
+
+- `--structure lipodisk_npt.gro` PDB or GRO file
+
+- `--trajectory lipodisk_npt_2_whole_cluster_nojump_mol.xtc` XTC or TRR file
+
+- `--write_freq` Number of steps that elapse between writing coordinates to output trajectory file
+
+- `--planefit_sel 'not resid 111 106 and resname DMPC and name C27 C37'` selection of atoms to fit plane
+
 [Original Jupyter notebook](LOP_all_atoms.ipynb) is also available.
 
 ### Calculate rotational correlation time of lipids
