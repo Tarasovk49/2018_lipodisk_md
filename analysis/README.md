@@ -27,6 +27,8 @@ Calculation of area per lipid is provided by two different scripts.
 It also contains original Jupyter notebooks fro those two scripts - [*APL_calculation_planefit.ipynb*](APL_calculation_planefit.ipynb), [...](...).
 ### Calculate order parameters of lipids
 
-[*LOP_all_atoms.py*](LOP_all_atoms.py) calculates lipid order parameters for each type of lipid chain carbon atom - C2, C3, C4, C5, ..., C14
+[*LOP_all_atoms.py*](LOP_all_atoms.py) calculates lipid order parameters for each type of lipid fatty acid chain carbon atom - C2, C3, C4, C5, ..., C14. Order parameters are also calculated for three different subsets of lipids - for all lipids, for central (inner) lipids that located at distance more than 2 nm from polymer molecules and peripheral (outer) lipids of lipodisk that located at distance less than 2 nm from polymer molecules.
+
+[Original Jupyter notebook](LOP_all_atoms.ipynb) is also available.
 
 ### Calculate rotational correlation time of lipids
