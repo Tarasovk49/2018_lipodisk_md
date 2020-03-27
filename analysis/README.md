@@ -1,6 +1,6 @@
 # Description
 
-This directory provides analysis scripts of Gromacs trajectories for lipodisks with examples.
+This directory provides analysis scripts of Gromacs trajectories for lipodisks with example outputs.
 
 ### Calculate area per lipid
 
