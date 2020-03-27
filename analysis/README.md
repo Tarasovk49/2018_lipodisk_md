@@ -24,7 +24,7 @@ Calculation of area per lipid is provided by two different scripts.
 
 2. The other one finds projections of lipids onto a fitted to those lipids parabola. That is useful if your membrane bended during the simulation. It is quite normal for membranes with area greater than ~200 nm^2 - [*APL_calculation_parabolafit.py*](APL_calculation_parabolafit.py).
 
-It also contains original Jupyter notebooks fro those two scripts - [...](...), [...](...).
+It also contains original Jupyter notebooks fro those two scripts - [*APL_calculation_planefit.ipynb*](APL_calculation_planefit.ipynb), [...](...).
 ### Calculate order parameters of lipids
 
 ### Calculate rotational correlation time of lipids
