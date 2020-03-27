@@ -259,7 +259,7 @@ for ts in universe.trajectory:
         APL = SUM/border
         apl_list.append(APL)
         ts_list.append(ts.frame)
-    else:
+    elif ts.frame > end_frame:
         break
         
 # APL must be multiplied by 2 because lipids from both monolayers were accounted for
