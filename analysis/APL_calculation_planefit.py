@@ -39,7 +39,7 @@ import os, sys
 from getopt import getopt
 
 
-opts, args = getopt(sys.argv[1:], 's:e:i:',longopts=['structure=','trajectory=','planefit_sel=','dots_selection='])
+opts, args = getopt(sys.argv[1:], 's:e:i:',longopts=['structure=','trajectory=','planefit_sel=','dots_sel='])
 
 #############################################
 ################  DEFAULTS  #################
@@ -79,7 +79,7 @@ for o, a in opts:
             traj = str(a)
         if o == '--planefit_sel':
             selection1 = str(a)
-        if o == '--dots_selection':
+        if o == '--dots_sel':
             selection2 = str(a)
 
 
@@ -211,6 +211,7 @@ apl_list = []
 for ts in universe.trajectory:
     if (ts.frame >= start_frame) and (ts.frame <= end_frame):
         if ts.frame%interval == 0:
+            # Fit plane to lipid atoms(selection1)
             positions = lipid_group.atoms.positions[:]
             c, normal = fitPlaneLTSQ(positions)
         # Get atom coordinates
