@@ -24,7 +24,7 @@ Calculation of area per lipid is provided by two different scripts.
 
 2. The other one finds projections of lipids onto a fitted to those lipids parabola. That is useful if your membrane bended during the simulation. It is quite normal for membranes with area greater than ~200 nm^2 - [*APL_calculation_parabolafit.py*](APL_calculation_parabolafit.py).
 
-It also contains original Jupyter notebooks fro those two scripts - [*APL_calculation_planefit.ipynb*](APL_calculation_planefit.ipynb), [...](...).
+It also contains original Jupyter notebooks for those two scripts - [*APL_calculation_planefit.ipynb*](APL_calculation_planefit.ipynb), [...](...).
 ### Lipid order parameters
 
 [*LOP_all_atoms.py*](LOP_all_atoms.py) calculates lipid order parameters for each type of lipid fatty acid chain carbon atom - C2, C3, C4, ..., C14. Order parameters are also calculated for three different subsets of lipids - for all lipids, for central (inner) lipids that located at distance more than 2 nm from polymer molecules and peripheral (outer) lipids of lipodisk that located at distance less than 2 nm from polymer molecules.
