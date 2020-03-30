@@ -73,9 +73,7 @@ The default calculations were carried of for models with \[0.0, -0.3, -0.5, -1.0
 Rotational correlation time of lipids is the time for autocorrelation function *1.5\*cos^2(theta)-0.5* to be reduced by *e* times. It can be measured in NMR and ESR relaxation experiments. Trajectory analysis is conducted in three steps - preparing index files with groups of atoms to be analysed, calculating autocorrelation functions for those groups specified, fitting of obtained plots with two exponents.
 
 Fitting function:
-`ACF_fit = (1 - S^2)(w1\*exp(-t/tau1) + w2\*exp(-t/tau2)) + S^2`
-
-where `S` is lipid order parameter calculated earlier
+`ACF_fit = (1 - S^2)(w1\*exp(-t/tau1) + w2\*exp(-t/tau2)) + S^2`, where `S` is lipid order parameter calculated earlier
 
 Resulting tau is:
 `tau = w1\*tau1 + w2\*tau2`
@@ -88,7 +86,6 @@ gmx rotacf -f lipodisk_npt_2_whole_cluster_nojump_mol.xtc -s lipodisk_npt_2.tpr 
 gmx rotacf -f lipodisk_npt_2_whole_cluster_nojump_mol.xtc -s lipodisk_npt_2.tpr -n index_center.ndx -o lipodisk_rotacf_center.xvg -P 2
 gmx rotacf -f lipodisk_npt_2_whole_cluster_nojump_mol.xtc -s lipodisk_npt_2.tpr -n index_all_lipids.ndx -o lipodisk_rotacf_all.xvg -P 2
 ```
-
 [python acf_fit.py](python acf_fit.py) fits ACFs with two exponent function. Order parameters for C12 are taken from CSV generated during LOP analysis earlier.
 
 ### Gyration radii of polymer molecules
