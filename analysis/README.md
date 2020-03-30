@@ -86,7 +86,7 @@ gmx rotacf -f lipodisk_npt_2_whole_cluster_nojump_mol.xtc -s lipodisk_npt_2.tpr 
 gmx rotacf -f lipodisk_npt_2_whole_cluster_nojump_mol.xtc -s lipodisk_npt_2.tpr -n index_center.ndx -o lipodisk_rotacf_center.xvg -P 2
 gmx rotacf -f lipodisk_npt_2_whole_cluster_nojump_mol.xtc -s lipodisk_npt_2.tpr -n index_all_lipids.ndx -o lipodisk_rotacf_all.xvg -P 2
 ```
-[acf_fit.py](acf_fit.py) fits ACFs with two exponent function. Order parameters for C12 are taken from CSV generated during LOP analysis earlier.
+[acf_fit.py](acf_fit.py) fits ACFs with two exponent function. Order parameters of C12 needed for fitting are derived from CSV generated during LOP analysis earlier.
 
 |SMALP without protein|SMALP with 1H2S|
 |----|----|
