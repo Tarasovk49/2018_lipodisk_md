@@ -24,12 +24,20 @@ This directory provides analysis scripts of Gromacs trajectories of lipodisks wi
 
 Original [Jupyter notebook](APL_calculation_planefit.ipynb).
 
+<p align="center">
+  <img width="600" height="350" src="../images/.png">
+</p>
+
 2. The other finds projections of lipids onto a fitted to those lipids parabola. That is useful if your membrane bended during the simulation. It is quite normal for membranes with area greater than ~200 nm^2 - [*APL_calculation_parabolafit.py*](APL_calculation_parabolafit.py).
 
 Original [Jupyter notebook](...).
 
 ##### Plotting of obtained data is conducted by [APL_multiple.py](APL_multiple.py). It combines data for set of different maleic acid charge trajectories into a single plot.
 The default calculations were carried of for models with \[0.0, -0.3, -0.5, -1.0, -1.2, -1.7, -1.9, -2.0\] maleic acid charges. Subdirectories where calculations were carried of have the same names. Original [Jupyter notebook](APL_multiple.ipynb).
+
+<p align="center">
+  <img width="600" height="350" src="../images/APL_vs_time.png">
+</p>
 
 ### Lipid order parameters
 
