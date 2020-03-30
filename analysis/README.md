@@ -35,12 +35,9 @@ Original [Jupyter notebook](...).
 ##### Plotting of obtained data is conducted by [APL_multiple.py](APL_multiple.py). It combines data for set of different maleic acid charge trajectories into a single plot.
 The default calculations were carried of for models with \[0.0, -0.3, -0.5, -1.0, -1.2, -1.7, -1.9, -2.0\] maleic acid charges. Subdirectories where calculations were carried of have the same names. Original [Jupyter notebook](APL_multiple.ipynb).
 
-
-|![SMA](../images/pol_SMA.png)|![DIBMA](../images/pol_DIBMA.png)|
-
-<p align="center">
-  <img width="600" height="420" src="../images/APL_vs_time.png">
-</p>
+|APL vs Maleic acid charge|APL vs time|
+|----|----|
+|![SMA](../images/APL_vs_charge.png)|![DIBMA](../images/APL_vs_time.png)|
 
 ### Lipid order parameters
 
