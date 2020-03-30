@@ -121,7 +121,7 @@ gmx gyrate -f lipodisk_npt_2_whole_cluster_nojump_mol.xtc -s lipodisk_npt_2.tpr 
 
 Plotting of obtained XVG files is performed with [gyration_radii.py](gyration_radii.py).
 
-![LOP.png](../images/gyration_radii.png)
+![LOP.png](../images/gyr_radii.png)
 
 ### Ions distribution along normal to membrane and maybe sth else????
 
