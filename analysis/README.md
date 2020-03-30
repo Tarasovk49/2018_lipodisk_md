@@ -18,7 +18,7 @@ Calculation of area per lipid is provided by two different scripts.
 
 - `--trajectory SMALP_npt.xtc` XTC or TRR file
 
-- `--planefit_sel 'resname DMPC and name C27'` selection of atoms to fit plane
+- `--planefit_sel 'resname DMPC and name C27'` selection of atoms to fit plane, must include only one atom for each lipid as they are used for calculation of area per lipid. In order to get correct APL value you need to multiply that value by the number of atoms used (in case if more than one atom for each lipid is depicted)
 
 - `--dots_sel '(resname ST1 ST2 MAL MAR DB1 DB2 MAD MA2 and name CA CB) or (protein and name CA)'` additional to `--planefit_sel` selection of atoms to calculate Delaunay triangulation
 
