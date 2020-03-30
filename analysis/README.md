@@ -75,19 +75,26 @@ Rotational correlation time of lipids is the time for autocorrelation function *
 Fitting function:
 `ACF_fit = (1 - S^2)(w1\*exp(-t/tau1) + w2\*exp(-t/tau2)) + S^2`
 
+where `S` is lipid order parameter calculated earlier
+
 Resulting tau is:
 `tau = w1\*tau1 + w2\*tau2`
 
-[make_ndx_rotacf.py](make_ndx_rotacf.py) - prepares index file with three groups: all lipids, inner and outer lipids. Those groups specify C12 H121 H122 atoms. ACF is calculated for 2nd Legandre polynom of vector C12H121 x C12H122.
+[make_ndx_rotacf.py](make_ndx_rotacf.py) prepares index file with three groups: all lipids, inner and outer lipids. Those groups specify C12 H121 H122 atoms. ACF is calculated for 2nd Legandre polynom of vector C12H121 x C12H122.
 
-
+Calculation of ACF via Gromacs:
 ```
-gmx_2018 rotacf -f lipodisk_npt_2_whole_cluster_nojump_mol.xtc -s lipodisk_npt_2.tpr -n index_edge.ndx -o lipodisk_rotacf_edge.xvg -P 2
-gmx_2018 rotacf -f lipodisk_npt_2_whole_cluster_nojump_mol.xtc -s lipodisk_npt_2.tpr -n index_center.ndx -o lipodisk_rotacf_center.xvg -P 2
-gmx_2018 rotacf -f lipodisk_npt_2_whole_cluster_nojump_mol.xtc -s lipodisk_npt_2.tpr -n index_all_lipids.ndx -o lipodisk_rotacf_all.xvg -P 2
+gmx rotacf -f lipodisk_npt_2_whole_cluster_nojump_mol.xtc -s lipodisk_npt_2.tpr -n index_edge.ndx -o lipodisk_rotacf_edge.xvg -P 2
+gmx rotacf -f lipodisk_npt_2_whole_cluster_nojump_mol.xtc -s lipodisk_npt_2.tpr -n index_center.ndx -o lipodisk_rotacf_center.xvg -P 2
+gmx rotacf -f lipodisk_npt_2_whole_cluster_nojump_mol.xtc -s lipodisk_npt_2.tpr -n index_all_lipids.ndx -o lipodisk_rotacf_all.xvg -P 2
 ```
 
-[python acf_fit.py](python acf_fit.py)
+[python acf_fit.py](python acf_fit.py) fits ACFs with two exponent function. Order parameters for C12 are taken from CSV generated during LOP analysis earlier.
 
 ### Gyration radii of polymer molecules
 
+### Ions distribution along normal to membrane and maybe sth else????
+
+### Polymer density along normal to membrane
+
+### ???????
