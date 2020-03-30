@@ -24,9 +24,11 @@ This directory provides analysis scripts of Gromacs trajectories of lipodisks wi
 
 Original [Jupyter notebook](APL_calculation_planefit.ipynb).
 
-<p align="center">
-  <img width="600" height="350" src="../images/APL_vs.png">
-</p>
+Delaunay triangulations with and without hanging over membrane polymer molecules can be seen below. 
+
+|APL vs Maleic acid charge|APL vs time|
+|----|----|
+|![SMA](../images/Delaunay_overhanging.png)|![DIBMA](../images/Delaunay_nooverhanging.png)|
 
 2. The other finds projections of lipids onto a fitted to those lipids parabola. That is useful if your membrane bended during the simulation. It is quite normal for membranes with area greater than ~200 nm^2 - [*APL_calculation_parabolafit.py*](APL_calculation_parabolafit.py).
 
