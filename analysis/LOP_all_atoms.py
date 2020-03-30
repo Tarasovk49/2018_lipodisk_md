@@ -11,7 +11,7 @@
 #
 # Output includes:
 #    - plot Order parameter vs atom number in lipid fatty acid chain
-
+#    - three CSV files with LOP data for all, inner and outer lipids
 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -154,6 +154,10 @@ for ts in notebook.tqdm(universe.trajectory):
         data_outer = data_outer.append(a_series_outer, ignore_index=True)
     elif ts.frame > end_frame:
         break
+
+data_all.to_csv('LOP_all.csv', header=True, sep=',')
+data_inner.to_csv('LOP_inner.csv', header=True, sep=',')
+data_outer.to_csv('LOP_outer.csv', header=True, sep=',')
         
 plt.figure(figsize=(10, 7), dpi=80)
 plt.rc('xtick', labelsize=14)
