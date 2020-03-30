@@ -1,6 +1,6 @@
 # Description
 
-This directory provides analysis scripts of Gromacs trajectories for lipodisks with example outputs.
+This directory provides analysis scripts of Gromacs trajectories of lipodisks with example outputs.
 
 ### Area per lipid
 ##### Calculation of area per lipid is provided by two different scripts. Among the output of those scripts there are CSV files with (time, APL) data. [APL_multiple.py](APL_multiple.py) combines those data for set of different maleic acid charge trajectories into a single plot.
