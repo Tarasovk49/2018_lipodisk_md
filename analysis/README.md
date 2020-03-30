@@ -88,6 +88,10 @@ gmx rotacf -f lipodisk_npt_2_whole_cluster_nojump_mol.xtc -s lipodisk_npt_2.tpr 
 ```
 [acf_fit.py](acf_fit.py) fits ACFs with two exponent function. Order parameters for C12 are taken from CSV generated during LOP analysis earlier.
 
+|SMALP without protein|SMALP with 1H2S|
+|----|----|
+|![SMA](../images/rotacf_noprot_SMALP.png)|![DIBMA](../images/rotacf_1h2s_SMALP.png)|
+
 ### Gyration radii of polymer molecules
 
 ### Ions distribution along normal to membrane and maybe sth else????
