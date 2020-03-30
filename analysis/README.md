@@ -78,7 +78,7 @@ Fitting function:
 Resulting tau is:
 `tau = w1*tau1 + w2*tau2`
 
-[make_ndx_rotacf.py](make_ndx_rotacf.py) prepares index file with three groups: all lipids, inner and outer lipids. Those groups specify C12 H121 H122 atoms. ACF is calculated for 2nd Legandre polynom of vector C12H121 x C12H122.
+[make_ndx_rotacf.py](make_ndx_rotacf.py) generates index file with three groups: all lipids, inner and outer lipids. Those groups specify C12 H121 H122 atoms. ACF is calculated for 2nd Legandre polynom of vector C12H121 x C12H122.
 
 Calculation of ACF via Gromacs:
 ```
@@ -93,6 +93,35 @@ gmx rotacf -f lipodisk_npt_2_whole_cluster_nojump_mol.xtc -s lipodisk_npt_2.tpr 
 |![SMA](../images/rotacf_noprot_SMALP.png)|![DIBMA](../images/rotacf_1h2s_SMALP.png)|
 
 ### Gyration radii of polymer molecules
+Gyration radii are calculated for three sets of monomers - all monomers, maleic acid monomers and styrol/diisobutylene monomers. Analysis is conducted in three steps - preparing index files with groups of atoms to be analysed, calculating gyration radii vs time for those groups specified, plotting graphs.
+
+Following Gromacs commands generate index file with three groups: all monomers, maleic acid monomers and styrol\diisobutylene monomers. Those groups specify CA and CB polymer backbone atoms.
+
+```
+gmx select -f lipodisk_npt.gro -s lipodisk_npt_2.tpr -on index_gyr_radii_both.ndx -select "(not same molecule as atomnr 39172 35498) and (resname MAL MAR MAD MA2 ST1 ST2 DB1 DB2) and (name CA CB)"
+
+gmx select -f lipodisk_npt.gro -s lipodisk_npt_2.tpr -on index_gyr_radii_mal.ndx -select "(not same molecule as atomnr 39172 35498) and (resname MAL MAR MAD MA2) and (name CA CB)"
+
+gmx select -f lipodisk_npt.gro -s lipodisk_npt_2.tpr -on index_gyr_radii_sty.ndx -select "(not same molecule as atomnr 39172 35498) and (resname ST1 ST2 DB1 DB2) and (name CA CB)"
+```
+
+Calculating gyration radii:
+
+```
+gmx gyrate -f lipodisk_npt_2_whole_cluster_nojump_mol.xtc -s lipodisk_npt_2.tpr -n index_gyr_radii_mal.ndx -o MA_gyr.xvg<<!
+0
+!
+gmx gyrate -f lipodisk_npt_2_whole_cluster_nojump_mol.xtc -s lipodisk_npt_2.tpr -n index_gyr_radii_sty.ndx -o ST_gyr.xvg<<!
+0
+!
+gmx gyrate -f lipodisk_npt_2_whole_cluster_nojump_mol.xtc -s lipodisk_npt_2.tpr -n index_gyr_radii_both.ndx -o both_gyr.xvg<<!
+0
+!
+```
+
+Plotting of obtained XVG files is performed with [gyration_radii.py](gyration_radii.py).
+
+![LOP.png](../images/gyration_radii.png)
 
 ### Ions distribution along normal to membrane and maybe sth else????
 
