@@ -66,4 +66,6 @@ The default calculations were carried of for models with \[0.0, -0.3, -0.5, -1.0
 
 [Original Jupyter notebook](LOP_all_atoms.ipynb) is also available.
 
+[LOP.png](../images/LOP.png)
+
 ### Rotational correlation time of lipids
