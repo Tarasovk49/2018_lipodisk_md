@@ -69,3 +69,25 @@ The default calculations were carried of for models with \[0.0, -0.3, -0.5, -1.0
 ![LOP.png](../images/LOP_SMALP_noprot.png)
 
 ### Rotational correlation time of lipids
+
+Rotational correlation time of lipids is the time for autocorrelation function *1.5\*cos^2(theta)-0.5* to be reduced by *e* times. It can be measured in NMR and ESR relaxation experiments. Trajectory analysis is conducted in three steps - preparing index files with groups of atoms to be analysed, calculating autocorrelation functions for those groups specified, fitting of obtained plots with two exponents.
+
+Fitting function:
+`ACF_fit = (1 - S^2)(w1\*exp(-t/tau1) + w2\*exp(-t/tau2)) + S^2`
+
+Resulting tau is:
+`tau = w1\*tau1 + w2\*tau2`
+
+[make_ndx_rotacf.py](make_ndx_rotacf.py) - prepares index file with three groups: all lipids, inner and outer lipids. Those groups specify C12 H121 H122 atoms. ACF is calculated for 2nd Legandre polynom of vector C12H121 x C12H122.
+
+
+```
+gmx_2018 rotacf -f lipodisk_npt_2_whole_cluster_nojump_mol.xtc -s lipodisk_npt_2.tpr -n index_edge.ndx -o lipodisk_rotacf_edge.xvg -P 2
+gmx_2018 rotacf -f lipodisk_npt_2_whole_cluster_nojump_mol.xtc -s lipodisk_npt_2.tpr -n index_center.ndx -o lipodisk_rotacf_center.xvg -P 2
+gmx_2018 rotacf -f lipodisk_npt_2_whole_cluster_nojump_mol.xtc -s lipodisk_npt_2.tpr -n index_all_lipids.ndx -o lipodisk_rotacf_all.xvg -P 2
+```
+
+[python acf_fit.py](python acf_fit.py)
+
+### Gyration radii of polymer molecules
+
