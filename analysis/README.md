@@ -26,7 +26,7 @@ Original [Jupyter notebook](APL_calculation_planefit.ipynb).
 
 Delaunay triangulations with and without hanging over membrane polymer molecules can be seen below. 
 
-|APL vs Maleic acid charge|APL vs time|
+|With overhanging polymer molecules|Without overhanging polymer molecules|
 |----|----|
 |![SMA](../images/Delaunay_overhanging.png)|![DIBMA](../images/Delaunay_nooverhanging.png)|
 
