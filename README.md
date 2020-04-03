@@ -17,7 +17,7 @@
 1. python 3.6.
 2. [Pysimm](https://github.com/Tarasovk49/pysimm) - branch with modified files to read atom names from *.mol2* files and write them (along with resids and resnames) to *.pdb* files. LAMMPS installation also required (see Pysimm [installation guide](https://github.com/Tarasovk49/pysimm#complete-installation-pysimm-and-lammps)).
 3. [MDAnalysis](https://github.com/MDAnalysis/mdanalysis).
-4. [Gromacs 2018.1.](http://manual.gromacs.org/documentation/).
+4. [Gromacs](http://manual.gromacs.org/documentation/). All calculations except for production NPT run were carried out with Gromacs 2018.1, production NPT calculations were carried out with Gromacs 2020.1.
 
 ### NOTE
 For all Gromacs simulations use the forcefield provided (*oplsaa_lipids_polymers.ff* and *residuetypes.dat*). It contains topologies for polymers, lipids (POPC, DOPC, DPPC, CHOL, DMPC), and lys+retinal (REK) residue of rhodopsins.
