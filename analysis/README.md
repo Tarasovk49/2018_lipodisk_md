@@ -4,7 +4,7 @@ This directory provides analysis scripts of Gromacs trajectories of lipodisks wi
 
 ### Area per lipid
 ##### Calculation of area per lipid is provided by two different scripts. Among the output of those scripts there are CSV files with (time, APL) data. [APL_multiple.py](APL_multiple.py) combines those data for set of different maleic acid charge trajectories into a single plot.
-1. The first one works much faster and calculates area per lipid for projections of lipids onto a fitted to those lipids plane - [*APL_calculation_planefit.py*](APL_calculation_planefit.py).
+1. The first one works much faster and calculates area per lipid for projections of lipid atoms onto a fitted to those lipid atoms plane - [*APL_calculation_planefit.py*](APL_calculation_planefit.py).
 
 `APL_calculation_planefit.py -s (0) --e (1000000) --i (1) --structure (SMALP_ions.gro) --trajectory (SMALP_npt.xtc) --planefit_sel (resname DMPC and name C27) --dots_sel ((resname ST1 ST2 MAL MAR DB1 DB2 MAD MA2 and name CA CB) or (protein and name CA))`
 
