@@ -1,7 +1,7 @@
 # Lipodisk_md
 
 ### Overview
-**Lipodisk_md** contains assembly and analysis scripts to perform GROMACS simulations of lipodisks. Lipodisk is a membrane system for extracting and studing membrane proteins. It comprises a part of lipid membrane with or without membrane protein in it which is stabilized on ridges by amphiphilic polymers. Usually SMA (Styrene and Maleic Acid copolymer) and DIBMA (Diisobutylene and Maleic Acid copolymer) copolymers are utilized for lipodisk production. Lipodisks formed with SMA and DIBMA are therefore called SMALPs and DIBMALPs. **Lipodisk_md** allows to:
+**Lipodisk_md** contains assembly and analysis scripts to perform GROMACS simulations of lipodisks. Lipodisk is a membrane system for extracting and studing membrane proteins. It comprises a part of lipid membrane with or without membrane protein in it which is stabilized on ridges by amphiphilic polymers. Usually SMA (Styrene and Maleic Acid copolymer) and DIBMA (Diisobutylene and Maleic Acid copolymer) polymers are used for lipodisk production. Lipodisks formed with SMA and DIBMA are therefore called SMALPs and DIBMALPs. **Lipodisk_md** allows to:
 
 1. Build polymer molecules using [Pysimm](https://github.com/Tarasovk49/pysimm) consisting of 3 types of monomers: Maleic acid, Diisobutylene, Styrene.
 <p align="center">
