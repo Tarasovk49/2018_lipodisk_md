@@ -123,8 +123,6 @@ Plotting of obtained XVG files is performed with [gyration_radii.py](gyration_ra
 
 ![LOP.png](../images/gyr_radii.png)
 
-### Ions distribution along normal to membrane and maybe sth else????
+### Ions distribution along normal to membrane
 
 ### Polymer density along normal to membrane
-
-### ???????
